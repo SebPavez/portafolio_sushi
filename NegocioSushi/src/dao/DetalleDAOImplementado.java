@@ -46,7 +46,7 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
                     DetallePedido detalle = new DetallePedido();
                     //detalle.setProducto(producto);
                     detalle.setCantidad(rs.getInt("cantidad"));
-                    detalle.setTotalDetalle(detalle.getCantidad()*detalle.getProducto().getValor());
+                    //detalle.setTotalDetalle(detalle.getCantidad()*detalle.getProducto().getValor());
                 }
                 listar.close();
                 conexion.close();  
