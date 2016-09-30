@@ -2,36 +2,72 @@ package negocio;
 
 import java.util.Date;
 
-public class Cliente {
-    private String clienteRun;
-    private String nombreCompleto;
-    private String direccion;
-    private String comuna;
-    private String provincia;
-    private String region;
-    private Date   fechaNacimiento;
-    private String genero;
-    private String correoElectronico;
+public class EmpleadoRun {
+    private Date    fechaContrato;
+    private Integer sueldoLiquido;
+    private Integer sueldoBruto;
+    private String  tipo;
+    private String  run;
+    private String  nombre;
+    private String  direccion;
+    private String  comuna;
+    private String  provincia;
+    private String  region;
+    private Date    fechaNacimiento;
+    private String  genero;
+    private String  correoElectronico;
     private Integer numeroTelefonico;
-    private String password;
+    private String  password;
 
-    public Cliente() {
+    public EmpleadoRun() {
     }
 
-    public String getClienteRun() {
-        return clienteRun;
+    public Date getFechaContrato() {
+        return fechaContrato;
     }
 
-    public void setClienteRun(String clienteRun) {
-        this.clienteRun = clienteRun;
+    public void setFechaContrato(Date fechaContrato) {
+        this.fechaContrato = fechaContrato;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public Integer getSueldoLiquido() {
+        return sueldoLiquido;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setSueldoLiquido(Integer sueldoLiquido) {
+        this.sueldoLiquido = sueldoLiquido;
+    }
+
+    public Integer getSueldoBruto() {
+        return sueldoBruto;
+    }
+
+    public void setSueldoBruto(Integer sueldoBruto) {
+        this.sueldoBruto = sueldoBruto;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getRun() {
+        return run;
+    }
+
+    public void setRun(String run) {
+        this.run = run;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDireccion() {
@@ -105,7 +141,5 @@ public class Cliente {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
     
 }
