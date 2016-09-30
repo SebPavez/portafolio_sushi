@@ -1,0 +1,35 @@
+--sentencias drop
+drop table Producto;
+drop table categoria_producto;
+
+
+--creacion secuencia
+CREATE SEQUENCE seq_categoriaId 
+START WITH 1 
+INCREMENT BY 1
+NOMAXVALUE;
+
+
+CREATE SEQUENCE seq_ProductosId
+START WITH 1 
+INCREMENT BY 1
+NOMAXVALUE;
+
+-- creacion de tablas 
+ create table categoria_producto(
+   categoria varchar2 (50) NOT NULL,
+   PRIMARY KEY (categoria)  
+ );
+
+ create table producto (
+  idProducto INTEGER NOT NULL,
+  stock INTEGER NOT NULL,
+  nombre varchar2 (50)	NOT NULL,
+  precio_normal INTEGER NOT NULL,
+  precio_oferta INTEGER NOT NULL,
+  en_oferta char (1) NOT NULL,
+  descripcion varchar2 (100) NOT NULL, 
+  categoriaProducto varchar2(50) NOT NULL,
+  PRIMARY KEY (idProducto),
+  FOREIGN KEY (categoriaProducto) REFERENCES categoria_producto(categoria)
+ );
