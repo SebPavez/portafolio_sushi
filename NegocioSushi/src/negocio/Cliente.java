@@ -7,7 +7,7 @@ public class Cliente {
     private String comuna;
     private String provincia;
     private String region;
-    private String   fechaNacimiento;
+    private String fechaNacimiento;
     private String genero;
     private String correoElectronico;
     private String numeroTelefonico;
