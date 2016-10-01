@@ -13,45 +13,94 @@ public class Pruebas {
         //Objeto Cliente para prueba
         Cliente nuevoCliente = new Cliente();
         
-        nuevoCliente.setNombreCompleto("");
+        nuevoCliente.setNombreCompleto("Sebastián");
         
-        if(Utilidades.validarRut("")){
-            nuevoCliente.setClienteRun("");
+        if(Utilidades.validarRut("17706258-8")){
+            nuevoCliente.setClienteRun("17706258-8");
         }        
-        if(Utilidades.validarEMail("")){
-            nuevoCliente.setCorreoElectronico("");
+        if(Utilidades.validarEMail("seb.pavez@alumnos.duoc.cl")){
+            nuevoCliente.setCorreoElectronico("seb.pavez@alumnos.duoc.cl");
         }
-        nuevoCliente.setNumeroTelefonico("");
-        if("".length()>7){
-            nuevoCliente.setPassword("");        
+        nuevoCliente.setNumeroTelefonico("+56956669308");
+        if("pecopeco".length()>7){
+            nuevoCliente.setPassword("pecopeco");        
         }
         
-        nuevoCliente.setDireccion("");
+        nuevoCliente.setDireccion("Cassiopeia #5390");
         
         //Campo date puede resultar algo complicado de ingresar a la BD
-        //nuevoCliente.setFechaNacimiento();
+        nuevoCliente.setFechaNacimiento("16/11/1990");
         
-        nuevoCliente.setGenero("");
+        nuevoCliente.setGenero("Másculino");
         
         //Existe la posibilidad de que cualquier String se pueda pasar como locación
-        nuevoCliente.setComuna("");
-        nuevoCliente.setProvincia("");
-        nuevoCliente.setRegion("");
+        nuevoCliente.setComuna("Pudahuel");
+        nuevoCliente.setProvincia("Santiago");
+        nuevoCliente.setRegion("Metropolitana");
                
         //Pruebas ClienteDao
-        testCliente.almacenarCliente(nuevoCliente);
-        testCliente.eliminarCliente(nuevoCliente);
-        testCliente.listarClientes();
-        testCliente.modificarCliente(nuevoCliente);
+        if(testCliente.almacenarCliente(nuevoCliente)){
+            System.out.println("Ingresado con éxito");
+        }
+        ArrayList<Cliente> lista = testCliente.listarClientes();
+        for (Cliente cliente : lista) {
+            System.out.println(cliente.toString());
+            
+        }
+        
+        nuevoCliente.setNombreCompleto("Juanito");
+        
+        if(testCliente.modificarCliente(nuevoCliente))
+            System.out.println("Modificado");
+        
+        if(testCliente.eliminarCliente(nuevoCliente))
+            System.out.println("Eliminado");
+        
+        
         
     }
     
     public void pruebasProducto(){
         
-        //--------------------------------------------
-        
         Producto producto = new Producto();
+        producto.setCategoriaProducto("roll");
+        producto.setDescripcion("descripcion del producto :D");
+        producto.setEn_oferta(Boolean.TRUE);        
+        producto.setNombre("california roll");
+        producto.setPrecio_normal(10000);
+        producto.setPrecio_oferta(7000);
+        producto.setStock(50);
+        
         Producto productoDos = new Producto();
+        productoDos.setCategoriaProducto("Promo");
+        productoDos.setDescripcion("descripcion del producto :D");
+        productoDos.setEn_oferta(Boolean.TRUE);        
+        productoDos.setNombre("california roll");
+        productoDos.setPrecio_normal(10000);
+        productoDos.setPrecio_oferta(7000);
+        productoDos.setStock(50);
+        
+        ProductoDaoImplementado testProducto = new ProductoDaoImplementado();
+        
+        if(testProducto.agregarProducto(producto))
+            System.out.println("Agregado");
+        
+        ArrayList<Producto> listado = testProducto.listarProductos();
+        for (Producto producto1 : listado) {
+            System.out.println(producto1.toString());
+        }
+        
+        if(testProducto.actualizarProducto(producto))
+            System.out.println("Actualizado");
+        
+        testProducto.buscarProducto(1).toString();
+        
+        listado = testProducto.listarPorCategoria("roll");
+        for (Producto producto1 : listado) {
+            System.out.println(producto1.toString());
+        }
+        
+        testProducto.eliminarProducto(1);
     }
     
     public void pruebasDetalle(){
@@ -74,9 +123,7 @@ public class Pruebas {
         productoDos.setPrecio_normal(0);
         productoDos.setPrecio_oferta(0);
         productoDos.setStock(0);
-        
-        
-        
+               
         DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
         
         DetallePedido nuevoDetalle = new DetallePedido();
@@ -106,27 +153,45 @@ public class Pruebas {
         EmpleadoRunImplementado testEmpleadoDao = new EmpleadoRunImplementado();
         
         EmpleadoRun nuevoEmpleado = new EmpleadoRun();
-        nuevoEmpleado.setComuna("");
-        nuevoEmpleado.setCorreoElectronico("");
-        nuevoEmpleado.setDireccion("");
-        //nuevoEmpleado.setFechaContrato("");
-        //nuevoEmpleado.setFechaNacimiento(fechaNacimiento);
-        nuevoEmpleado.setGenero("");
-        nuevoEmpleado.setNombre("");
-        nuevoEmpleado.setNumeroTelefonico("");
-        nuevoEmpleado.setPassword("");
-        nuevoEmpleado.setProvincia("");
-        nuevoEmpleado.setRegion("");
-        nuevoEmpleado.setRun("");
-        nuevoEmpleado.setSueldoBruto(0);
-        nuevoEmpleado.setSueldoLiquido(0);
-        nuevoEmpleado.setTipo("");
+        nuevoEmpleado.setComuna("La Cisterna");
+        if(Utilidades.validarEMail("empleado@sushi.cl"))
+            nuevoEmpleado.setCorreoElectronico("empleado@sushi.cl");
+        nuevoEmpleado.setDireccion("Pedro Prado #431");
+        nuevoEmpleado.setFechaContrato("21/09/2016");
+        nuevoEmpleado.setFechaNacimiento("09/10/1995");
+        nuevoEmpleado.setGenero("Femenino");
+        nuevoEmpleado.setNombre("Davida");
+        nuevoEmpleado.setNumeroTelefonico("555-5555rriente");
+        nuevoEmpleado.setPassword("alfilareina4");
+        nuevoEmpleado.setProvincia("Santiago");
+        nuevoEmpleado.setRegion("Metropolitana");
+        if(Utilidades.validarRut("17.706.258-8"))
+            nuevoEmpleado.setRun("5.555.555-5");
+        nuevoEmpleado.setSueldoBruto(222222);
+        nuevoEmpleado.setSueldoLiquido(200000);
+        nuevoEmpleado.setTipo("Practicante");
         
-        //Pruebas DAO Empleado
-        testEmpleadoDao.almacenarEmpleado(nuevoEmpleado);
-        testEmpleadoDao.eliminarEmpleado(nuevoEmpleado);
-        testEmpleadoDao.listarEmpleados();
-        testEmpleadoDao.modificarEmpleado(nuevoEmpleado);
+        //Pruebas DAO 
+        if(testEmpleadoDao.almacenarEmpleado(nuevoEmpleado))
+            System.out.println("Almacenado");
+        
+        nuevoEmpleado.setNombre("NombreNuevo");
+        
+        ArrayList<EmpleadoRun> listaEmpleado = testEmpleadoDao.listarEmpleados();
+        for (EmpleadoRun empleadoRun : listaEmpleado) {
+            System.out.println(empleadoRun.toString());
+        }
+        
+        if(testEmpleadoDao.modificarEmpleado(nuevoEmpleado))
+            System.out.println("Modificado");
+        
+        listaEmpleado = testEmpleadoDao.listarEmpleados();
+        for (EmpleadoRun empleadoRun : listaEmpleado) {
+            System.out.println(empleadoRun.toString());
+        }
+        
+        if(testEmpleadoDao.eliminarEmpleado(nuevoEmpleado))
+            System.out.println("Eliminado");
         
     }
     

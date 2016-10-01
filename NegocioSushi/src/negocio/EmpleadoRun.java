@@ -1,9 +1,7 @@
 package negocio;
 
-import java.util.Date;
-
 public class EmpleadoRun {
-    private Date    fechaContrato;
+    private String    fechaContrato;
     private Integer sueldoLiquido;
     private Integer sueldoBruto;
     private String  tipo;
@@ -22,11 +20,11 @@ public class EmpleadoRun {
     public EmpleadoRun() {
     }
 
-    public Date getFechaContrato() {
+    public String getFechaContrato() {
         return fechaContrato;
     }
 
-    public void setFechaContrato(Date fechaContrato) {
+    public void setFechaContrato(String fechaContrato) {
         this.fechaContrato = fechaContrato;
     }
 
@@ -141,5 +139,11 @@ public class EmpleadoRun {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "EmpleadoRun{" + "fechaContrato=" + fechaContrato + ", sueldoLiquido=" + sueldoLiquido + ", sueldoBruto=" + sueldoBruto + ", tipo=" + tipo + ", run=" + run + ", nombre=" + nombre + ", direccion=" + direccion + ", comuna=" + comuna + ", provincia=" + provincia + ", region=" + region + ", fechaNacimiento=" + fechaNacimiento + ", genero=" + genero + ", correoElectronico=" + correoElectronico + ", numeroTelefonico=" + numeroTelefonico + ", password=" + password + '}';
+    }
+    
     
 }

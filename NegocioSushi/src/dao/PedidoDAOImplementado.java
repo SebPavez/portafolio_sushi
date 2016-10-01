@@ -64,18 +64,19 @@ public class PedidoDAOImplementado implements PedidoDAO{
     public boolean actualizarPedido(Pedido nuevoPedido) {
         boolean logrado = false;
         try {
-            Connection conexion = Conexion.getConexion();
-            //insertarPedido(forma de entrega,comentario,totalVenta,runCliente);
+            Connection conexion = Conexion.getConexion();            
             String query = "UPDATE pedido SET "
                     + "forma_entrega = ?"
                     + "detalle_entrega = ?"
                     + "total_venta = ?"
-                    + "id_estado = ?";
+                    + "id_estado = ?"
+                    + "WHERE id_pedido = ?";
             PreparedStatement actualizar = conexion.prepareStatement(query);
             actualizar.setString(1, nuevoPedido.getFormaEntrega());         
             actualizar.setString(2, nuevoPedido.getComentario());
             actualizar.setDouble(3, nuevoPedido.getTotalVenta());
             actualizar.setInt(4, nuevoPedido.getIdEstado());            
+            actualizar.setInt(5, nuevoPedido.getId());
             actualizar.execute();            
             if (actualizar.getUpdateCount()>-1)
                 logrado = true;                            

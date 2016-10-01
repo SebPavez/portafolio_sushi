@@ -6,7 +6,6 @@
 package dao;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import negocio.Producto;
 import oracleSql.Conexion;
 
@@ -16,7 +15,7 @@ public class ProductoDaoImplementado {
         boolean agregado = false;
         try{
           Connection conexion = Conexion.getConexion();
-          String query = "insert into producto(stock, nombre, precio_normal, precio_oferta,en_oferta, descripcion, categoriaProducto) values (?,?,?,?,?,?,?)";
+          String query = "insert into producto(id_producto, stock, nombre, precio_normal, precio_oferta,en_oferta, descripcion, categoria) values (seq_id_producto.NEXTVAL,?,?,?,?,?,?,?)";
           CallableStatement crear = conexion.prepareCall(query);
           crear.setInt(1,producto.getStock());
           crear.setString(2, producto.getNombre());
@@ -59,9 +58,9 @@ public class ProductoDaoImplementado {
             buscar.close();
             conexion.close();
        } catch (SQLException sqlExc){
-            System.out.println("Error SQL al agregar producto: "+sqlExc.getMessage());
+            System.out.println("Error SQL al buscar producto: "+sqlExc.getMessage());
         } catch (Exception exc){
-            System.out.println("Error al agregar producto: "+exc.getMessage());
+            System.out.println("Error al buscar producto: "+exc.getMessage());
         }   
         return prod;
     };
@@ -121,8 +120,8 @@ public class ProductoDaoImplementado {
         return eliminado;
     }
     
-    public List<Producto> listarPeliculas() {
-        List<Producto> lista = null;
+    public ArrayList<Producto> listarProductos() {
+        ArrayList<Producto> lista = null;
         try {            
             Connection conexion=Conexion.getConexion();
             String query="SELECT * FROM producto";
@@ -131,13 +130,17 @@ public class ProductoDaoImplementado {
             lista = new ArrayList<Producto>();
             while(rs.next()){                
                 Producto instancia = new Producto();
-                instancia.setIdProducto(rs.getInt("idProducto"));
+                instancia.setIdProducto(rs.getInt("id_producto"));
+                instancia.setStock(rs.getInt("stock"));                
                 instancia.setNombre(rs.getString("nombre"));
                 instancia.setPrecio_normal(rs.getInt("precio_normal"));
                 instancia.setPrecio_oferta(rs.getInt("precio_oferta"));
-                instancia.setEn_oferta(rs.getBoolean("en_oferta"));
+                if(rs.getByte("en_oferta")==1)
+                    instancia.setEn_oferta(true);
+                else
+                    instancia.setEn_oferta(false);
                 instancia.setDescripcion(rs.getString("descripcion"));
-                instancia.setCategoriaProducto(rs.getString("categoriaProducto"));
+                instancia.setCategoriaProducto(rs.getString("categoria"));
                 lista.add(instancia);                
             }
             buscar.close();
@@ -150,11 +153,11 @@ public class ProductoDaoImplementado {
         return lista;
     }
     
-     public List<Producto> listarPorCategoria(String categoria) {
-        List<Producto> lista = null;
+     public ArrayList<Producto> listarPorCategoria(String categoria) {
+        ArrayList<Producto> lista = null;
         try {            
             Connection conexion=Conexion.getConexion();
-            String query="select * from producto where categoriaProducto = ?";
+            String query="select * from producto where categoria = ?";
             PreparedStatement buscar= conexion.prepareStatement(query);
             buscar.setString(1, categoria);            
             ResultSet rs= buscar.executeQuery();
@@ -167,7 +170,7 @@ public class ProductoDaoImplementado {
                 instancia.setPrecio_oferta(rs.getInt("precio_oferta"));
                 instancia.setEn_oferta(rs.getBoolean("en_oferta"));
                 instancia.setDescripcion(rs.getString("descripcion"));
-                instancia.setCategoriaProducto(rs.getString("categoriaProducto"));
+                instancia.setCategoriaProducto(rs.getString("categoria"));
                 lista.add(instancia);                
             }
             buscar.close();

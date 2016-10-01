@@ -22,7 +22,7 @@ CREATE TABLE detalle_pedido(
 );
 
 CREATE TABLE producto ( 
-     id_Productos INTEGER  PRIMARY KEY , 
+     id_Producto INTEGER  PRIMARY KEY , 
      stock INTEGER  NOT NULL , 
      nombre VARCHAR2 (50)  NOT NULL , 
      precio_normal INTEGER  NOT NULL , 
@@ -97,6 +97,11 @@ START WITH 1
 INCREMENT BY 1
 NOCACHE --sujeto a discusión
 NOCYCLE;
+
+CREATE SEQUENCE seq_id_producto
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;    
 
 --PROCEDIMIENTOS ALMACENADOS
 

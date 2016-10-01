@@ -8,6 +8,7 @@ public class Conexion {
         Connection connection =  null;
         try{
             String driverClassName = "oracle.jdbc.driver.OracleDriver";
+            //jdbc:oracle:thin:@localhost:1521:XE [sushi on Default schema]
             String driverURI = "jdbc:oracle:thin:@localhost:1521";
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(driverURI, "sushi", "sushi");

@@ -104,6 +104,11 @@ public class Cliente {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" + "clienteRun=" + clienteRun + ", nombreCompleto=" + nombreCompleto + ", direccion=" + direccion + ", comuna=" + comuna + ", provincia=" + provincia + ", region=" + region + ", fechaNacimiento=" + fechaNacimiento + ", genero=" + genero + ", correoElectronico=" + correoElectronico + ", numeroTelefonico=" + numeroTelefonico + ", password=" + password + '}';
+    }
+
     
     
 }
