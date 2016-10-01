@@ -2,7 +2,6 @@ package dao;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import negocio.EmpleadoRun;
 import oracleSql.Conexion;
 
@@ -73,7 +72,7 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
     }
 
     @Override
-    public boolean modificarCliente(EmpleadoRun empleadoModificado) {
+    public boolean modificarEmpleado(EmpleadoRun empleadoModificado) {
         try {
             Connection conexion = Conexion.getConexion();
             String query = "UDPATE empleado_run set fecha_contrato = ? , sueldo_liquido = ? , sueldo_bruto = ? , tipo = ? , run = ? , nombre = ? , direccion = ?"

@@ -21,6 +21,54 @@ CREATE TABLE detalle_pedido(
     cantidad integer NOT NULL
 );
 
+CREATE TABLE producto ( 
+     id Productos INTEGER  PRIMARY KEY , 
+     stock INTEGER  NOT NULL , 
+     nombre VARCHAR2 (50)  NOT NULL , 
+     precio_normal INTEGER  NOT NULL , 
+     precio_oferta INTEGER  NOT NULL , 
+     en_oferta CHAR (1)  NOT NULL , 
+     descripcion VARCHAR2 (50)  NOT NULL , 
+     categoria VARCHAR2 (50)  NOT NULL 
+    ) ;
+
+CREATE TABLE tipo_producto     ( 
+     nombre VARCHAR2 (50)  NOT NULL , 
+     categoria VARCHAR2 (50)  NOT NULL , 
+     idProductos INTEGER  NOT NULL 
+    ) ;
+
+CREATE TABLE cliente(
+    cliente_run varchar2(15) PRIMARY KEY,
+    nombre_completo varchar2(100) NOT NULL,
+    direccion varchar2(50) NOT NULL, 
+    comuna varchar2(50) NOT NULL,
+    provincia varchar2(50) NOT NULL,
+    region varchar2(50) NOT NULL,
+    fecha_nacimiento date NOT NULL,
+    genero varchar2(20) NOT NULL,
+    correo_electronico varchar2(100) NOT NULL,
+    numero_telefonico varchar2(15) NOT NULL,
+    password varchar2(50) NOT NULL
+);
+
+CREATE TABLE empleado(
+    run varchar2(15) PRIMARY KEY,
+    fecha_contrato date NOT NULL,
+    sueldo_liquido integer NOT NULL,
+    sueldo_bruto integer NOT NULL,
+    tipo varchar2(20) NOT NULL,
+    nombre varchar2(100) NOT NULL,
+    direccion varchar2(50),
+    comuna varchar2(100) NOT NULL,
+    provincia varchar2(50) NOT NULL,
+    region varchar2(50) NOT NULL,
+    fecha_nacimiento date NOT NULL,
+    genero varchar2(20) NOT NULL,
+    correo_electronico varchar2(100) NOT NULL,
+    numero_telefonico varchar2(15) NOT NULL,
+    password varchar2(50) NOT NULL
+);
 
 --RESTRICCIONES PARA TABLAS CREADAS
 
@@ -29,6 +77,9 @@ ALTER TABLE pedido ADD CONSTRAINT id_estado_FK FOREIGN KEY (id_estado) REFERENCE
 ALTER TABLE detalle_pedido ADD CONSTRAINT id_pedido_FK FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido);
 ALTER TABLE detalle_pedido ADD CONSTRAINT id_producto_FK FOREIGN KEY (id_producto) REFERENCES producto (id_producto);
 
+ALTER TABLE Producto ADD CONSTRAINT "Productos PK" PRIMARY KEY ( idProductos ) ;
+ALTER TABLE Producto ADD FOREIGN KEY (nombre) REFERENCE tipo_producto(nombre);
+ALTER TABLE tipo_producto  ADD CONSTRAINT "tipo_producto PK" PRIMARY KEY ( nombre ) ;
 --DROPS
 
 ALTER TABLE pedido DROP CONSTRAINT run_cliente_FK;

@@ -12,7 +12,7 @@ public class Conexion {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(driverURI, "user", "password");
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println("Error en conexión a Oracle: "+e.getMessage());
         }
         return connection;
     }

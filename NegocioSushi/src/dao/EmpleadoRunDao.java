@@ -7,6 +7,6 @@ public interface EmpleadoRunDao {
     
     public boolean almacenarEmpleado(EmpleadoRun nuevoEmpleado);
     public boolean eliminarEmpleado(EmpleadoRun empleadoRun);
-    public boolean modificarCliente(EmpleadoRun empleadoModificado);
+    public boolean modificarEmpleado(EmpleadoRun empleadoModificado);
     public ArrayList<EmpleadoRun> listarEmpleados();
 }
