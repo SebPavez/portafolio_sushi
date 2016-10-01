@@ -27,10 +27,10 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
             almacenar.setString(8, nuevoEmpleado.getComuna());
             almacenar.setString(9, nuevoEmpleado.getProvincia());
             almacenar.setString(10, nuevoEmpleado.getRegion());
-            almacenar.setDate(11, (Date) nuevoEmpleado.getFechaNacimiento());
+            almacenar.setString(11, nuevoEmpleado.getFechaNacimiento());
             almacenar.setString(12, nuevoEmpleado.getGenero());
             almacenar.setString(13, nuevoEmpleado.getCorreoElectronico());
-            almacenar.setInt(14, nuevoEmpleado.getNumeroTelefonico());
+            almacenar.setString(14, nuevoEmpleado.getNumeroTelefonico());
             almacenar.setString(15, nuevoEmpleado.getPassword());
 
             almacenar.execute();
@@ -90,10 +90,10 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
             modificar.setString(8, empleadoModificado.getComuna());
             modificar.setString(9, empleadoModificado.getProvincia());
             modificar.setString(10, empleadoModificado.getRegion());
-            modificar.setDate(11, (Date) empleadoModificado.getFechaNacimiento());
+            modificar.setString(11, empleadoModificado.getFechaNacimiento());
             modificar.setString(12, empleadoModificado.getGenero());
             modificar.setString(13, empleadoModificado.getCorreoElectronico());
-            modificar.setInt(14, empleadoModificado.getNumeroTelefonico());
+            modificar.setString(14, empleadoModificado.getNumeroTelefonico());
             modificar.setString(15, empleadoModificado.getPassword());
 
             modificar.executeUpdate();
@@ -142,10 +142,10 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
                     listarEmpleado.setComuna(rs.getString("comuna"));
                     listarEmpleado.setProvincia(rs.getString("provincia"));
                     listarEmpleado.setRegion(rs.getString("region"));
-                    listarEmpleado.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                    listarEmpleado.setFechaNacimiento(rs.getString("fecha_nacimiento"));
                     listarEmpleado.setGenero(rs.getString("genero"));
                     listarEmpleado.setCorreoElectronico(rs.getString("correo_electronico"));
-                    listarEmpleado.setNumeroTelefonico(rs.getInt("numero_telefonico"));
+                    listarEmpleado.setNumeroTelefonico(rs.getString("numero_telefonico"));
                     listarEmpleado.setPassword(rs.getString("password"));
 
                     lista.add(listarEmpleado);

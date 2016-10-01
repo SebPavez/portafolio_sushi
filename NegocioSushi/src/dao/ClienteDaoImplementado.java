@@ -24,10 +24,10 @@ public class ClienteDaoImplementado implements ClienteDao {
             almacenar.setString(4, nuevoCliente.getComuna());
             almacenar.setString(5, nuevoCliente.getProvincia());
             almacenar.setString(6, nuevoCliente.getRegion());
-            almacenar.setDate(7, (Date) nuevoCliente.getFechaNacimiento());
+            almacenar.setString(7, nuevoCliente.getFechaNacimiento());
             almacenar.setString(8, nuevoCliente.getGenero());
             almacenar.setString(9, nuevoCliente.getCorreoElectronico());
-            almacenar.setInt(10, nuevoCliente.getNumeroTelefonico());
+            almacenar.setString(10, nuevoCliente.getNumeroTelefonico());
             almacenar.setString(11, nuevoCliente.getPassword());
 
             almacenar.execute();
@@ -83,10 +83,10 @@ public class ClienteDaoImplementado implements ClienteDao {
             modificar.setString(4, clienteModificado.getComuna());
             modificar.setString(5, clienteModificado.getProvincia());
             modificar.setString(6, clienteModificado.getRegion());
-            modificar.setDate(7, (Date) clienteModificado.getFechaNacimiento());
+            modificar.setString(7, clienteModificado.getFechaNacimiento());
             modificar.setString(8, clienteModificado.getGenero());
             modificar.setString(9, clienteModificado.getCorreoElectronico());
-            modificar.setInt(10, clienteModificado.getNumeroTelefonico());
+            modificar.setString(10, clienteModificado.getNumeroTelefonico());
             modificar.setString(11, clienteModificado.getPassword());
 
             modificar.executeUpdate();
@@ -131,10 +131,10 @@ public class ClienteDaoImplementado implements ClienteDao {
                     listarCliente.setComuna(rs.getString("comuna"));
                     listarCliente.setProvincia(rs.getString("provincia"));
                     listarCliente.setRegion(rs.getString("region"));
-                    listarCliente.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
+                    listarCliente.setFechaNacimiento(rs.getString("fecha_nacimiento"));
                     listarCliente.setGenero(rs.getString("genero"));
                     listarCliente.setCorreoElectronico(rs.getString("correo_electronico"));
-                    listarCliente.setNumeroTelefonico(rs.getInt("numero_telefonico"));
+                    listarCliente.setNumeroTelefonico(rs.getString("numero_telefonico"));
                     listarCliente.setPassword(rs.getString("password"));
 
                     lista.add(listarCliente);

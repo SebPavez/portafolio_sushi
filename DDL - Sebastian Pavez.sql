@@ -22,7 +22,7 @@ CREATE TABLE detalle_pedido(
 );
 
 CREATE TABLE producto ( 
-     id Productos INTEGER  PRIMARY KEY , 
+     id_Productos INTEGER  PRIMARY KEY , 
      stock INTEGER  NOT NULL , 
      nombre VARCHAR2 (50)  NOT NULL , 
      precio_normal INTEGER  NOT NULL , 

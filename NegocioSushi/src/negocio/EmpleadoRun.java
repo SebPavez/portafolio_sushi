@@ -13,10 +13,10 @@ public class EmpleadoRun {
     private String  comuna;
     private String  provincia;
     private String  region;
-    private Date    fechaNacimiento;
+    private String  fechaNacimiento;
     private String  genero;
     private String  correoElectronico;
-    private Integer numeroTelefonico;
+    private String numeroTelefonico;
     private String  password;
 
     public EmpleadoRun() {
@@ -102,11 +102,11 @@ public class EmpleadoRun {
         this.region = region;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -126,11 +126,11 @@ public class EmpleadoRun {
         this.correoElectronico = correoElectronico;
     }
 
-    public Integer getNumeroTelefonico() {
+    public String getNumeroTelefonico() {
         return numeroTelefonico;
     }
 
-    public void setNumeroTelefonico(Integer numeroTelefonico) {
+    public void setNumeroTelefonico(String numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
 

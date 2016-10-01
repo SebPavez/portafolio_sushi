@@ -10,7 +10,7 @@ public class Conexion {
             String driverClassName = "oracle.jdbc.driver.OracleDriver";
             String driverURI = "jdbc:oracle:thin:@localhost:1521";
             Class.forName(driverClassName);
-            connection = DriverManager.getConnection(driverURI, "user", "password");
+            connection = DriverManager.getConnection(driverURI, "sushi", "sushi");
         }catch (Exception e){
             System.out.println("Error en conexión a Oracle: "+e.getMessage());
         }

@@ -1,7 +1,5 @@
 package negocio;
 
-import java.util.Date;
-
 public class Cliente {
     private String clienteRun;
     private String nombreCompleto;
@@ -9,10 +7,10 @@ public class Cliente {
     private String comuna;
     private String provincia;
     private String region;
-    private Date   fechaNacimiento;
+    private String   fechaNacimiento;
     private String genero;
     private String correoElectronico;
-    private Integer numeroTelefonico;
+    private String numeroTelefonico;
     private String password;
 
     public Cliente() {
@@ -66,11 +64,11 @@ public class Cliente {
         this.region = region;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -90,11 +88,11 @@ public class Cliente {
         this.correoElectronico = correoElectronico;
     }
 
-    public Integer getNumeroTelefonico() {
+    public String getNumeroTelefonico() {
         return numeroTelefonico;
     }
 
-    public void setNumeroTelefonico(Integer numeroTelefonico) {
+    public void setNumeroTelefonico(String numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
 
