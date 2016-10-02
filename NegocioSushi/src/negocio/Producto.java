@@ -94,25 +94,8 @@ public class Producto {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + this.idProducto;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Producto other = (Producto) obj;
-        if (this.idProducto != other.idProducto) {
-            return false;
-        }
-        return true;
+    public String toString() {
+        return "Producto{" + "idProducto=" + idProducto + ", stock=" + stock + ", nombre=" + nombre + ", precio_normal=" + precio_normal + ", precio_oferta=" + precio_oferta + ", en_oferta=" + en_oferta + ", descripcion=" + descripcion + ", categoriaProducto=" + categoriaProducto + '}';
     }
     
   

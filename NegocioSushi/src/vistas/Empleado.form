@@ -619,56 +619,62 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
-                                  <Component id="jTextField2" max="32767" attributes="0"/>
-                                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txbCorreoEmpleadoEditar" max="32767" attributes="0"/>
+                                  <Component id="txbRunEmpleadoEditar" max="32767" attributes="0"/>
+                                  <Component id="txbRunNombreEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txbPassEmpleadoEliminar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txbDirEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txbRegionEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txbProvinciaEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbMasculinoEmpleadoEditar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbGeneroEmpleadoEditar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="43" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jTextField15" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField10" pref="164" max="32767" attributes="0"/>
-                                  <Component id="jTextField11" max="32767" attributes="0"/>
-                                  <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="jTextField9" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txbFechaContratoEmpleadoEditar" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txbNumeroEmpleadoEditar" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txbComunaEmpleadoEditar" max="32767" attributes="0"/>
+                                          <Component id="txbNacimientoEmpleadoEditar" max="32767" attributes="0"/>
+                                          <Component id="txbLiquidoEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txbBrutoEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="cmbTipoEmpleadoEditar" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField16" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="btnEditarEmpleado" min="-2" pref="204" max="-2" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -679,60 +685,68 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbRunEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbComunaEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txbNacimientoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jTextField3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbRunNombreEditar" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbCorreoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbTipoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbPassEmpleadoEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbLiquidoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbBrutoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbMasculinoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbGeneroEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbDirEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbFechaContratoEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField16" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbRegionEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txbNumeroEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txbProvinciaEmpleadoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btnEditarEmpleado" pref="38" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -813,62 +827,36 @@
                 <Property name="text" type="java.lang.String" value="Numero Telefonico"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txbCorreoEmpleadoEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField6">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField7">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField8">
+            <Component class="javax.swing.JTextField" name="txbRunEmpleadoEditar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField8"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField9">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField9"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField10"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbRunNombreEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField11">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField11"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbPassEmpleadoEliminar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField13"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbDirEmpleadoEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField14">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField14"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbRegionEmpleadoEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField15">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField15"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbProvinciaEmpleadoEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField16">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField16"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txbComunaEmpleadoEditar">
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JTextField" name="txbNacimientoEmpleadoEditar">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txbLiquidoEmpleadoEditar">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txbBrutoEmpleadoEditar">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txbFechaContratoEmpleadoEditar">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txbNumeroEmpleadoEditar">
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="cbMasculinoEmpleadoEditar">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup2"/>
@@ -876,12 +864,29 @@
                 <Property name="text" type="java.lang.String" value="Masculino"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="cbGeneroEmpleadoEditar">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroup2"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Femenino"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbTipoEmpleadoEditar">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="1" value="Item 2"/>
+                    <StringItem index="2" value="Item 3"/>
+                    <StringItem index="3" value="Item 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEditarEmpleado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
             </Component>
           </SubComponents>

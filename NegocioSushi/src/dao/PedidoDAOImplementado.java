@@ -6,7 +6,6 @@ import negocio.Pedido;
 import oracleSql.Conexion;
 
 public class PedidoDAOImplementado implements PedidoDAO{
-
     @Override
     public boolean crearPedido(Pedido nuevoPedido) {        
         boolean logrado = false;

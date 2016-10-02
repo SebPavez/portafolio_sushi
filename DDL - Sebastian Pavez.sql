@@ -1,4 +1,4 @@
---CREACION DE TABLAS
+﻿--CREACION DE TABLAS
 
 CREATE TABLE pedido (
 Id_pedido integer PRIMARY KEY,
@@ -22,7 +22,7 @@ CREATE TABLE detalle_pedido(
 );
 
 CREATE TABLE producto ( 
-     id_Producto INTEGER  PRIMARY KEY , 
+     id_producto INTEGER  PRIMARY KEY , 
      stock INTEGER  NOT NULL , 
      nombre VARCHAR2 (50)  NOT NULL , 
      precio_normal INTEGER  NOT NULL , 
@@ -34,9 +34,7 @@ CREATE TABLE producto (
 
 CREATE TABLE tipo_producto     ( 
      nombre VARCHAR2 (50)  NOT NULL , 
-     categoria VARCHAR2 (50)  NOT NULL , 
-     idProductos INTEGER  NOT NULL 
-    ) ;
+ ) ;
 
 CREATE TABLE cliente(
     cliente_run varchar2(15) PRIMARY KEY,
@@ -72,14 +70,12 @@ CREATE TABLE empleado(
 
 --RESTRICCIONES PARA TABLAS CREADAS
 
-ALTER TABLE pedido ADD CONSTRAINT run_cliente_FK FOREIGN KEY (run_cliente) REFERENCES cliente (run); 
+ALTER TABLE pedido ADD CONSTRAINT run_cliente_FK FOREIGN KEY (run_cliente) REFERENCES cliente (cliente_run); 
 ALTER TABLE pedido ADD CONSTRAINT id_estado_FK FOREIGN KEY (id_estado) REFERENCES estado_pedido (id_estado); 
 ALTER TABLE detalle_pedido ADD CONSTRAINT id_pedido_FK FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido);
 ALTER TABLE detalle_pedido ADD CONSTRAINT id_producto_FK FOREIGN KEY (id_producto) REFERENCES producto (id_producto);
-
-ALTER TABLE Producto ADD CONSTRAINT "Productos PK" PRIMARY KEY ( idProductos ) ;
-ALTER TABLE Producto ADD FOREIGN KEY (nombre) REFERENCE tipo_producto(nombre);
 ALTER TABLE tipo_producto  ADD CONSTRAINT "tipo_producto PK" PRIMARY KEY ( nombre ) ;
+ALTER TABLE producto add constraint categoria_producto_fk foreign key (categoria) references tipo_producto (nombre)
 --DROPS
 
 ALTER TABLE pedido DROP CONSTRAINT run_cliente_FK;
@@ -107,7 +103,7 @@ NOMAXVALUE;
 
 CREATE OR REPLACE PROCEDURE insertarPedido(    
     forma IN pedido.forma_entrega%TYPE,
-    detalle IN pedido.detalle_entrega%TYPE,
+    detalle IN pedido.forma_entrega%TYPE,
     total IN pedido.total_venta%TYPE,    
     run_cliente IN pedido.run_cliente%TYPE)
 IS

@@ -97,22 +97,23 @@ public class Empleado extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        txbCorreoEmpleadoEditar = new javax.swing.JTextField();
+        txbRunEmpleadoEditar = new javax.swing.JTextField();
+        txbRunNombreEditar = new javax.swing.JTextField();
+        txbPassEmpleadoEliminar = new javax.swing.JTextField();
+        txbDirEmpleadoEditar = new javax.swing.JTextField();
+        txbRegionEmpleadoEditar = new javax.swing.JTextField();
+        txbProvinciaEmpleadoEditar = new javax.swing.JTextField();
+        txbComunaEmpleadoEditar = new javax.swing.JTextField();
+        txbNacimientoEmpleadoEditar = new javax.swing.JTextField();
+        txbLiquidoEmpleadoEditar = new javax.swing.JTextField();
+        txbBrutoEmpleadoEditar = new javax.swing.JTextField();
+        txbFechaContratoEmpleadoEditar = new javax.swing.JTextField();
+        txbNumeroEmpleadoEditar = new javax.swing.JTextField();
+        cbMasculinoEmpleadoEditar = new javax.swing.JRadioButton();
+        cbGeneroEmpleadoEditar = new javax.swing.JRadioButton();
+        cmbTipoEmpleadoEditar = new javax.swing.JComboBox();
+        btnEditarEmpleado = new javax.swing.JButton();
 
         jTabbedPane2.addTab("tab1", jTabbedPane3);
 
@@ -438,32 +439,17 @@ public class Empleado extends javax.swing.JFrame {
 
         jLabel33.setText("Numero Telefonico");
 
-        jTextField8.setText("jTextField8");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
+        txbRunEmpleadoEditar.setEnabled(false);
 
-        jTextField9.setText("jTextField9");
+        buttonGroup2.add(cbMasculinoEmpleadoEditar);
+        cbMasculinoEmpleadoEditar.setText("Masculino");
 
-        jTextField10.setText("jTextField10");
+        buttonGroup2.add(cbGeneroEmpleadoEditar);
+        cbGeneroEmpleadoEditar.setText("Femenino");
 
-        jTextField11.setText("jTextField11");
+        cmbTipoEmpleadoEditar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField13.setText("jTextField13");
-
-        jTextField14.setText("jTextField14");
-
-        jTextField15.setText("jTextField15");
-
-        jTextField16.setText("jTextField16");
-
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("Masculino");
-
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("Femenino");
+        btnEditarEmpleado.setText("Actualizar");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -484,45 +470,49 @@ public class Empleado extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField8))
+                            .addComponent(txbCorreoEmpleadoEditar)
+                            .addComponent(txbRunEmpleadoEditar)
+                            .addComponent(txbRunNombreEditar)
+                            .addComponent(txbPassEmpleadoEliminar)
+                            .addComponent(txbDirEmpleadoEditar)
+                            .addComponent(txbRegionEmpleadoEditar)
+                            .addComponent(txbProvinciaEmpleadoEditar))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(cbMasculinoEmpleadoEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(cbGeneroEmpleadoEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)))
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField15))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel31))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(jTextField11)
-                            .addComponent(jTextField13)
-                            .addComponent(jTextField14)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(18, 18, 18)
+                                .addComponent(txbFechaContratoEmpleadoEditar))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txbNumeroEmpleadoEditar))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jLabel27))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txbComunaEmpleadoEditar)
+                                    .addComponent(txbNacimientoEmpleadoEditar)
+                                    .addComponent(txbLiquidoEmpleadoEditar)
+                                    .addComponent(txbBrutoEmpleadoEditar)
+                                    .addComponent(cmbTipoEmpleadoEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addGap(58, 58, 58)
-                        .addComponent(jTextField9))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField16)))
-                .addContainerGap())
+                        .addGap(34, 34, 34)
+                        .addComponent(btnEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(30, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,51 +521,56 @@ public class Empleado extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel27)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbRunEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txbComunaEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel20)
                         .addComponent(jLabel28)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txbNacimientoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbRunNombreEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(jLabel29)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbCorreoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbTipoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jLabel30)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbPassEmpleadoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txbLiquidoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(txbBrutoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMasculinoEmpleadoEditar)
+                    .addComponent(cbGeneroEmpleadoEditar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbDirEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txbFechaContratoEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(jLabel33)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txbRegionEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txbNumeroEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(txbProvinciaEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(btnEditarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))))
         );
 
         jTabbedPane1.addTab("Editar", jPanel7);
@@ -595,10 +590,6 @@ public class Empleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -637,9 +628,13 @@ public class Empleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEmpleado;
+    private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton cbGeneroEmpleadoEditar;
+    private javax.swing.JRadioButton cbMasculinoEmpleadoEditar;
     private javax.swing.JComboBox cmbTipoEmpleado;
+    private javax.swing.JComboBox cmbTipoEmpleadoEditar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -682,8 +677,6 @@ public class Empleado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
@@ -691,34 +684,33 @@ public class Empleado extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton rdFemenino;
     private javax.swing.JRadioButton rdMasculino;
+    private javax.swing.JTextField txbBrutoEmpleadoEditar;
     private javax.swing.JTextField txbBuscarEmpleado;
     private javax.swing.JTextField txbComunaEmpleado;
+    private javax.swing.JTextField txbComunaEmpleadoEditar;
     private javax.swing.JTextField txbCorreoEmpelado;
+    private javax.swing.JTextField txbCorreoEmpleadoEditar;
+    private javax.swing.JTextField txbDirEmpleadoEditar;
     private javax.swing.JTextField txbDireccionEmpleado;
     private javax.swing.JTextField txbFechaContrato;
+    private javax.swing.JTextField txbFechaContratoEmpleadoEditar;
     private javax.swing.JTextField txbFechaNacimientoEmpleado;
+    private javax.swing.JTextField txbLiquidoEmpleadoEditar;
+    private javax.swing.JTextField txbNacimientoEmpleadoEditar;
     private javax.swing.JTextField txbNombreEmpleado;
+    private javax.swing.JTextField txbNumeroEmpleadoEditar;
     private javax.swing.JTextField txbPassEmpleado;
+    private javax.swing.JTextField txbPassEmpleadoEliminar;
     private javax.swing.JTextField txbProvinciaEmpleado;
+    private javax.swing.JTextField txbProvinciaEmpleadoEditar;
     private javax.swing.JTextField txbRegionEmpleado;
+    private javax.swing.JTextField txbRegionEmpleadoEditar;
     private javax.swing.JTextField txbRunEmpleado;
+    private javax.swing.JTextField txbRunEmpleadoEditar;
+    private javax.swing.JTextField txbRunNombreEditar;
     private javax.swing.JTextField txbSueldoBrutoEmpleado;
     private javax.swing.JTextField txbSueldoLiquidoEmpleado;
     private javax.swing.JTextField txbTelefonoEmpleado;
