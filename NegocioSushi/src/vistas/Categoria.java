@@ -6,6 +6,7 @@
 package vistas;
 import negocio.CategoriaProducto;
 import dao.CategoriaProductoDaoImplementado;
+import javax.swing.JOptionPane;
 public class Categoria extends javax.swing.JFrame {
 
     /**
@@ -198,6 +199,7 @@ public class Categoria extends javax.swing.JFrame {
        String cat = txbEliminar.getText().trim();
        CategoriaProductoDaoImplementado cpdi = new CategoriaProductoDaoImplementado();
        cpdi.eliminarCategoria(cat);
+       JOptionPane.showMessageDialog(this,"Categoria Eliminado"); 
        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
