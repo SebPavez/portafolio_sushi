@@ -448,6 +448,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarEmpleadoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cmbTipoEmpleado">
               <Properties>
@@ -478,7 +481,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="277" max="-2" attributes="0"/>
+                      <Component id="btnListarEmpleados" min="-2" pref="277" max="-2" attributes="0"/>
                       <EmptySpace pref="160" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -492,7 +495,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="btnListarEmpleados" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" pref="172" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -501,10 +504,13 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnListarEmpleados">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listar Todos los empleados"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarEmpleadosActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
@@ -513,7 +519,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="txaListarEmpleados">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -539,13 +545,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="239" max="-2" attributes="0"/>
+                          <Component id="btnEdEmpleado" min="-2" pref="239" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txbBuscarEmpleado" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jButton3" min="-2" pref="282" max="-2" attributes="0"/>
+                              <Component id="btnEliminarEmpleado" min="-2" pref="282" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -563,8 +569,8 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton3" pref="68" max="32767" attributes="0"/>
-                          <Component id="jButton2" max="32767" attributes="0"/>
+                          <Component id="btnEliminarEmpleado" pref="68" max="32767" attributes="0"/>
+                          <Component id="btnEdEmpleado" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="87" max="32767" attributes="0"/>
                   </Group>
@@ -579,15 +585,21 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txbBuscarEmpleado">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="btnEdEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEdEmpleadoActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnEliminarEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarEmpleadoActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -876,10 +888,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="0" value="Repartidor"/>
+                    <StringItem index="1" value="Cocinero"/>
+                    <StringItem index="2" value="Part Time"/>
+                    <StringItem index="3" value="Full Yime"/>
                   </StringArray>
                 </Property>
               </Properties>

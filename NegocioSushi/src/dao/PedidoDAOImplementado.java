@@ -1,7 +1,7 @@
 package dao;
 
 import java.sql.*;
-import negocio.Cliente;
+import negocio.Clientes;
 import negocio.Pedido;
 import oracleSql.Conexion;
 
@@ -17,7 +17,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
             crear.setString(1, nuevoPedido.getFormaEntrega());         
             crear.setString(2, nuevoPedido.getComentario());
             crear.setDouble(3, nuevoPedido.getTotalVenta());
-            crear.setString(4, nuevoPedido.getCliente().getClienteRun()); 
+            crear.setString(4, nuevoPedido.getClientes().getClienteRun()); 
             crear.setInt(5,nuevoPedido.getIdEstado());
             crear.execute();            
             crear.close();
@@ -46,8 +46,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
                 pedido.setFormaEntrega(resultado.getString("forma_entrega"));
                 pedido.setComentario(resultado.getString("comentario"));
                 pedido.setTotalVenta(resultado.getInt("total_venta"));
-                pedido.setFechaHoraPedido(resultado.getString("fecha_hora"));
-                
+                pedido.setFechaHoraPedido(resultado.getString("fecha_hora"));                
                 //pedido.setCliente(new Cliente()); //resultado.getString("run_cliente")
                 pedido.setIdEstado(resultado.getInt("id_estado"));                
             }                
@@ -78,7 +77,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
             actualizar.setString(2, nuevoPedido.getComentario());
             actualizar.setDouble(3, nuevoPedido.getTotalVenta());
             actualizar.setInt(4, nuevoPedido.getIdEstado());            
-            actualizar.setString(5, nuevoPedido.getCliente().getClienteRun()); 
+            actualizar.setString(5, nuevoPedido.getClientes().getClienteRun()); 
             actualizar.setInt(6, nuevoPedido.getId());
             actualizar.execute();            
             if (actualizar.getUpdateCount()>-1)

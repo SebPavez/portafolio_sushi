@@ -48,14 +48,14 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
     }
 
     @Override
-    public boolean eliminarEmpleado(EmpleadoRun empleadoRun) {
+    public boolean eliminarEmpleado(String empleadoRun) {
         try {
             Connection conexion = Conexion.getConexion();
             String query = "DELETE FROM empleado where run=?";
 
             PreparedStatement eliminar = conexion.prepareCall(query);
 
-            eliminar.setString(1, empleadoRun.getRun());
+            eliminar.setString(1, empleadoRun);
 
             eliminar.execute();
             eliminar.close();

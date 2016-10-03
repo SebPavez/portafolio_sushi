@@ -11,7 +11,7 @@ public class Pruebas {
         ClienteDaoImplementado testCliente = new ClienteDaoImplementado();
 
         //Objeto Cliente para prueba
-        Cliente nuevoCliente = new Cliente();
+        Clientes nuevoCliente = new Clientes();
 
         nuevoCliente.setNombreCompleto("Sebastián");
 
@@ -42,8 +42,8 @@ public class Pruebas {
         if (testCliente.almacenarCliente(nuevoCliente)) {
             System.out.println("Ingresado con éxito");
         }
-        ArrayList<Cliente> lista = testCliente.listarClientes();
-        for (Cliente cliente : lista) {
+        ArrayList<Clientes> lista = testCliente.listarClientes();
+        for (Clientes cliente : lista) {
             System.out.println(cliente.toString());
 
         }
@@ -54,7 +54,7 @@ public class Pruebas {
             System.out.println("Modificado");
         }
 
-        if (testCliente.eliminarCliente(nuevoCliente)) {
+        if (testCliente.eliminarCliente(nuevoCliente.getClienteRun())) {
             System.out.println("Eliminado");
         }
 
@@ -202,7 +202,7 @@ public class Pruebas {
             System.out.println(empleadoRun.toString());
         }
 
-        if (testEmpleadoDao.eliminarEmpleado(nuevoEmpleado)) {
+        if (testEmpleadoDao.eliminarEmpleado(nuevoEmpleado.getRun())) {
             System.out.println("Eliminado");
         }
 
@@ -266,7 +266,7 @@ public class Pruebas {
         listaDetalle.add(nuevoDetalleDos);
         
         
-        Cliente nuevoCliente = new Cliente();
+        Clientes nuevoCliente = new Clientes();
         nuevoCliente.setClienteRun("17706258-8");
         nuevoCliente.setComuna("Pudahuel");
         nuevoCliente.setCorreoElectronico("seb.pavez@gmail.com");
