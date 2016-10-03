@@ -47,7 +47,8 @@ public class PedidoDAOImplementado implements PedidoDAO{
                 pedido.setComentario(resultado.getString("comentario"));
                 pedido.setTotalVenta(resultado.getInt("total_venta"));
                 pedido.setFechaHoraPedido(resultado.getString("fecha_hora"));
-                pedido.setCliente(new Cliente()); //resultado.getString("run_cliente")
+                
+                //pedido.setCliente(new Cliente()); //resultado.getString("run_cliente")
                 pedido.setIdEstado(resultado.getInt("id_estado"));                
             }                
             buscar.close();

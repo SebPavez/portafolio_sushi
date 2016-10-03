@@ -3,6 +3,7 @@ package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import negocio.DetallePedido;
+import negocio.Producto;
 import oracleSql.Conexion;
 
 public class DetalleDAOImplementado implements DetallePedidoDAO {
@@ -41,19 +42,23 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
             Connection conexion = Conexion.getConexion();            
             String query = "SELECT * FROM detalle_pedido WHERE id_pedido = ?";
                 PreparedStatement listar = conexion.prepareStatement(query);
-                ResultSet rs = listar.executeQuery();
+                listar.setInt(1, idPedido);
+                ResultSet rs = listar.executeQuery();                                
                 while(rs.next()){
                     DetallePedido detalle = new DetallePedido();
-                    //detalle.setProducto(producto);
+                    Producto producto = new Producto();
+                    ProductoDaoImplementado busqueda = new ProductoDaoImplementado();
+                    producto = busqueda.buscarProducto(rs.getInt("id_producto"));
+                    detalle.setProducto(producto);                    
                     detalle.setCantidad(rs.getInt("cantidad"));
-                    //detalle.setTotalDetalle(detalle.getCantidad()*detalle.getProducto().getValor());
+                    detalle.setTotalDetalle(detalle.getCantidad()*detalle.getProducto().getPrecio_normal());
                 }
                 listar.close();
                 conexion.close();  
         } catch (SQLException sqlExc){
-            System.out.println("Error SQL al agregar detalle: "+sqlExc.getMessage());    
+            System.out.println("Error SQL al listar detalle: "+sqlExc.getMessage());    
         } catch (Exception exc){
-            System.out.println("Error al agregar detalle: "+exc.getMessage());
+            System.out.println("Error al listar detalle: "+exc.getMessage());
         }
         return listadoDetalle;
     }
@@ -72,7 +77,8 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
         try{
             Connection conexion = Conexion.getConexion();            
             String query = "DELETE FROM detalle_pedido WHERE id_pedido = ?";
-            PreparedStatement eliminar = conexion.prepareStatement(query);            
+            PreparedStatement eliminar = conexion.prepareStatement(query);      
+            eliminar.setInt(1, idPedido);
             eliminar.execute();
             if(eliminar.getUpdateCount()>-1)
                 logrado = true;                            

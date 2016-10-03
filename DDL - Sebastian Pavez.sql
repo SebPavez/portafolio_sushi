@@ -91,8 +91,7 @@ DROP TABLE detalle_pedido;
 CREATE SEQUENCE sec_id_pedido
 START WITH 1
 INCREMENT BY 1
-NOCACHE --sujeto a discusión
-NOCYCLE;
+NOMAXVALUE;
 
 CREATE SEQUENCE seq_id_producto
 START WITH 1

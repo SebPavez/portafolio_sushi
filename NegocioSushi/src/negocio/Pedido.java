@@ -76,6 +76,10 @@ public class Pedido {
     public void setDetallePedido(ArrayList<DetallePedido> detallePedido) {
         this.detallePedido = detallePedido;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Pedido{" + "id=" + id + ", formaEntrega=" + formaEntrega + ", comentario=" + comentario + ", totalVenta=" + totalVenta + ", fechaHoraPedido=" + fechaHoraPedido + ", detallePedido=" + detallePedido + ", cliente=" + cliente + ", idEstado=" + idEstado + '}';
+    }
     
 }

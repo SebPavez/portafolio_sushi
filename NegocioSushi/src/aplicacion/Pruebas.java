@@ -231,36 +231,35 @@ public class Pruebas {
         Producto producto = new Producto();
         producto.setCategoriaProducto("promo");
         producto.setDescripcion("descripcion producto 1");
-        producto.setEn_oferta(Boolean.TRUE);
+        producto.setEn_oferta(true);
         producto.setIdProducto(1);
         producto.setNombre("Nombre");
         producto.setPrecio_normal(100);
         producto.setPrecio_oferta(50);
-        producto.setStock(0);
+        producto.setStock(51);
         producto.setIdProducto(99);
-
+        
         Producto productoDos = new Producto();
         productoDos.setCategoriaProducto("roll");
-        productoDos.setDescripcion("");
-        productoDos.setEn_oferta(Boolean.TRUE);
+        productoDos.setDescripcion("un nuevo roll");
+        productoDos.setEn_oferta(false);
         productoDos.setIdProducto(0);
-        productoDos.setNombre("");
-        productoDos.setPrecio_normal(0);
-        productoDos.setPrecio_oferta(0);
-        productoDos.setStock(0);
+        productoDos.setNombre("roll california");
+        productoDos.setPrecio_normal(1000);
+        productoDos.setPrecio_oferta(500);
+        productoDos.setStock(100);
         productoDos.setIdProducto(200);
-
-        DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
+       
 
         DetallePedido nuevoDetalle = new DetallePedido();
-        nuevoDetalle.setCantidad(0);
+        nuevoDetalle.setCantidad(15);
         nuevoDetalle.setProducto(producto);
-        nuevoDetalle.setTotalDetalle(0);
+        nuevoDetalle.setTotalDetalle(nuevoDetalle.getProducto().getPrecio_normal()*nuevoDetalle.getCantidad());
 
         DetallePedido nuevoDetalleDos = new DetallePedido();
         nuevoDetalleDos.setCantidad(1);
         nuevoDetalleDos.setProducto(productoDos);
-        nuevoDetalle.setTotalDetalle(2);
+        nuevoDetalle.setTotalDetalle(nuevoDetalle.getProducto().getPrecio_normal()*nuevoDetalle.getCantidad());
 
         ArrayList<DetallePedido> listaDetalle = new ArrayList<DetallePedido>();
         listaDetalle.add(nuevoDetalle);
@@ -269,16 +268,16 @@ public class Pruebas {
         
         Cliente nuevoCliente = new Cliente();
         nuevoCliente.setClienteRun("17706258-8");
-        nuevoCliente.setComuna("");
-        nuevoCliente.setCorreoElectronico("");
-        nuevoCliente.setDireccion("");
-        nuevoCliente.setFechaNacimiento("");
-        nuevoCliente.setGenero("");
-        nuevoCliente.setNombreCompleto("");
-        nuevoCliente.setNumeroTelefonico("");
-        nuevoCliente.setPassword("");
-        nuevoCliente.setProvincia("");
-        nuevoCliente.setRegion("");
+        nuevoCliente.setComuna("Pudahuel");
+        nuevoCliente.setCorreoElectronico("seb.pavez@gmail.com");
+        nuevoCliente.setDireccion("Marta burnet 123");
+        nuevoCliente.setFechaNacimiento("16/11/1990");
+        nuevoCliente.setGenero("masculino");
+        nuevoCliente.setNombreCompleto("Sebastián Eduardo Pavez Morales");
+        nuevoCliente.setNumeroTelefonico("+56956669308");
+        nuevoCliente.setPassword("pecopeco");
+        nuevoCliente.setProvincia("Santiago");
+        nuevoCliente.setRegion("Metropolitana");
 
         PedidoDAOImplementado testPedido = new PedidoDAOImplementado();
         Pedido nuevoPedido = new Pedido();
@@ -287,25 +286,45 @@ public class Pruebas {
         nuevoPedido.setDetallePedido(listaDetalle);
         nuevoPedido.setFechaHoraPedido("");
         nuevoPedido.setFormaEntrega("quiero comida");
-        nuevoPedido.setId(0);
+        nuevoPedido.setId(6);
         nuevoPedido.setIdEstado(2);
         nuevoPedido.setTotalVenta(0);
         
-        Pedido actualizarPedido = new Pedido();
-        nuevoPedido.setCliente(nuevoCliente);
-        nuevoPedido.setComentario("esto es un comentario editado");
-        nuevoPedido.setDetallePedido(listaDetalle);
-        nuevoPedido.setFechaHoraPedido("02-10-16");
-        nuevoPedido.setFormaEntrega("quiero comida");
-        nuevoPedido.setId(15);
-        nuevoPedido.setIdEstado(2);
-        nuevoPedido.setTotalVenta(200);
         
-//        if(testPedido.crearPedido(nuevoPedido))
-//            System.out.println("Agregado"); 
         
-        if(testPedido.actualizarPedido(actualizarPedido))
-            System.out.println("editado");
+        DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
+        
+        if(testPedido.crearPedido(nuevoPedido))
+            System.out.println("Pedido Agregado"); 
+        
+        if(detalleTest.crearDetalle(listaDetalle, 6))
+            System.out.println("Detalle agregado");        
+        
+        nuevoPedido.setComentario("nuevoComentario");
+        
+        if(testPedido.actualizarPedido(nuevoPedido))
+            System.out.println("comentario pedido editado");
+        
+        if(detalleTest.actualizarDetalle(listaDetalle, 6))        
+            System.out.println("detalle actualizado");
+        
+        System.out.println("------------prueba listado detalle--------------");
+        
+        ArrayList<DetallePedido> listadoDetalleTest = detalleTest.listarDetalle(6);
+        
+        for (DetallePedido detallePedido : listadoDetalleTest) {
+            System.out.println(detallePedido.toString());
+        }
+        
+        System.out.println("PEDIDO BUSCADO: "+testPedido.buscarPedido(6).toString());
+        
+                
+        if(detalleTest.eliminarDetalle(6))
+            System.out.println("Detalle eliminado");
+            
+        if(testPedido.eliminarPedido(6))
+            System.out.println("Eliminado");
+        
     }
     
     public void pruebasCategoria (){

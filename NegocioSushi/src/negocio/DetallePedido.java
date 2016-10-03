@@ -38,5 +38,10 @@ public class DetallePedido {
     public void setTotalDetalle(double totalDetalle) {
         this.totalDetalle = totalDetalle;
     }
+
+    @Override
+    public String toString() {
+        return "DetallePedido{" + "idPedido=" + idPedido + ", producto=" + producto + ", cantidad=" + cantidad + ", totalDetalle=" + totalDetalle + '}';
+    }
     
 }
