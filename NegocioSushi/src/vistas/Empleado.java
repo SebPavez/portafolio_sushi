@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package vistas;
-
-/**
- *
- * @author David Perez
- */
+import negocio.EmpleadoRun;
+import dao.EmpleadoRunImplementado;
+import javax.swing.JOptionPane;
 public class Empleado extends javax.swing.JFrame {
 
     /**
@@ -73,14 +71,14 @@ public class Empleado extends javax.swing.JFrame {
         btnAgregarEmpleado = new javax.swing.JButton();
         cmbTipoEmpleado = new javax.swing.JComboBox();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnListarEmpleados = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txaListarEmpleados = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txbBuscarEmpleado = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnEdEmpleado = new javax.swing.JButton();
+        btnEliminarEmpleado = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -194,6 +192,11 @@ public class Empleado extends javax.swing.JFrame {
         rdFemenino.setText("Femenino");
 
         btnAgregarEmpleado.setText("Agregar");
+        btnAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarEmpleadoActionPerformed(evt);
+            }
+        });
 
         cmbTipoEmpleado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Repartidor", "Cocinero", "Full Time", "Part Time", " " }));
 
@@ -339,11 +342,16 @@ public class Empleado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar", jPanel3);
 
-        jButton1.setText("Listar Todos los empleados");
+        btnListarEmpleados.setText("Listar Todos los empleados");
+        btnListarEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarEmpleadosActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txaListarEmpleados.setColumns(20);
+        txaListarEmpleados.setRows(5);
+        jScrollPane1.setViewportView(txaListarEmpleados);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -351,7 +359,7 @@ public class Empleado extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(132, 132, 132)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(160, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
@@ -362,7 +370,7 @@ public class Empleado extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListarEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addContainerGap())
@@ -372,9 +380,19 @@ public class Empleado extends javax.swing.JFrame {
 
         jLabel4.setText("Ingrese el rut del empleado y luego elija opcion");
 
-        jButton2.setText("Editar");
+        btnEdEmpleado.setText("Editar");
+        btnEdEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdEmpleadoActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Eliminar");
+        btnEliminarEmpleado.setText("Eliminar");
+        btnEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarEmpleadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -384,12 +402,12 @@ public class Empleado extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txbBuscarEmpleado)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEliminarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -402,8 +420,8 @@ public class Empleado extends javax.swing.JFrame {
                     .addComponent(txbBuscarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                    .addComponent(btnEdEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
@@ -447,7 +465,7 @@ public class Empleado extends javax.swing.JFrame {
         buttonGroup2.add(cbGeneroEmpleadoEditar);
         cbGeneroEmpleadoEditar.setText("Femenino");
 
-        cmbTipoEmpleadoEditar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbTipoEmpleadoEditar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Repartidor", "Cocinero", "Part Time", "Full Yime" }));
 
         btnEditarEmpleado.setText("Actualizar");
 
@@ -591,6 +609,70 @@ public class Empleado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEmpleadoActionPerformed
+        EmpleadoRun emp = new EmpleadoRun();
+        EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+        emp.setRun(txbRunEmpleado.getText().trim());
+        emp.setNombre(txbNombreEmpleado.getText().trim());
+        emp.setCorreoElectronico(txbCorreoEmpelado.getText().trim());
+        emp.setPassword(txbPassEmpleado.getText().trim());
+        if(rdMasculino.isSelected())
+         emp.setGenero("maculino");
+        else  
+         emp.setGenero("femenino");
+        emp.setDireccion(txbDireccionEmpleado.getText().trim());
+        emp.setRegion(txbRegionEmpleado.getText().trim());
+        emp.setProvincia(txbProvinciaEmpleado.getText().trim());
+        emp.setComuna(txbComunaEmpleado.getText().trim());
+        emp.setFechaNacimiento(txbFechaNacimientoEmpleado.getText().trim());
+        emp.setSueldoBruto(Integer.parseInt(txbSueldoBrutoEmpleado.getText().trim()));
+        emp.setSueldoLiquido(Integer.parseInt(txbSueldoLiquidoEmpleado.getText().trim()));
+        emp.setTipo(cmbTipoEmpleado.getSelectedItem().toString().trim());
+        emp.setFechaContrato(txbFechaContrato.getText().trim());
+        emp.setNumeroTelefonico(txbTelefonoEmpleado.getText().trim());
+        eri.almacenarEmpleado(emp);
+        
+        
+    }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
+
+    private void btnListarEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEmpleadosActionPerformed
+       EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+        txaListarEmpleados.setText(eri.listarEmpleados().toString());
+    }//GEN-LAST:event_btnListarEmpleadosActionPerformed
+
+    private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
+       
+       EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+       eri.eliminarEmpleado(txbBuscarEmpleado.getText().trim());
+       JOptionPane.showMessageDialog(this,"Empleado Eliminado"); 
+    }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
+
+    private void btnEdEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdEmpleadoActionPerformed
+        EmpleadoRun emp = new EmpleadoRun();
+        EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+        emp.setRun(txbBuscarEmpleado.getText().trim());
+        emp.setNombre(txbRunNombreEditar.getText().trim());
+        emp.setCorreoElectronico(txbCorreoEmpleadoEditar.getText().trim());
+        emp.setPassword(txbPassEmpleadoEliminar.getText().trim());
+        if(cbMasculinoEmpleadoEditar.isSelected())
+         emp.setGenero("maculino");
+        else  
+         emp.setGenero("femenino");
+        emp.setDireccion(txbDirEmpleadoEditar.getText().trim());
+        emp.setRegion(txbRegionEmpleadoEditar.getText().trim());
+        emp.setProvincia(txbProvinciaEmpleadoEditar.getText().trim());
+        emp.setComuna(txbComunaEmpleadoEditar.getText().trim());
+        emp.setFechaNacimiento(txbNacimientoEmpleadoEditar.getText().trim());
+        emp.setTipo(cmbTipoEmpleadoEditar.getSelectedItem().toString().trim());
+        emp.setSueldoLiquido(Integer.parseInt(txbLiquidoEmpleadoEditar.getText().trim()));
+        emp.setSueldoBruto(Integer.parseInt(txbBrutoEmpleadoEditar.getText().trim()));
+        emp.setFechaContrato(txbFechaContratoEmpleadoEditar.getText().trim());
+        emp.setNumeroTelefonico(txbNumeroEmpleadoEditar.getText().trim());
+        eri.modificarEmpleado(emp);
+        
+        
+    }//GEN-LAST:event_btnEdEmpleadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -628,16 +710,16 @@ public class Empleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEmpleado;
+    private javax.swing.JButton btnEdEmpleado;
     private javax.swing.JButton btnEditarEmpleado;
+    private javax.swing.JButton btnEliminarEmpleado;
+    private javax.swing.JButton btnListarEmpleados;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton cbGeneroEmpleadoEditar;
     private javax.swing.JRadioButton cbMasculinoEmpleadoEditar;
     private javax.swing.JComboBox cmbTipoEmpleado;
     private javax.swing.JComboBox cmbTipoEmpleadoEditar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -683,10 +765,10 @@ public class Empleado extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JRadioButton rdFemenino;
     private javax.swing.JRadioButton rdMasculino;
+    private javax.swing.JTextArea txaListarEmpleados;
     private javax.swing.JTextField txbBrutoEmpleadoEditar;
     private javax.swing.JTextField txbBuscarEmpleado;
     private javax.swing.JTextField txbComunaEmpleado;

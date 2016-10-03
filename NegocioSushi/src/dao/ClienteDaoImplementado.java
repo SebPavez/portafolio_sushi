@@ -2,13 +2,13 @@ package dao;
 
 import java.sql.*;
 import java.util.ArrayList;
-import negocio.Cliente;
+import negocio.Clientes;
 import oracleSql.Conexion;
 
 public class ClienteDaoImplementado implements ClienteDao {
 
     @Override
-    public boolean almacenarCliente(Cliente nuevoCliente) {
+    public boolean almacenarCliente(Clientes nuevoCliente) {
         boolean almacenado = false;
         try {
             Connection conexion = Conexion.getConexion();
@@ -44,14 +44,14 @@ public class ClienteDaoImplementado implements ClienteDao {
     }
 
     @Override
-    public boolean eliminarCliente(Cliente clienteRun) {
+    public boolean eliminarCliente(String clienteRun) {
         try {
             Connection conexion = Conexion.getConexion();
             String query = "DELETE FROM cliente where cliente_run=?";
 
             PreparedStatement eliminar = conexion.prepareCall(query);
 
-            eliminar.setString(1, clienteRun.getClienteRun());
+            eliminar.setString(1, clienteRun);
 
             eliminar.execute();
             eliminar.close();
@@ -68,7 +68,7 @@ public class ClienteDaoImplementado implements ClienteDao {
     }
 
     @Override
-    public boolean modificarCliente(Cliente clienteModificado) {
+    public boolean modificarCliente(Clientes clienteModificado) {
         try {
             Connection conexion = Conexion.getConexion();
             String query = "UPDATE cliente set "
@@ -116,8 +116,8 @@ public class ClienteDaoImplementado implements ClienteDao {
     }
 
     @Override
-    public ArrayList<Cliente> listarClientes() {
-        ArrayList<Cliente> lista = null;
+    public ArrayList<Clientes> listarClientes() {
+        ArrayList<Clientes> lista = null;
 
         try {
             Connection conexion = Conexion.getConexion();
@@ -126,10 +126,10 @@ public class ClienteDaoImplementado implements ClienteDao {
 
             ResultSet rs = listar.executeQuery();            
             
-            lista = new ArrayList<Cliente>();
+            lista = new ArrayList<Clientes>();
             
             while (rs.next()) {
-                    Cliente listarCliente = new Cliente();
+                    Clientes listarCliente = new Clientes();
                     listarCliente.setClienteRun(rs.getString("cliente_run"));
                     listarCliente.setNombreCompleto(rs.getString("nombre_completo"));
                     listarCliente.setDireccion(rs.getString("direccion"));
