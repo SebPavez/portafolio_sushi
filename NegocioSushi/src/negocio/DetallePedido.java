@@ -1,10 +1,20 @@
 package negocio;
 
 public class DetallePedido {
+    private int idPedido;
     private Producto producto;
     private int cantidad;
     private double totalDetalle;
 
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
+
+   
     public Producto getProducto() {
         return producto;
     }

@@ -114,6 +114,7 @@ public class Pruebas {
         producto.setPrecio_normal(0);
         producto.setPrecio_oferta(0);
         producto.setStock(0);
+        producto.setIdProducto(27);
 
         Producto productoDos = new Producto();
         productoDos.setCategoriaProducto("");
@@ -124,15 +125,19 @@ public class Pruebas {
         productoDos.setPrecio_normal(0);
         productoDos.setPrecio_oferta(0);
         productoDos.setStock(0);
+        productoDos.setIdProducto(22);
+        
 
         DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
 
         DetallePedido nuevoDetalle = new DetallePedido();
-        nuevoDetalle.setCantidad(0);
+        nuevoDetalle.setIdPedido(22);
+        nuevoDetalle.setCantidad(1);
         nuevoDetalle.setProducto(producto);
-        nuevoDetalle.setTotalDetalle(0);
+        nuevoDetalle.setTotalDetalle(2);
 
         DetallePedido nuevoDetalleDos = new DetallePedido();
+        nuevoDetalleDos.setIdPedido(22);
         nuevoDetalleDos.setCantidad(1);
         nuevoDetalleDos.setProducto(productoDos);
         nuevoDetalle.setTotalDetalle(2);
@@ -141,10 +146,12 @@ public class Pruebas {
         listaDetalle.add(nuevoDetalle);
         listaDetalle.add(nuevoDetalleDos);
 
-        detalleTest.actualizarDetalle(listaDetalle, 0);
-        detalleTest.crearDetalle(listaDetalle, 0);
-        detalleTest.eliminarDetalle(0);
-        detalleTest.listarDetalle(0);
+        
+        if(detalleTest.crearDetalle(listaDetalle, 1))
+            System.out.println("agregado");
+       // detalleTest.eliminarDetalle(0);
+       //detalleTest.listarDetalle(0);
+       // detalleTest.actualizarDetalle(listaDetalle, 0);
 
     }
 
@@ -207,29 +214,33 @@ public class Pruebas {
         EstadoDAOImplementado testEstado = new EstadoDAOImplementado();
 
         EstadoPedido nuevoEstado = new EstadoPedido();
-        nuevoEstado.setIdEstado(0);
-        nuevoEstado.setEstado("");
-
-        //Pruebas DAO Estado
-        testEstado.crearEstado(nuevoEstado);
-        testEstado.eliminarEstado(0);
-        testEstado.listarEstados();
-        testEstado.modificarEstado(nuevoEstado);
+        nuevoEstado.setEstado("rechazado");
+        nuevoEstado.setIdEstado(2);
+       //Pruebas DAO Estado
+        if(testEstado.crearEstado(nuevoEstado));
+          System.out.println("Agregado");
+ 
+          if(testEstado.eliminarEstado(1));
+          System.out.println("Eliminado");
+        System.out.println(testEstado.listarEstados());
+        if(testEstado.modificarEstado(nuevoEstado))
+            System.out.println("Editado");
     }
 
     public void pruebasPedido() {
         Producto producto = new Producto();
-        producto.setCategoriaProducto("");
-        producto.setDescripcion("");
+        producto.setCategoriaProducto("promo");
+        producto.setDescripcion("descripcion producto 1");
         producto.setEn_oferta(Boolean.TRUE);
-        producto.setIdProducto(0);
-        producto.setNombre("");
-        producto.setPrecio_normal(0);
-        producto.setPrecio_oferta(0);
+        producto.setIdProducto(1);
+        producto.setNombre("Nombre");
+        producto.setPrecio_normal(100);
+        producto.setPrecio_oferta(50);
         producto.setStock(0);
+        producto.setIdProducto(99);
 
         Producto productoDos = new Producto();
-        productoDos.setCategoriaProducto("");
+        productoDos.setCategoriaProducto("roll");
         productoDos.setDescripcion("");
         productoDos.setEn_oferta(Boolean.TRUE);
         productoDos.setIdProducto(0);
@@ -237,6 +248,7 @@ public class Pruebas {
         productoDos.setPrecio_normal(0);
         productoDos.setPrecio_oferta(0);
         productoDos.setStock(0);
+        productoDos.setIdProducto(200);
 
         DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
 
@@ -253,8 +265,10 @@ public class Pruebas {
         ArrayList<DetallePedido> listaDetalle = new ArrayList<DetallePedido>();
         listaDetalle.add(nuevoDetalle);
         listaDetalle.add(nuevoDetalleDos);
+        
+        
         Cliente nuevoCliente = new Cliente();
-        nuevoCliente.setClienteRun("");
+        nuevoCliente.setClienteRun("17706258-8");
         nuevoCliente.setComuna("");
         nuevoCliente.setCorreoElectronico("");
         nuevoCliente.setDireccion("");
@@ -269,13 +283,29 @@ public class Pruebas {
         PedidoDAOImplementado testPedido = new PedidoDAOImplementado();
         Pedido nuevoPedido = new Pedido();
         nuevoPedido.setCliente(nuevoCliente);
-        nuevoPedido.setComentario("");
+        nuevoPedido.setComentario("comentario");
         nuevoPedido.setDetallePedido(listaDetalle);
         nuevoPedido.setFechaHoraPedido("");
-        nuevoPedido.setFormaEntrega("");
+        nuevoPedido.setFormaEntrega("quiero comida");
         nuevoPedido.setId(0);
-        nuevoPedido.setIdEstado(0);
+        nuevoPedido.setIdEstado(2);
         nuevoPedido.setTotalVenta(0);
+        
+        Pedido actualizarPedido = new Pedido();
+        nuevoPedido.setCliente(nuevoCliente);
+        nuevoPedido.setComentario("esto es un comentario editado");
+        nuevoPedido.setDetallePedido(listaDetalle);
+        nuevoPedido.setFechaHoraPedido("02-10-16");
+        nuevoPedido.setFormaEntrega("quiero comida");
+        nuevoPedido.setId(15);
+        nuevoPedido.setIdEstado(2);
+        nuevoPedido.setTotalVenta(200);
+        
+//        if(testPedido.crearPedido(nuevoPedido))
+//            System.out.println("Agregado"); 
+        
+        if(testPedido.actualizarPedido(actualizarPedido))
+            System.out.println("editado");
     }
     
     public void pruebasCategoria (){

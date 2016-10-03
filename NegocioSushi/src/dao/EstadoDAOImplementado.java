@@ -62,18 +62,18 @@ public class EstadoDAOImplementado implements EstadoDAO{
         boolean logrado = false;
         try {
             Connection conexion = Conexion.getConexion();
-            String query = "UPDATE estado_pedido SET estado = ? where id_pedido = ?";
+            String query = "UPDATE estado_pedido SET estado = ? where id_estado = ?";
             PreparedStatement actualizar = conexion.prepareStatement(query);
-            actualizar.setInt(1, nuevoEstado.getIdEstado());         
-            actualizar.setString(2, nuevoEstado.getEstado());
+            actualizar.setString(1, nuevoEstado.getEstado());
+            actualizar.setInt(2, nuevoEstado.getIdEstado());         
             actualizar.execute();            
             actualizar.close();
             conexion.close();
             logrado = true;            
         } catch (SQLException sqlExc){
-            System.out.println("Error SQL al crear estado: "+sqlExc.getMessage());
+            System.out.println("Error SQL al modificar estado: "+sqlExc.getMessage());
         } catch (Exception exc){
-            System.out.println("Error al crear estado: "+exc.getMessage());
+            System.out.println("Error al modificar estado: "+exc.getMessage());
         }       
         return logrado;
     }

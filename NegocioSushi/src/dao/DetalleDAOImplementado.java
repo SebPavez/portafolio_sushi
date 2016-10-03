@@ -18,7 +18,7 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
                 PreparedStatement crear = conexion.prepareStatement(query);
             for (DetallePedido detallePedido : detalle) {                
                 crear.setInt(1, idPedido);
-                //crear.setInt(2, detallePedido.getProducto().getId());         
+                crear.setInt(2, detallePedido.getProducto().getIdProducto());         
                 crear.setInt(3, detallePedido.getCantidad());
                 crear.addBatch();
             }          

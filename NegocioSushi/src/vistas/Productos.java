@@ -166,7 +166,7 @@ public class Productos extends javax.swing.JFrame {
         txaDescripcion.setRows(5);
         jScrollPane2.setViewportView(txaDescripcion);
 
-        cmbCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCategoriaProducto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "promo", "roll", " " }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

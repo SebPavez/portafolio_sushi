@@ -12,12 +12,13 @@ public class PedidoDAOImplementado implements PedidoDAO{
         try {
             Connection conexion = Conexion.getConexion();
             //insertarPedido(forma de entrega,comentario,totalVenta,runCliente);
-            String query = "{CALL insertarPedido(?,?,?,?)}";
+            String query = "{CALL insertarPedido(?,?,?,?,?)}";
             CallableStatement crear = conexion.prepareCall(query);
             crear.setString(1, nuevoPedido.getFormaEntrega());         
             crear.setString(2, nuevoPedido.getComentario());
             crear.setDouble(3, nuevoPedido.getTotalVenta());
-            //crear.setString(4, nuevoPedido.getCliente().getRut());            
+            crear.setString(4, nuevoPedido.getCliente().getClienteRun()); 
+            crear.setInt(5,nuevoPedido.getIdEstado());
             crear.execute();            
             crear.close();
             conexion.close();
@@ -65,17 +66,19 @@ public class PedidoDAOImplementado implements PedidoDAO{
         try {
             Connection conexion = Conexion.getConexion();            
             String query = "UPDATE pedido SET "
-                    + "forma_entrega = ?"
-                    + "detalle_entrega = ?"
-                    + "total_venta = ?"
-                    + "id_estado = ?"
+                    + "forma_entrega = ?,"
+                    + "comentario = ?,"
+                    + "total_venta = ?,"
+                    + "id_estado = ?,"
+                    + "run_cliente=?"
                     + "WHERE id_pedido = ?";
             PreparedStatement actualizar = conexion.prepareStatement(query);
             actualizar.setString(1, nuevoPedido.getFormaEntrega());         
             actualizar.setString(2, nuevoPedido.getComentario());
             actualizar.setDouble(3, nuevoPedido.getTotalVenta());
             actualizar.setInt(4, nuevoPedido.getIdEstado());            
-            actualizar.setInt(5, nuevoPedido.getId());
+            actualizar.setString(5, nuevoPedido.getCliente().getClienteRun()); 
+            actualizar.setInt(6, nuevoPedido.getId());
             actualizar.execute();            
             if (actualizar.getUpdateCount()>-1)
                 logrado = true;                            
