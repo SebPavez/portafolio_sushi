@@ -1,4 +1,3 @@
-
 BEGIN
 insert into estado_pedido VALUES (1, 'Solicitado a local');
 insert into estado_pedido VALUES (2, 'En proceso');

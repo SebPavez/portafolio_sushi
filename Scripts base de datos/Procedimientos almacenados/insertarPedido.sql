@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE OR REPLACE PROCEDURE insertarPedido(    
     forma IN pedido.forma_entrega%TYPE,
     detalle IN pedido.forma_entrega%TYPE,

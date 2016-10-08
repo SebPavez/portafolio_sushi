@@ -1,3 +1,4 @@
+
 CREATE TABLE detalle_pedido(
     id_detalle integer PRIMARY KEY,
     id_pedido integer NOT NULL,
