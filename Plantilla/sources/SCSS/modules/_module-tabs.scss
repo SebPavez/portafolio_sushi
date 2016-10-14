@@ -1,0 +1,57 @@
+/*========================================================
+                 Tab Products Module
+=========================================================*/
+.module_tab {
+  clear: both;
+  margin-top: 32px;
+  .nav-tabs {
+    padding: 0;
+    padding-left: 19px;
+    text-align: center;
+    margin-bottom: -px;
+    border: none;
+    background: $primary;
+    height: 42px;
+    > li {
+      float: none;
+      float: left;
+      position: relative;
+      &.active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        margin-left: -25px;
+        @include triangle(bottom, 39px, 20px, $primary);
+      }
+      > a {
+        max-height: 42px;
+      }
+      > a, > a:focus {
+        font: 700 18px/24px $base-font-family;
+        color: #fff;
+        border: none;
+        padding: 9px 18px 10px 11px;
+        text-transform: uppercase;
+        margin-right: 0;
+      }
+      &.active > a, > a:hover {
+        background: $primary;
+        border: none;
+        border-radius: 0;
+        color: #fff;
+      }
+      > a:hover {
+         text-shadow: 1px 1px 2px $secondary-color2;
+      }
+    }
+  }
+}
+
+.tab-content {
+  margin-top: 26px;
+}
+/*========================================================
+           Tab Products Module Responsive Layout
+=========================================================*/

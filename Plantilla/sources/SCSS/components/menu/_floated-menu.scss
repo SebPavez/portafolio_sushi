@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+//                       Floated menu
+//--------------------------------------------------------------
+$item-margin: 20px;
+
+.nav__primary{
+  
+}
+
+.nav__primary .menu {
+  @include clearfix;
+  display: inline-block;
+
+  > li {
+    position: relative;
+    float: left;
+
+    & + li {
+      margin-left: $item-margin;
+    }
+  }
+}

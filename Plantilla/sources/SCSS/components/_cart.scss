@@ -1,0 +1,127 @@
+/*================ Box Cart  ===============*/
+$close-button-color: #333;
+
+.box-cart {
+  position: relative;
+  padding-top: 13px;
+  padding-right: 6px;
+  .btn-danger {
+    border: 0;
+    padding: 0;
+    color: $close-button-color;
+    font-size: 13px;
+    background: none;
+    i {
+      @include transition(all .3s ease);
+    }
+    &:hover {
+      i {
+        color: $primary;
+      }
+      background: none;
+    }
+  }
+  a:hover img {
+    opacity: .5;
+  }
+  .btn {
+    margin-bottom: 7px;
+  }
+}
+
+/*================  Cart  ===============*/
+.cart {
+  position: relative;
+  i,strong,span{
+    color: #fff;
+    vertical-align: middle;
+  }
+  > button {
+    i {
+      @include transition(all .3s ease);
+      font-size: 18px;
+      line-height: 18px;
+      + strong {
+        margin-left: 4px;
+      }
+    }
+    span, strong {
+      @include transition(all .3s ease);
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+  }
+
+
+  > button:hover,
+  &.open > button {
+    i,span,strong {
+      color: $primary;
+    }
+  }
+}
+
+/*================  Cart DropDown ===============*/
+.cart .dropdown-menu {
+  z-index: 1001;
+  min-width: 260px;
+  padding: 10px 10px 5px;
+  
+  img {
+    max-width: 50px;
+  }
+  table {
+    margin-bottom: 10px;
+  }
+}
+
+.cart ul > li:first-child tr {
+  border-bottom: 1px solid $border-color;
+}
+
+.cart td {
+  font-size: 13px;
+  strong {
+    font-size: 12px;
+  }
+}
+
+.cart {
+  .total td {
+    border: none;
+    padding: 2px;
+    color: #fff;
+    line-height: 20px;
+    + td {
+      padding-top: 4px;
+      padding-bottom: 0;
+      line-height: 24px;
+    }
+  }
+  .price-cart {
+    color: $primary;
+  }
+}
+
+.cart .table.total tr:nth-child(4) td strong,
+.cart .table.total tr:nth-child(4) td {
+  font-size: 20px;
+}
+
+@media (max-width: 767px) {
+  .cart {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    margin: 0;
+    z-index: 10000;
+    > button {
+
+    }
+    .dropdown-menu {
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+}

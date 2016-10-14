@@ -1,0 +1,36 @@
+﻿/*==================     ToTop     ======================*/
+$to-top-color: #fff;
+.toTop {
+    width: 40px;
+    height: 40px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 24px;
+    color: $to-top-color;
+    background: $primary;
+
+    position: fixed;
+    right: 66px;
+    bottom: 100px;
+
+    display: none;
+    overflow: hidden;
+    text-decoration: none;
+    z-index: 20;
+
+    &:hover {
+        background: $secondary-color;
+        text-decoration: none;
+        color: $primary;
+    }
+}
+
+.toTop:visited,.toTop:focus,.toTop:active{
+    color: $to-top-color;
+}
+
+@media only screen and (max-width: 1399px) {
+    .toTop {
+        display: none !important;
+    }
+}

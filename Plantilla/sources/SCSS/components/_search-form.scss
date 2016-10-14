@@ -1,0 +1,121 @@
+//--------------------------------------------------------------
+//                    Search Form
+//--------------------------------------------------------------
+// input variables
+$form-bg: #fff;
+$form-width: 448px;
+$form-height: 49px;
+$form-border: 1px solid $border-color;
+$form-color: $text-primary;
+
+// button variables
+$form-submit-icon: '\f002';
+$form-submit-color: $border-color;
+$form-submit-hover: $primary;
+
+.search{
+  margin-top: 5px;
+  position: relative;
+  background: $form-bg;
+  input {
+    color: $form-color;
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+    width: $form-width;
+    height: $form-height;
+    padding: (($form-height - 22px) / 2) 50px (($form-height - 22px) / 2) 20px;
+    background: $form-bg;
+    border: $form-border;
+    @include box-sizing(border-box);
+    &:focus{
+      outline: none;
+    }
+    &::-webkit-input-placeholder{
+      color: $form-color;
+      opacity: 0;
+    }
+    &:-moz-placeholder{
+      color: $form-color;
+      opacity: 0;
+    }
+    &::-moz-placeholder{
+      color: $form-color;
+      opacity: 0;
+    }
+    &:-ms-input-placeholder  {
+      color: $form-color;
+      opacity: 0;
+    }
+  }
+
+  button, button:focus, button:active {
+    @include reset-button;
+    @include transition(.3s all ease);
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    color: $form-submit-color;
+    font: 400 18px/20px $fa;
+    @include transform(rotate(90deg));
+    &:before{
+      content: $form-submit-icon;
+    }
+  }
+
+  button:hover, button:focus:hover, button:active:hover {
+    color: $form-submit-hover;
+  }
+}
+
+//--------------------------------------------------------------
+//                    Responsive Search Form Layout
+//--------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------
+//                    Live Search
+//--------------------------------------------------------------
+#livesearch_search_results {
+  margin: 3px 0 0;
+  padding: 5px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  background-color: $dropdown-bg;
+  list-style-type: none;
+  z-index: 12;
+  font-size: 14px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.176);
+  li{
+    img{
+      float: left;
+      margin-right: 10px;
+      &.loading{
+        background: #F5F5F5;
+      }
+    }
+    &:hover,&.highlighted{
+      background-color: $primary;
+      a,a:visited{
+        color: #FFF;
+      }
+    }
+
+  }
+  a,a:visited{
+    display: block;
+    padding: 5px;
+    color: #fff;
+    @include clearfix;
+  }
+}
+
+@media (max-width: 991px) {
+  .search input {
+    width:100%;
+  }
+}

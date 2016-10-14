@@ -1,0 +1,240 @@
+/*========================================================
+                   Bootstrap Reset
+=========================================================*/
+button,.btn {
+  @include reset-button();
+  @include transition(.3s all ease);
+  &:focus {
+    outline: none;
+  }
+}
+
+label, input, button, select, textarea {
+  font-size: 13px;
+  color: $text-primary;
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 10px;
+  }
+}
+
+label {
+  font-weight: bold;
+  cursor: default
+}
+
+textarea {
+  resize: none
+}
+
+blockquote{
+  font-size: inherit;
+  line-height: inherit;
+}
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input {
+  font-size: 13px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+select.form-control,textarea.form-control,input[type="text"].form-control,input[type="password"].form-control,input[type="datetime"].form-control,input[type="datetime-local"].form-control,input[type="date"].form-control,input[type="month"].form-control,input[type="time"].form-control,input[type="week"].form-control,input[type="number"].form-control,input[type="email"].form-control,input[type="url"].form-control,input[type="search"].form-control,input[type="tel"].form-control,input[type="color"].form-control,.input-group input,.input-group select,.input-group .dropdown-menu,.input-group .popover,.input-group-addon{
+  font-size: 12px;
+}
+
+input[type="checkbox"], input[type="checkbox"]:focus, input[type="radio"], input[type="radio"]:focus {
+  outline: none;
+}
+
+// Bootstrap DateTimePicker
+
+.bootstrap-datetimepicker-widget {
+  z-index: 999 !important;
+  td.day:hover,
+  td.minute:hover,
+  td.second:hover,
+  thead tr:first-child th:hover,
+  td span:hover,
+  {
+    background-color: transparent;
+  }
+  .timepicker {
+    margin-top: 5px;
+    td > span {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin: 5px 0;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.bootstrap-datetimepicker-widget td.day.active,
+.bootstrap-datetimepicker-widget td.day.active:hover{
+  background: $primary;
+  color: #FFF;
+  cursor: inherit;
+}
+
+
+
+
+.container > .alert,
+.breadcrumb + .alert {
+  position: fixed;
+  z-index: 1000;
+}
+
+.alert {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px 14px 8px 14px;
+  z-index: 30;
+  color: #FFF;
+  border-radius: 0;
+  i {
+    font-size: 21px;
+    margin-right: 5px;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+      color: #FFF;
+    }
+  }
+  button.close {
+    color: #FFF;
+    &:hover, &:focus {
+      opacity: 1;
+      color: #FFF;
+    }
+  }
+}
+
+.alert-success {
+  background-color: #55C65E;
+  border: 1px solid #48B151;
+}
+
+.alert-danger {
+  background-color: #F3515C;
+  border-color: #D4323D;
+}
+
+.alert-info {
+  background-color: #FE9126;
+  border-color: #E4752B;
+}
+
+.alert-warning {
+  background-color: #EC710D;
+  border-color: #D45634;
+}
+
+.pagination{
+  margin: 0;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span, .pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-radius: 0;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: $primary;
+  border-color: $primary;
+  color: #FFF;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: $text-primary;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  background: $text-primary;
+  border-color: $text-primary;
+  color: #FFF;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background: none;
+  text-decoration: none;
+}
+
+.table thead td {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #323232 !important;
+  font-size: 13px;
+  background-color: #F9F9F9;
+}
+
+.table th,
+.table td {
+  padding: 20px;
+  border-color: #D7D7D7;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.block-compare .table th, .block-compare .table td {
+  padding: 7px;
+}
+
+.panel-group .panel, .panel,.table-bordered, .table-bordered thead:first-child tr:first-child > th:last-child,.table-bordered tbody:first-child tr:first-child > td:last-child,.table-bordered tbody:first-child tr:first-child > th:last-child,.table-bordered thead:first-child tr:first-child > th:first-child, .table-bordered tbody:first-child tr:first-child > td:first-child, .table-bordered tbody:first-child tr:first-child > th:first-child, .table-bordered thead:last-child tr:last-child > th:first-child, .table-bordered tbody:last-child tr:last-child > td:first-child, .table-bordered tbody:last-child tr:last-child > th:first-child, .table-bordered tfoot:last-child tr:last-child > td:first-child, .table-bordered tfoot:last-child tr:last-child > th:first-child {
+  border-radius: 0;
+}
+
+.table-bordered,.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+  border-color: $border-color;
+}
+
+.table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td{
+  white-space: normal;
+}
+
+.table > tbody + tbody {
+  border-top: none;
+}
+
+.panel-heading {
+  padding: 20px;
+}
+
+.addthis_button_tweet {
+  width: 100px !important;
+}
+
+.fancybox-close, .fancybox-prev span, .fancybox-next span {
+  opacity: 0.8
+}
+
+.fancybox-close:hover, .fancybox-prev span:hover, .fancybox-next span:hover {
+  opacity: 1
+}
+
+
+
+.text-danger {
+  color: #F00;
+}
+
+.has-error{
+  *+.text-danger{
+    margin-top: 5px;
+  }
+}
+
+
+.buttons input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
+.tooltip {
+  z-index: 10000;
+}
