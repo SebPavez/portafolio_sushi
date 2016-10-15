@@ -153,7 +153,12 @@ public class Empleado extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel2.setText("Run");
 
@@ -669,9 +674,14 @@ public class Empleado extends javax.swing.JFrame {
         emp.setFechaContrato(txbFechaContratoEmpleadoEditar.getText().trim());
         emp.setNumeroTelefonico(txbNumeroEmpleadoEditar.getText().trim());
         eri.modificarEmpleado(emp);
-        
+        this.jTabbedPane1.setSelectedIndex(3);
         
     }//GEN-LAST:event_btnEdEmpleadoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        VentanaPrincipal instancia = new VentanaPrincipal();
+        instancia.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

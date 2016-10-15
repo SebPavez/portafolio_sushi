@@ -64,7 +64,12 @@ public class Productos extends javax.swing.JFrame {
         txaEditarDescripcion = new javax.swing.JTextArea();
         btnActualizar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         txaListarProductos.setColumns(20);
         txaListarProductos.setRows(5);
@@ -435,7 +440,15 @@ public class Productos extends javax.swing.JFrame {
        prod.setCategoriaProducto(cmbEditarCategoria.getSelectedItem().toString().trim());
        prod.setDescripcion(txaEditarDescripcion.getText().trim());
        produc.actualizarProducto(prod);
+       
+       this.jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnEditarProductoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        VentanaPrincipal instancia = new VentanaPrincipal();
+        instancia.setVisible(true);        
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

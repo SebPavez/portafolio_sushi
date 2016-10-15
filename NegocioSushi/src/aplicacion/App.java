@@ -13,6 +13,11 @@ public class App {
 //            System.out.println("error en ejecución: "+exc.getMessage());
 //        }
         
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
         
     }
     
