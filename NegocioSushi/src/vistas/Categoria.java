@@ -40,7 +40,12 @@ public class Categoria extends javax.swing.JFrame {
         txbEliminar = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel2.setText("Agregar Categoria");
 
@@ -203,6 +208,11 @@ public class Categoria extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(this,"Categoria Eliminado"); 
        
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        VentanaPrincipal instancia = new VentanaPrincipal();
+        instancia.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

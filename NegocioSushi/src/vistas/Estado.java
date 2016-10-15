@@ -38,6 +38,11 @@ public class Estado extends javax.swing.JFrame {
         btnSeleccionEditarEstado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setText("Nombre estado");
 
@@ -119,6 +124,11 @@ public class Estado extends javax.swing.JFrame {
         jLabel3.setText("Nombre Estado");
 
         btnEditarEstado.setText("Editar");
+        btnEditarEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEstadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -254,6 +264,16 @@ public class Estado extends javax.swing.JFrame {
         edi.eliminarEstado(id);
         JOptionPane.showMessageDialog(this,"Estado Eliminado"); 
     }//GEN-LAST:event_btnEliminarEstadoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        VentanaPrincipal instancia =  new VentanaPrincipal();
+        instancia.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
+    private void btnEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoActionPerformed
+        //TO_DO obtener datos
+        this.jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_btnEditarEstadoActionPerformed
 
     /**
      * @param args the command line arguments
