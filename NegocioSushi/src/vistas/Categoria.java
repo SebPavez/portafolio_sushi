@@ -198,6 +198,7 @@ public class Categoria extends javax.swing.JFrame {
     private void btnListarCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarCategoriasActionPerformed
         CategoriaProductoDaoImplementado cpdi = new CategoriaProductoDaoImplementado();
         txaListar.setText(cpdi.listarCategoria().toString());
+        
     }//GEN-LAST:event_btnListarCategoriasActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
