@@ -6,5 +6,6 @@ CREATE TABLE producto (
      precio_oferta INTEGER  NOT NULL , 
      en_oferta CHAR (1)  NOT NULL , 
      descripcion VARCHAR2 (50)  NOT NULL , 
-     categoria VARCHAR2 (50)  NOT NULL 
+     categoria INTEGER NOT NULL,
+     tipo_producto INTEGER NOT NULL
     ) ;
