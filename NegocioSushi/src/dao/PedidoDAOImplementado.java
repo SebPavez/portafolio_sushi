@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.*;
+import java.util.HashSet;
+import java.util.Set;
 import negocio.Clientes;
 import negocio.Pedido;
 import oracleSql.Conexion;
@@ -11,7 +13,6 @@ public class PedidoDAOImplementado implements PedidoDAO{
         boolean logrado = false;
         try {
             Connection conexion = Conexion.getConexion();
-            //insertarPedido(forma de entrega,comentario,totalVenta,runCliente);
             String query = "{CALL insertarPedido(?,?,?,?,?)}";
             CallableStatement crear = conexion.prepareCall(query);
             crear.setString(1, nuevoPedido.getFormaEntrega());         
@@ -34,6 +35,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
     @Override
     public Pedido buscarPedido(int idPedido) {
         Pedido pedido = null;
+        String idCliente = new String();
         try {
             Connection conexion = Conexion.getConexion();            
             String query = "SELECT * FROM pedido WHERE id_pedido = ?";
@@ -47,11 +49,12 @@ public class PedidoDAOImplementado implements PedidoDAO{
                 pedido.setComentario(resultado.getString("comentario"));
                 pedido.setTotalVenta(resultado.getInt("total_venta"));
                 pedido.setFechaHoraPedido(resultado.getString("fecha_hora"));                
-                //pedido.setCliente(new Cliente()); //resultado.getString("run_cliente")
+                idCliente = resultado.getString("run_cliente");
                 pedido.setIdEstado(resultado.getInt("id_estado"));                
             }                
             buscar.close();
-            conexion.close();            
+            conexion.close();     
+            pedido.setCliente(new ClienteDaoImplementado().buscarCliente(idCliente));
         } catch (SQLException sqlExc){
             System.out.println("Error SQL al buscar pedido: "+sqlExc.getMessage());
         } catch (Exception exc){
