@@ -9,27 +9,29 @@ import oracleSql.Conexion;
 
 public class PedidoDAOImplementado implements PedidoDAO{
     @Override
-    public boolean crearPedido(Pedido nuevoPedido) {        
-        boolean logrado = false;
+    public int crearPedido(Pedido nuevoPedido) {        
+        int id = 0;
         try {
             Connection conexion = Conexion.getConexion();
-            String query = "{CALL insertarPedido(?,?,?,?,?)}";
+            String query = "{CALL insertarPedido(?,?,?,?,?,?)}";
             CallableStatement crear = conexion.prepareCall(query);
             crear.setString(1, nuevoPedido.getFormaEntrega());         
             crear.setString(2, nuevoPedido.getComentario());
             crear.setDouble(3, nuevoPedido.getTotalVenta());
             crear.setString(4, nuevoPedido.getClientes().getClienteRun()); 
             crear.setInt(5,nuevoPedido.getIdEstado());
+            crear.registerOutParameter(6, Types.INTEGER);            
             crear.execute();            
+            id = crear.getInt(6);
             crear.close();
             conexion.close();
-            logrado = true;            
+                      
         } catch (SQLException sqlExc){
             System.out.println("Error SQL al crear pedido: "+sqlExc.getMessage());
         } catch (Exception exc){
             System.out.println("Error al crear pedido: "+exc.getMessage());
         }       
-        return logrado;
+        return id;
     }
 
     @Override
