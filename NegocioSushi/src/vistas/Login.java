@@ -5,12 +5,19 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleResultSet;
+import oracleSql.Conexion;
+
 /**
  *
  * @author David Perez
  */
 public class Login extends javax.swing.JFrame {
-
+  Conexion conec = null;
+  OraclePreparedStatement prepare = null;
+  OracleResultSet rs = null;
     /**
      * Creates new form Login
      */
@@ -103,9 +110,30 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+
+       conec = Conexion.getConexion();
+        
         String correo = txbCorreoIngresar.getText().toLowerCase().trim();
         String pass = txbPassIngresar.getPassword().toString();
         
+        try {
+            String sql = "select * from cliente where correo=? and password=?";
+            prepare = (OraclePreparedStatement) conec.prepareStatement(sql);
+            prepare.setString(1, txbCorreoIngresar.getText());
+            prepare.setString(2, txbPassIngresar.getText());
+            
+            rs = (OracleResultSet) prepare.executeQuery();
+            if(rs.next()) {
+                JOptionPane.showMessageDialog(null, "El usuario y contraseña son correctos");
+                VentanaPrincipal v = new VentanaPrincipal();
+                v.setVisible(true);
+            }else {
+                JOptionPane.showMessageDialog(null, "Usuario y contraseña incorrectos, ingrese los datos nuevamente");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
         
     }//GEN-LAST:event_btnIngresarActionPerformed
 
@@ -149,7 +177,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txbCorreoIngresar;
-    private javax.swing.JPasswordField txbPassIngresar;
+    public static javax.swing.JTextField txbCorreoIngresar;
+    public static javax.swing.JPasswordField txbPassIngresar;
     // End of variables declaration//GEN-END:variables
 }
