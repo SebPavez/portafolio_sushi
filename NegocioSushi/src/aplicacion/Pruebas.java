@@ -294,7 +294,7 @@ public class Pruebas {
         
         DetalleDAOImplementado detalleTest = new DetalleDAOImplementado();
         
-        if(testPedido.crearPedido(nuevoPedido))
+        if(testPedido.crearPedido(nuevoPedido)>0)
             System.out.println("Pedido Agregado"); 
         
         if(detalleTest.crearDetalle(listaDetalle, 6))
