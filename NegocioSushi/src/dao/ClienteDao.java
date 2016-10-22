@@ -9,4 +9,5 @@ public interface ClienteDao {
     public boolean eliminarCliente(String clienteRun);
     public boolean modificarCliente(Clientes clienteModificado);
     public ArrayList<Clientes> listarClientes();
+    public Clientes buscarCliente(String runCliente);
 }

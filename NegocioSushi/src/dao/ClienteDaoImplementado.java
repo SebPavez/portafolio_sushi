@@ -156,4 +156,37 @@ public class ClienteDaoImplementado implements ClienteDao {
         return lista;
     }
 
+    @Override
+    public Clientes buscarCliente(String runCliente) {
+        
+        Clientes nuevoCliente =  new Clientes();
+        try {
+            Connection conexion = Conexion.getConexion();
+            String query = "SELECT * FROM cliente WHERE cliente_run = ?";
+            PreparedStatement buscar = conexion.prepareStatement(query);
+            buscar.setString(0, runCliente);
+            ResultSet rs = buscar.executeQuery();
+            if (rs.next()) {                    
+                    nuevoCliente.setClienteRun(runCliente);
+                    nuevoCliente.setNombreCompleto(rs.getString("nombre_completo"));
+                    nuevoCliente.setDireccion(rs.getString("direccion"));
+                    nuevoCliente.setComuna(rs.getString("comuna"));
+                    nuevoCliente.setProvincia(rs.getString("provincia"));
+                    nuevoCliente.setRegion(rs.getString("region"));
+                    nuevoCliente.setFechaNacimiento(rs.getString("fecha_nacimiento"));
+                    nuevoCliente.setGenero(rs.getString("genero"));
+                    nuevoCliente.setCorreoElectronico(rs.getString("correo_electronico"));
+                    nuevoCliente.setNumeroTelefonico(rs.getString("numero_telefonico"));
+                    nuevoCliente.setPassword(rs.getString("password"));
+            }
+            buscar.close();
+            conexion.close();             
+        } catch (SQLException w) {
+            System.out.println("Error sql en listar cliente" + w.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error en listar a los clientes " + e.getMessage());
+        }
+        return nuevoCliente;
+    }
+
 }

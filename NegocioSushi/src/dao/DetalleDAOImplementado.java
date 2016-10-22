@@ -13,6 +13,8 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
     @Override
     public boolean crearDetalle(ArrayList<DetallePedido> detalle, int idPedido) {
         boolean logrado = false;
+        final int batchSize = 1000;
+        int count = 0;
         try{
             Connection conexion = Conexion.getConexion();            
             String query = "INSERT INTO detalle_pedido VALUES (?, ?, ?)";
@@ -22,6 +24,9 @@ public class DetalleDAOImplementado implements DetallePedidoDAO {
                 crear.setInt(2, detallePedido.getProducto().getIdProducto());         
                 crear.setInt(3, detallePedido.getCantidad());
                 crear.addBatch();
+                if(++count % batchSize == 0) {
+                    crear.executeBatch();
+                }                
             }          
             crear.executeBatch();                        
             logrado = true;                            
