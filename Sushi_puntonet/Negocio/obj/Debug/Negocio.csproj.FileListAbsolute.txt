@@ -1,0 +1,4 @@
+C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.dll
+C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.pdb
+C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
+C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb
