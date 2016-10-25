@@ -1,13 +1,13 @@
 package dao;
 
 import java.util.ArrayList;
-import negocio.Clientes;
+import negocio.Cliente;
 
 public interface ClienteDao {
     
-    public boolean almacenarCliente(Clientes nuevoCliente);
+    public boolean almacenarCliente(Cliente nuevoCliente);
     public boolean eliminarCliente(String clienteRun);
-    public boolean modificarCliente(Clientes clienteModificado);
-    public ArrayList<Clientes> listarClientes();
-    public Clientes buscarCliente(String runCliente);
+    public boolean modificarCliente(Cliente clienteModificado);
+    public ArrayList<Cliente> listarClientes();
+    public Cliente buscarCliente(String runCliente);
 }

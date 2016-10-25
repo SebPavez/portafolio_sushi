@@ -1,6 +1,6 @@
 package negocio;
 
-public class Clientes {
+public class Cliente {
     private String clienteRun;
     private String nombreCompleto;
     private String direccion;
@@ -13,7 +13,7 @@ public class Clientes {
     private String numeroTelefonico;
     private String password;
 
-    public Clientes() {
+    public Cliente() {
     }
 
     public String getClienteRun() {

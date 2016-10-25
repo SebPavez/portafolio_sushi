@@ -14,5 +14,6 @@ BEGIN
   INSERT INTO pedido
   VALUES (valorNum, forma, detalle, total, CURRENT_TIMESTAMP, run_cliente, estado);
   idSalida := valorNum;
+  
   COMMIT;
 END;

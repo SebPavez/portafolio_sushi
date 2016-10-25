@@ -555,7 +555,7 @@
         <EntityTypeShape EntityType="Modelo.CATEGORIA_PRODUCTO" Width="1.5" PointX="0.75" PointY="1.875" Height="1.5956835937499998" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.CLIENTE" Width="1.5" PointX="0.75" PointY="8.375" Height="3.3263964843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.DETALLE_PEDIDO" Width="1.5" PointX="5.25" PointY="1.625" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Modelo.EMPLEADO" Width="1.5" PointX="5.75" PointY="4.75" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.EMPLEADO" Width="1.75" PointX="7" PointY="4.25" Height="3.9033007812499996" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.ESTADO_PEDIDO" Width="1.5" PointX="0.75" PointY="12.375" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.PEDIDO" Width="1.5" PointX="3" PointY="9.75" Height="2.9417936197916674" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.PRODUCTO" Width="1.5" PointX="3" PointY="1" Height="3.3263964843749996" IsExpanded="true" />
@@ -570,8 +570,8 @@
         </AssociationConnector>
         <AssociationConnector Association="Modelo.ID_PEDIDO_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="11.220896809895834" />
-          <ConnectorPoint PointX="5.46875" PointY="11.220896809895834" />
-          <ConnectorPoint PointX="5.46875" PointY="3.7975878906249996" />
+          <ConnectorPoint PointX="6" PointY="11.220896809895834" />
+          <ConnectorPoint PointX="6" PointY="3.7975878906249996" />
         </AssociationConnector>
         <AssociationConnector Association="Modelo.ID_PRODUCTO_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.7112939453125" />
