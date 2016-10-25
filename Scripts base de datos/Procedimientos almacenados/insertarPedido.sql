@@ -8,12 +8,12 @@ CREATE OR REPLACE PROCEDURE insertarPedido(
 )
     
 AS
+ 
    valorNum number;
 BEGIN
   valorNum := sec_id_pedido.nextVal;
   INSERT INTO pedido
   VALUES (valorNum, forma, detalle, total, CURRENT_TIMESTAMP, run_cliente, estado);
-  idSalida := valorNum;
-  
+  id_salida := valorNum;
   COMMIT;
 END;

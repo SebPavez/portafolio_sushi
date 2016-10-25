@@ -7,5 +7,4 @@ CREATE TABLE producto (
      en_oferta CHAR (1)  NOT NULL , 
      descripcion VARCHAR2 (50)  NOT NULL , 
      categoria INTEGER NOT NULL,
-     tipo_producto INTEGER NOT NULL
-    ) ;
+     link_internet varchar2(200) not null) ;
