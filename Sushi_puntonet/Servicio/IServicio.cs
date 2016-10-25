@@ -13,7 +13,13 @@ namespace Servicio
     public interface IServicio
     {
         [OperationContract]
-        bool registrarUsuario(Negocio.Cliente nuevoCliente);        
+        bool RegistrarUsuario(Cliente nuevoCliente);
+        bool EditarUsuario(Cliente clienteEditado);
+        bool EliminarUsuario(string runCliente);
+        bool AutenticarCliente(string correo, string password);
+        bool AnularPedido(int idPedido);
+        bool GenerarPedido(Pedido nuevoPedido);
+
     }
     
 }

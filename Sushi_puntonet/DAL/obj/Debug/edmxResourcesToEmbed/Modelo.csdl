@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityContainer Name="Entidad" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CATEGORIA_PRODUCTO" EntityType="Modelo.CATEGORIA_PRODUCTO" />
-    <EntitySet Name="CLIENTE" EntityType="Modelo.CLIENTE" />
+    <EntitySet Name="CLIENTEs" EntityType="Modelo.CLIENTE" />
     <EntitySet Name="DETALLE_PEDIDO" EntityType="Modelo.DETALLE_PEDIDO" />
-    <EntitySet Name="EMPLEADO" EntityType="Modelo.EMPLEADO" />
+    <EntitySet Name="EMPLEADOes" EntityType="Modelo.EMPLEADO" />
     <EntitySet Name="ESTADO_PEDIDO" EntityType="Modelo.ESTADO_PEDIDO" />
-    <EntitySet Name="PEDIDO" EntityType="Modelo.PEDIDO" />
-    <EntitySet Name="PRODUCTO" EntityType="Modelo.PRODUCTO" />
+    <EntitySet Name="PEDIDOes" EntityType="Modelo.PEDIDO" />
+    <EntitySet Name="PRODUCTOes" EntityType="Modelo.PRODUCTO" />
     <EntitySet Name="TIPO_PRODUCTO" EntityType="Modelo.TIPO_PRODUCTO" />
     <AssociationSet Name="CATEGORIA_PRODUCTO_FK" Association="Modelo.CATEGORIA_PRODUCTO_FK">
       <End Role="CATEGORIA_PRODUCTO" EntitySet="CATEGORIA_PRODUCTO" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
     </AssociationSet>
     <AssociationSet Name="RUN_CLIENTE_FK" Association="Modelo.RUN_CLIENTE_FK">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="CLIENTE" EntitySet="CLIENTEs" />
+      <End Role="PEDIDO" EntitySet="PEDIDOes" />
     </AssociationSet>
     <AssociationSet Name="ID_PEDIDO_FK" Association="Modelo.ID_PEDIDO_FK">
-      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="PEDIDO" EntitySet="PEDIDOes" />
       <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
     </AssociationSet>
     <AssociationSet Name="ID_PRODUCTO_FK" Association="Modelo.ID_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
       <End Role="DETALLE_PEDIDO" EntitySet="DETALLE_PEDIDO" />
     </AssociationSet>
     <AssociationSet Name="ID_ESTADO_FK" Association="Modelo.ID_ESTADO_FK">
       <End Role="ESTADO_PEDIDO" EntitySet="ESTADO_PEDIDO" />
-      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="PEDIDO" EntitySet="PEDIDOes" />
     </AssociationSet>
     <AssociationSet Name="TIPO_PRODUCTO_FK" Association="Modelo.TIPO_PRODUCTO_FK">
       <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="CATEGORIA_PRODUCTO">
@@ -40,7 +40,7 @@
     </Key>
     <Property Name="ID_CATEGORIA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
     <Property Name="CATEGORIA" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Modelo.CATEGORIA_PRODUCTO_FK" FromRole="CATEGORIA_PRODUCTO" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PRODUCTOes" Relationship="Modelo.CATEGORIA_PRODUCTO_FK" FromRole="CATEGORIA_PRODUCTO" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="CLIENTE">
     <Key>
@@ -57,7 +57,7 @@
     <Property Name="CORREO_ELECTRONICO" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="NUMERO_TELEFONICO" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
     <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="PEDIDO" Relationship="Modelo.RUN_CLIENTE_FK" FromRole="CLIENTE" ToRole="PEDIDO" />
+    <NavigationProperty Name="PEDIDOes" Relationship="Modelo.RUN_CLIENTE_FK" FromRole="CLIENTE" ToRole="PEDIDO" />
   </EntityType>
   <EntityType Name="DETALLE_PEDIDO">
     <Key>
@@ -96,7 +96,7 @@
     </Key>
     <Property Name="ID_ESTADO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
     <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="PEDIDO" Relationship="Modelo.ID_ESTADO_FK" FromRole="ESTADO_PEDIDO" ToRole="PEDIDO" />
+    <NavigationProperty Name="PEDIDOes" Relationship="Modelo.ID_ESTADO_FK" FromRole="ESTADO_PEDIDO" ToRole="PEDIDO" />
   </EntityType>
   <EntityType Name="PEDIDO">
     <Key>
@@ -136,7 +136,7 @@
     </Key>
     <Property Name="ID_TIPO_PRODUCTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
     <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Modelo.TIPO_PRODUCTO_FK" FromRole="TIPO_PRODUCTO" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PRODUCTOes" Relationship="Modelo.TIPO_PRODUCTO_FK" FromRole="TIPO_PRODUCTO" ToRole="PRODUCTO" />
   </EntityType>
   <Association Name="CATEGORIA_PRODUCTO_FK">
     <End Role="CATEGORIA_PRODUCTO" Type="Modelo.CATEGORIA_PRODUCTO" Multiplicity="1" />
