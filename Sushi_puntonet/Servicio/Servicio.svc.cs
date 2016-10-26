@@ -70,6 +70,35 @@ namespace Servicio
             throw new NotImplementedException();
         }
 
+        public bool AnularPedido(int idPedido)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool GenerarPedido(Pedido nuevoPedido)
+        {
+            if (nuevoPedido == null)
+            {
+                return false;
+            }
+            else 
+            {
+                try
+                {
+                    using (Entidades contexto = new Entidades()) {
+                        DAL.PEDIDO pedidoDAL = new DAL.PEDIDO();
+                        
+                    }
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+
+            throw new NotImplementedException();
+        }
+
         bool IsAnyNullOrEmpty(object myObject)
         {
             foreach (PropertyInfo pi in myObject.GetType().GetProperties())
@@ -93,5 +122,6 @@ namespace Servicio
             }
             return false;
         }
+        
     }
 }

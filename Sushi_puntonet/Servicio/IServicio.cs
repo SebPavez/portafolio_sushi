@@ -14,10 +14,20 @@ namespace Servicio
     {
         [OperationContract]
         bool RegistrarUsuario(Cliente nuevoCliente);
+
+        [OperationContract]
         bool EditarUsuario(Cliente clienteEditado);
+
+        [OperationContract]
         bool EliminarUsuario(string runCliente);
+
+        [OperationContract]
         bool AutenticarCliente(string correo, string password);
+
+        [OperationContract]
         bool AnularPedido(int idPedido);
+
+        [OperationContract]
         bool GenerarPedido(Pedido nuevoPedido);
 
     }
