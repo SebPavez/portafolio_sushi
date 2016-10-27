@@ -51,9 +51,38 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\ie6.css" />
+    <Content Include="css\images\big1.jpg" />
+    <Content Include="css\images\big2.jpg" />
+    <Content Include="css\images\big3.jpg" />
+    <Content Include="css\images\body.gif" />
+    <Content Include="css\images\bul.gif" />
+    <Content Include="css\images\cart-link.gif" />
+    <Content Include="css\images\cat.gif" />
+    <Content Include="css\images\h2-arr.gif" />
+    <Content Include="css\images\header.gif" />
+    <Content Include="css\images\ico1.gif" />
+    <Content Include="css\images\ico2.gif" />
+    <Content Include="css\images\ico3.gif" />
+    <Content Include="css\images\ico4.gif" />
+    <Content Include="css\images\info.png" />
+    <Content Include="css\images\logo.gif" />
+    <Content Include="css\images\next.gif" />
+    <Content Include="css\images\prev.gif" />
+    <Content Include="css\images\slide1.jpg" />
+    <Content Include="css\images\small1.jpg" />
+    <Content Include="css\images\small2.jpg" />
+    <Content Include="css\images\small3.jpg" />
+    <Content Include="css\images\small4.jpg" />
+    <Content Include="css\images\small5.jpg" />
+    <Content Include="css\images\small6.jpg" />
+    <Content Include="css\images\small7.jpg" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
     <Content Include="js\index.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
+    <Content Include="js\jquery-func.js" />
+    <Content Include="js\jquery.jcarousel.pack.js" />
     <Content Include="login.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -69,6 +98,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Base.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -82,19 +112,16 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Base.aspx.cs">
+      <DependentUpon>Base.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Base.aspx.designer.cs">
+      <DependentUpon>Base.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <None Include="scss\style.scss" />
