@@ -16,43 +16,31 @@ namespace Servicio
     {
         public bool RegistrarUsuario(Cliente nuevoCliente)
         {
-            if (nuevoCliente == null)
+            try{
+                using (Entidades contexto = new Entidades())
+                {
+                    DAL.CLIENTE ClienteDal = new DAL.CLIENTE();
+                    ClienteDal.CLIENTE_RUN = nuevoCliente.Run;
+                    ClienteDal.NOMBRE_COMPLETO = nuevoCliente.NombreCompleto;
+                    ClienteDal.DIRECCION = nuevoCliente.Direccion;
+                    ClienteDal.COMUNA = nuevoCliente.Comuna;
+                    ClienteDal.PROVINCIA = nuevoCliente.Provincia;
+                    ClienteDal.REGION = nuevoCliente.Region;
+                    ClienteDal.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
+                    ClienteDal.GENERO = nuevoCliente.Genero;
+                    ClienteDal.CORREO_ELECTRONICO = nuevoCliente.Email;
+                    ClienteDal.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
+                    ClienteDal.PASSWORD = nuevoCliente.Password;
+                    contexto.AddToCLIENTEs(ClienteDal);
+                    contexto.SaveChanges();
+                    contexto.Dispose();
+                }
+                return true;
+            }
+            catch (Exception)
             {
                 return false;
-            }
-            else
-            {
-                if(IsAnyNullOrEmpty(nuevoCliente))
-                    return false;
-                else{
-                    try{
-                        using (Entidades contexto = new Entidades())
-                        {
-                            DAL.CLIENTE ClienteDal = new DAL.CLIENTE();
-                            ClienteDal.CLIENTE_RUN = nuevoCliente.Run;
-                            ClienteDal.NOMBRE_COMPLETO = nuevoCliente.NombreCompleto;
-                            ClienteDal.DIRECCION = nuevoCliente.Direccion;
-                            ClienteDal.COMUNA = nuevoCliente.Comuna;
-                            ClienteDal.PROVINCIA = nuevoCliente.Provincia;
-                            ClienteDal.REGION = nuevoCliente.Region;
-                            ClienteDal.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
-                            ClienteDal.GENERO = nuevoCliente.Genero;
-                            ClienteDal.CORREO_ELECTRONICO = nuevoCliente.Email;
-                            ClienteDal.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
-                            ClienteDal.PASSWORD = nuevoCliente.Password;
-
-                            contexto.AddToCLIENTEs(ClienteDal);
-                            contexto.SaveChanges();
-                            contexto.Dispose();
-                        }
-                        return true;
-                    }
-                    catch (Exception)
-                    {
-                        return false;
-                    }
-                }
-            }
+            }                       
         }        
 
         public bool EditarUsuario(Cliente clienteEditado)
@@ -62,41 +50,79 @@ namespace Servicio
 
         public bool EliminarUsuario(string runCliente)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (Entidades contexto = new Entidades()) {
+                    contexto.DeleteObject(contexto.CLIENTEs.Where(p => p.CLIENTE_RUN == runCliente).First());
+                    contexto.SaveChanges();                    
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public bool AutenticarCliente(string correo, string password)
         {
-            throw new NotImplementedException();
+            bool resultado = false;
+            if (correo != null && password != null) {
+                using (Entidades contexto = new Entidades()) {
+                    CLIENTE cliente = contexto.CLIENTEs.Where(p => p.CORREO_ELECTRONICO == correo && p.PASSWORD == password).First();
+                    if(cliente!=null)
+                        resultado = true;
+                }
+            }
+            return resultado;
+            
         }
 
         public bool AnularPedido(int idPedido)
         {
-            throw new NotImplementedException();
+            bool resultado = false;
+            if (idPedido != null) {
+                try
+                {
+                    using (Entidades contexto = new Entidades())
+                    {
+                        PEDIDO pedido = contexto.PEDIDOes.Where(p => p.ID_PEDIDO == idPedido).First();
+                        if (pedido != null)
+                        {
+                            pedido.ID_ESTADO = (decimal)Estado.ANULADO;
+                            contexto.SaveChanges();
+                            resultado = true;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    resultado = false;
+                }                     
+            }
+            return resultado;           
         }
 
         public bool GenerarPedido(Pedido nuevoPedido)
         {
-            if (nuevoPedido == null)
-            {
-                return false;
-            }
-            else 
+            if (nuevoPedido != null)
             {
                 try
                 {
-                    using (Entidades contexto = new Entidades()) {
+                    using (Entidades contexto = new Entidades())
+                    {
                         DAL.PEDIDO pedidoDAL = new DAL.PEDIDO();
-                        
+
                     }
+                    return true;
                 }
                 catch (Exception)
                 {
                     return false;
                 }
             }
-
-            throw new NotImplementedException();
+            else
+                return false;
         }
 
         bool IsAnyNullOrEmpty(object myObject)
