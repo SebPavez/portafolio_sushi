@@ -10,6 +10,7 @@
 using System;
 using System.ComponentModel;
 using System.Data.EntityClient;
+using System.Data.Entity;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
 using System.Linq;
@@ -35,32 +36,32 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class Entidad : ObjectContext
+    public partial class Entidades : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new Entidad object using the connection string found in the 'Entidad' section of the application configuration file.
+        /// Initializes a new Entidades object using the connection string found in the 'Entidades' section of the application configuration file.
         /// </summary>
-        public Entidad() : base("name=Entidad", "Entidad")
+        public Entidades() : base("name=Entidades", "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Entidad object.
+        /// Initialize a new Entidades object.
         /// </summary>
-        public Entidad(string connectionString) : base(connectionString, "Entidad")
+        public Entidades(string connectionString) : base(connectionString, "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new Entidad object.
+        /// Initialize a new Entidades object.
         /// </summary>
-        public Entidad(EntityConnection connection) : base(connection, "Entidad")
+        public Entidades(EntityConnection connection) : base(connection, "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -95,18 +96,18 @@ namespace DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CLIENTE> CLIENTE
+        public ObjectSet<CLIENTE> CLIENTEs
         {
             get
             {
-                if ((_CLIENTE == null))
+                if ((_CLIENTEs == null))
                 {
-                    _CLIENTE = base.CreateObjectSet<CLIENTE>("CLIENTE");
+                    _CLIENTEs = base.CreateObjectSet<CLIENTE>("CLIENTEs");
                 }
-                return _CLIENTE;
+                return _CLIENTEs;
             }
         }
-        private ObjectSet<CLIENTE> _CLIENTE;
+        private ObjectSet<CLIENTE> _CLIENTEs;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -127,18 +128,18 @@ namespace DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<EMPLEADO> EMPLEADO
+        public ObjectSet<EMPLEADO> EMPLEADOes
         {
             get
             {
-                if ((_EMPLEADO == null))
+                if ((_EMPLEADOes == null))
                 {
-                    _EMPLEADO = base.CreateObjectSet<EMPLEADO>("EMPLEADO");
+                    _EMPLEADOes = base.CreateObjectSet<EMPLEADO>("EMPLEADOes");
                 }
-                return _EMPLEADO;
+                return _EMPLEADOes;
             }
         }
-        private ObjectSet<EMPLEADO> _EMPLEADO;
+        private ObjectSet<EMPLEADO> _EMPLEADOes;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -159,34 +160,34 @@ namespace DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PEDIDO> PEDIDO
+        public ObjectSet<PEDIDO> PEDIDOes
         {
             get
             {
-                if ((_PEDIDO == null))
+                if ((_PEDIDOes == null))
                 {
-                    _PEDIDO = base.CreateObjectSet<PEDIDO>("PEDIDO");
+                    _PEDIDOes = base.CreateObjectSet<PEDIDO>("PEDIDOes");
                 }
-                return _PEDIDO;
+                return _PEDIDOes;
             }
         }
-        private ObjectSet<PEDIDO> _PEDIDO;
+        private ObjectSet<PEDIDO> _PEDIDOes;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PRODUCTO> PRODUCTO
+        public ObjectSet<PRODUCTO> PRODUCTOes
         {
             get
             {
-                if ((_PRODUCTO == null))
+                if ((_PRODUCTOes == null))
                 {
-                    _PRODUCTO = base.CreateObjectSet<PRODUCTO>("PRODUCTO");
+                    _PRODUCTOes = base.CreateObjectSet<PRODUCTO>("PRODUCTOes");
                 }
-                return _PRODUCTO;
+                return _PRODUCTOes;
             }
         }
-        private ObjectSet<PRODUCTO> _PRODUCTO;
+        private ObjectSet<PRODUCTO> _PRODUCTOes;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -217,11 +218,11 @@ namespace DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the CLIENTE EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the CLIENTEs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCLIENTE(CLIENTE cLIENTE)
+        public void AddToCLIENTEs(CLIENTE cLIENTE)
         {
-            base.AddObject("CLIENTE", cLIENTE);
+            base.AddObject("CLIENTEs", cLIENTE);
         }
     
         /// <summary>
@@ -233,11 +234,11 @@ namespace DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the EMPLEADO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the EMPLEADOes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToEMPLEADO(EMPLEADO eMPLEADO)
+        public void AddToEMPLEADOes(EMPLEADO eMPLEADO)
         {
-            base.AddObject("EMPLEADO", eMPLEADO);
+            base.AddObject("EMPLEADOes", eMPLEADO);
         }
     
         /// <summary>
@@ -249,19 +250,19 @@ namespace DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PEDIDO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the PEDIDOes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPEDIDO(PEDIDO pEDIDO)
+        public void AddToPEDIDOes(PEDIDO pEDIDO)
         {
-            base.AddObject("PEDIDO", pEDIDO);
+            base.AddObject("PEDIDOes", pEDIDO);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PRODUCTO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the PRODUCTOes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPRODUCTO(PRODUCTO pRODUCTO)
+        public void AddToPRODUCTOes(PRODUCTO pRODUCTO)
         {
-            base.AddObject("PRODUCTO", pRODUCTO);
+            base.AddObject("PRODUCTOes", pRODUCTO);
         }
     
         /// <summary>
@@ -370,7 +371,7 @@ namespace DAL
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("Modelo", "CATEGORIA_PRODUCTO_FK", "PRODUCTO")]
-        public EntityCollection<PRODUCTO> PRODUCTO
+        public EntityCollection<PRODUCTO> PRODUCTOes
         {
             get
             {
@@ -713,7 +714,7 @@ namespace DAL
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("Modelo", "RUN_CLIENTE_FK", "PEDIDO")]
-        public EntityCollection<PEDIDO> PEDIDO
+        public EntityCollection<PEDIDO> PEDIDOes
         {
             get
             {
@@ -1456,7 +1457,7 @@ namespace DAL
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_ESTADO_FK", "PEDIDO")]
-        public EntityCollection<PEDIDO> PEDIDO
+        public EntityCollection<PEDIDO> PEDIDOes
         {
             get
             {
@@ -2247,7 +2248,7 @@ namespace DAL
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("Modelo", "TIPO_PRODUCTO_FK", "PRODUCTO")]
-        public EntityCollection<PRODUCTO> PRODUCTO
+        public EntityCollection<PRODUCTO> PRODUCTOes
         {
             get
             {

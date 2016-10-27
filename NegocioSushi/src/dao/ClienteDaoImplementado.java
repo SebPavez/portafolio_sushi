@@ -2,13 +2,13 @@ package dao;
 
 import java.sql.*;
 import java.util.ArrayList;
-import negocio.Clientes;
+import negocio.Cliente;
 import oracleSql.Conexion;
 
 public class ClienteDaoImplementado implements ClienteDao {
 
     @Override
-    public boolean almacenarCliente(Clientes nuevoCliente) {
+    public boolean almacenarCliente(Cliente nuevoCliente) {
         boolean almacenado = false;
         try {
             Connection conexion = Conexion.getConexion();
@@ -68,7 +68,7 @@ public class ClienteDaoImplementado implements ClienteDao {
     }
 
     @Override
-    public boolean modificarCliente(Clientes clienteModificado) {
+    public boolean modificarCliente(Cliente clienteModificado) {
         try {
             Connection conexion = Conexion.getConexion();
             String query = "UPDATE cliente set "
@@ -116,8 +116,8 @@ public class ClienteDaoImplementado implements ClienteDao {
     }
 
     @Override
-    public ArrayList<Clientes> listarClientes() {
-        ArrayList<Clientes> lista = null;
+    public ArrayList<Cliente> listarClientes() {
+        ArrayList<Cliente> lista = null;
 
         try {
             Connection conexion = Conexion.getConexion();
@@ -126,10 +126,10 @@ public class ClienteDaoImplementado implements ClienteDao {
 
             ResultSet rs = listar.executeQuery();            
             
-            lista = new ArrayList<Clientes>();
+            lista = new ArrayList<Cliente>();
             
             while (rs.next()) {
-                    Clientes listarCliente = new Clientes();
+                    Cliente listarCliente = new Cliente();
                     listarCliente.setClienteRun(rs.getString("cliente_run"));
                     listarCliente.setNombreCompleto(rs.getString("nombre_completo"));
                     listarCliente.setDireccion(rs.getString("direccion"));
@@ -150,16 +150,16 @@ public class ClienteDaoImplementado implements ClienteDao {
             System.out.println("Error sql en listar cliente" + w.getMessage());
         } catch (Exception e) {
 
-            System.out.println("Error en listar a los clientes " + e.getMessage());
+            System.out.println("Error en listar a los Cliente " + e.getMessage());
         }
 
         return lista;
     }
 
     @Override
-    public Clientes buscarCliente(String runCliente) {
+    public Cliente buscarCliente(String runCliente) {
         
-        Clientes nuevoCliente =  new Clientes();
+        Cliente nuevoCliente =  new Cliente();
         try {
             Connection conexion = Conexion.getConexion();
             String query = "SELECT * FROM cliente WHERE cliente_run = ?";

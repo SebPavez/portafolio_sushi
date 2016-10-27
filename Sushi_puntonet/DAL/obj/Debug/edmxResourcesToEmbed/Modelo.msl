@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="Entidad">
+  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="Entidades">
     <EntitySetMapping Name="CATEGORIA_PRODUCTO">
       <EntityTypeMapping TypeName="Modelo.CATEGORIA_PRODUCTO">
         <MappingFragment StoreEntitySet="CATEGORIA_PRODUCTO">
@@ -9,7 +9,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CLIENTE">
+    <EntitySetMapping Name="CLIENTEs">
       <EntityTypeMapping TypeName="Modelo.CLIENTE">
         <MappingFragment StoreEntitySet="CLIENTE">
           <ScalarProperty Name="CLIENTE_RUN" ColumnName="CLIENTE_RUN" />
@@ -36,7 +36,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EMPLEADO">
+    <EntitySetMapping Name="EMPLEADOes">
       <EntityTypeMapping TypeName="Modelo.EMPLEADO">
         <MappingFragment StoreEntitySet="EMPLEADO">
           <ScalarProperty Name="RUN" ColumnName="RUN" />
@@ -65,7 +65,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PEDIDO">
+    <EntitySetMapping Name="PEDIDOes">
       <EntityTypeMapping TypeName="Modelo.PEDIDO">
         <MappingFragment StoreEntitySet="PEDIDO">
           <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
@@ -78,7 +78,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PRODUCTO">
+    <EntitySetMapping Name="PRODUCTOes">
       <EntityTypeMapping TypeName="Modelo.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
           <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />

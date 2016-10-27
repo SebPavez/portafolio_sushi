@@ -6,7 +6,7 @@
 package vistas;
 import dao.ClienteDaoImplementado;
 import javax.swing.JOptionPane;
-import negocio.Clientes;
+import negocio.Cliente;
 public class Cliente extends javax.swing.JFrame {
 
     /**
