@@ -12,10 +12,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="template base/css/style.css" type="text/css" media="all" />
+	<meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
+	<meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
+	<script src="template base/js/jquery-1.4.1.min.js" type="text/javascript"></script>	
+	<script src="template base/js/jquery.jcarousel.pack.js" type="text/javascript"></script>	
+	<script src="template base/js/jquery-func.js" type="text/javascript"></script>	
   </head>
 
   <body>
-
+  <div class="shell">
+	<!-- Header -->	
+	<div id="header">
+		<!-- Navigation -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="#">Tienda</a></li>
+			    <li><a href="#">Contactenos</a></li>
+			</ul>
+		</div>
+		<!-- End Navigation -->
+	</div>
+</div>
+	<!-- End Header -->
     
 <!-- Form Mixin-->
 <!-- Input Mixin-->
@@ -39,7 +58,7 @@
   </div>
   <div class="form">
     <h2>Crear una cuenta </h2>
-    <form>
+    <form action = "PaginaPrincipal.aspx">
        <input type="text" placeholder="Rut: ej: 19188621-6" name="txbRutRegister"/>
        <input type="text" placeholder="Nombre: ej: Roberto Carlos" name="txbNombreRegister"/>
          <div class="form-group">

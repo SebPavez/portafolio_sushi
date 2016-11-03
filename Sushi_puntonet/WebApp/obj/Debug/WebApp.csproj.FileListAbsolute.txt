@@ -10,4 +10,3 @@ C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebAp
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
-C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
