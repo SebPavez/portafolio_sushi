@@ -29,11 +29,11 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="#">Tienda</a></li>
+			    <li><a href="/registrado.aspx">Tienda</a></li>
                 <li><a href="#">Mi carrito</a></li>
-                <li><a href="#">Mi Perfil</a></li>
-			    <li><a href="#">Contactenos</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
+			    <li><a href="/Contactenos.aspx">Contactenos</a></li>
+                <li><a href="/login.aspx">Salir</a></li>
 			</ul>
 		</div>
 		<!-- End Navigation -->
@@ -51,10 +51,9 @@
 			<div id="slider" class="box">
 				<div id="slider-holder">
 					<ul>
-					    <li><a href="#"><img src="template base/css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="template base/css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="template base/css/images/slide1.jpg" alt="" /></a></li>
-					    <li><a href="#"><img src="template base/css/images/slide1.jpg" alt="" /></a></li>
+					    <li><a href="1"><img src="template base/css/images/promo 1.jpg" alt="" /></a></li>
+					    <li><a href="2"><img src="template base/css/images/promo 3.jpg" alt="" /></a></li>
+					    <li><a href="3"><img src="template base/css/images/promo5.png" alt="" /></a></li>
 					</ul>
 				</div>
 				<div id="slider-nav">
@@ -71,35 +70,68 @@
 				<div class="cl">&nbsp;</div>
 				<ul>
 				    <li>
-				    	<a href="#"><img src="template base/css/images/big1.jpg" alt="" /></a>
+				    	<a href="5"><img src="template base/css/images/bebidas.jpg" alt="" /></a>
 				    	<div class="product-info">
-				    		<h3>LOREM IPSUM</h3>
+				    		<h3>Bebidas</h3>
 				    		<div class="product-desc">
-								<h4>WOMEN’S</h4>
-				    			<p>Lorem ipsum dolor sit<br />amet</p>
-				    			<strong class="price">$58.99</strong>
+								<h4>Distintos sabores</h4>
+				    			<p>Bebidas de distintas categorias</p>
+				    			<strong class="price">$1000</strong>
 				    		</div>
 				    	</div>
 			    	</li>
                     <li>
-				    	<a href="#"><img src="template base/css/images/big1.jpg" alt="" /></a>
+				    	<a href="6"><img src="template base/css/images/bebidas2.jpg" alt="" /></a>
 				    	<div class="product-info">
-				    		<h3>LOREM IPSUM</h3>
+				    		<h3>Bebidas</h3>
 				    		<div class="product-desc">
-								<h4>WOMEN’S</h4>
-				    			<p>Lorem ipsum dolor sit<br />amet</p>
-				    			<strong class="price">$58.99</strong>
+								<h4>Distintos sabores</h4>
+				    			<p>Promocion bebidas</p>
+				    			<strong class="price">$3000</strong>
 				    		</div>
 				    	</div>
 			    	</li>
 			    	<li>
-				    	<a href="#"><img src="template base/css/images/big1.jpg" alt="" /></a>
+				    	<a href="7"><img src="template base/css/images/índice.jpg" alt="" /></a>
 				    	<div class="product-info">
-				    		<h3>LOREM IPSUM</h3>
+				    		<h3>sushi roll</h3>
 				    		<div class="product-desc">
-								<h4>WOMEN’S</h4>
-				    			<p>Lorem ipsum dolor sit<br />amet</p>
-				    			<strong class="price">$58.99</strong>
+								<h4>Sushi</h4>
+				    			<p>suhi roll tradicional 15 piezas</p>
+				    			<strong class="price">$4000</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+                    <li>
+				    	<a href="8"><img src="template base/css/images/índice2.jpg" alt="" /></a>
+				    	<div class="product-info">
+				    		<h3>sushi roll</h3>
+				    		<div class="product-desc">
+								<h4>Sushi</h4>
+				    			<p>suhi roll con queso 15 piezas</p>
+				    			<strong class="price">$7000</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+                    <li>
+				    	<a href="9"><img src="template base/css/images/indice3.jpg" alt="" /></a>
+				    	<div class="product-info">
+				    		<h3>sushi roll</h3>
+				    		<div class="product-desc">
+								<h4>Sushi</h4>
+				    			<p>suhi roll con chia  15 piezas</p>
+				    			<strong class="price">$7000</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+                    <li>
+				    	<a href="11"><img src="template base/css/images/índice8.jpg" alt="" /></a>
+				    	<div class="product-info">
+				    		<h3>sushi roll</h3>
+				    		<div class="product-desc">
+								<h4>sushi</h4>
+				    			<p>sushi tempura con salsa de soya</p>
+				    			<strong class="price">$10000</strong>
 				    		</div>
 				    	</div>
 			    	</li>
@@ -181,27 +213,21 @@
 		<div class="more-products">
 			<div class="more-products-holder">
 				<ul>
-				    <li><a href="#"><img src="template base/css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small6.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small7.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small6.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small7.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="template base/css/images/small6.jpg" alt="" /></a></li>
-				    <li class="last"><a href="#"><img src="template base/css/images/small7.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/bebidas.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/bebidas2.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/indice 6.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/índice.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/índice1.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/índice2.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/indice3.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/índice4.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/indice5.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/indice 6.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/indice7.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/índice8.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/promo 1.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/promo 3.jpg" alt="" /></a></li>
+				    <li><a href="#"><img src="template base/css/images/promo5.png" alt="" /></a></li>
 				</ul>
 			</div>
 			<div class="more-nav">

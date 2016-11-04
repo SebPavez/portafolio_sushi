@@ -59,6 +59,7 @@
     <Content Include="boostrap\js\bootstrap.js" />
     <Content Include="boostrap\js\bootstrap.min.js" />
     <Content Include="boostrap\js\npm.js" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="login.aspx" />
     <Content Include="login\css\reset.css" />
     <Content Include="login\css\style.css" />
@@ -72,9 +73,8 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="template base\css\ie6.css" />
-    <Content Include="template base\css\images\big1.jpg" />
-    <Content Include="template base\css\images\big2.jpg" />
-    <Content Include="template base\css\images\big3.jpg" />
+    <Content Include="template base\css\images\bebidas.jpg" />
+    <Content Include="template base\css\images\bebidas2.jpg" />
     <Content Include="template base\css\images\body.gif" />
     <Content Include="template base\css\images\bul.gif" />
     <Content Include="template base\css\images\cart-link.gif" />
@@ -85,18 +85,22 @@
     <Content Include="template base\css\images\ico2.gif" />
     <Content Include="template base\css\images\ico3.gif" />
     <Content Include="template base\css\images\ico4.gif" />
+    <Content Include="template base\css\images\indice 6.jpg" />
+    <Content Include="template base\css\images\indice3.jpg" />
+    <Content Include="template base\css\images\indice5.jpg" />
+    <Content Include="template base\css\images\indice7.jpg" />
     <Content Include="template base\css\images\info.png" />
     <Content Include="template base\css\images\logo.gif" />
     <Content Include="template base\css\images\next.gif" />
     <Content Include="template base\css\images\prev.gif" />
-    <Content Include="template base\css\images\slide1.jpg" />
-    <Content Include="template base\css\images\small1.jpg" />
-    <Content Include="template base\css\images\small2.jpg" />
-    <Content Include="template base\css\images\small3.jpg" />
-    <Content Include="template base\css\images\small4.jpg" />
-    <Content Include="template base\css\images\small5.jpg" />
-    <Content Include="template base\css\images\small6.jpg" />
-    <Content Include="template base\css\images\small7.jpg" />
+    <Content Include="template base\css\images\promo 1.jpg" />
+    <Content Include="template base\css\images\promo 3.jpg" />
+    <Content Include="template base\css\images\promo5.png" />
+    <Content Include="template base\css\images\índice.jpg" />
+    <Content Include="template base\css\images\índice1.jpg" />
+    <Content Include="template base\css\images\índice2.jpg" />
+    <Content Include="template base\css\images\índice4.jpg" />
+    <Content Include="template base\css\images\índice8.jpg" />
     <Content Include="template base\css\style.css" />
     <Content Include="template base\js\jquery-1.4.1.min.js" />
     <Content Include="template base\js\jquery-func.js" />
@@ -112,6 +116,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

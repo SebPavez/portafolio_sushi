@@ -26,11 +26,11 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="#">Tienda</a></li>
+			    <li><a href="/registrado.aspx">Tienda</a></li>
                 <li><a href="#">Mi carrito</a></li>
-                <li><a href="#">Mi Perfil</a></li>
-			    <li><a href="#">Contactenos</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
+			    <li><a href="/Contactenos.aspx">Contactenos</a></li>
+                <li><a href="/login.aspx">Salir</a></li>
 			</ul>
 		</div>
 		<!-- End Navigation -->

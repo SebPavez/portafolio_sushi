@@ -27,8 +27,7 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="#">Tienda</a></li>
-			    <li><a href="#">Contactenos</a></li>
+			    <li><a href="/PaginaPrincipal.aspx">Tienda</a></li>
 			</ul>
 		</div>
 		<!-- End Navigation -->

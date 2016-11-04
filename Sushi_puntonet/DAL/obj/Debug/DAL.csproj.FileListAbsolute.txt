@@ -15,6 +15,5 @@ C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\De
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.pdb
-C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
