@@ -51,44 +51,61 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\ie6.css" />
-    <Content Include="css\images\big1.jpg" />
-    <Content Include="css\images\big2.jpg" />
-    <Content Include="css\images\big3.jpg" />
-    <Content Include="css\images\body.gif" />
-    <Content Include="css\images\bul.gif" />
-    <Content Include="css\images\cart-link.gif" />
-    <Content Include="css\images\cat.gif" />
-    <Content Include="css\images\h2-arr.gif" />
-    <Content Include="css\images\header.gif" />
-    <Content Include="css\images\ico1.gif" />
-    <Content Include="css\images\ico2.gif" />
-    <Content Include="css\images\ico3.gif" />
-    <Content Include="css\images\ico4.gif" />
-    <Content Include="css\images\info.png" />
-    <Content Include="css\images\logo.gif" />
-    <Content Include="css\images\next.gif" />
-    <Content Include="css\images\prev.gif" />
-    <Content Include="css\images\slide1.jpg" />
-    <Content Include="css\images\small1.jpg" />
-    <Content Include="css\images\small2.jpg" />
-    <Content Include="css\images\small3.jpg" />
-    <Content Include="css\images\small4.jpg" />
-    <Content Include="css\images\small5.jpg" />
-    <Content Include="css\images\small6.jpg" />
-    <Content Include="css\images\small7.jpg" />
-    <Content Include="css\reset.css" />
-    <Content Include="css\style.css" />
-    <Content Include="js\index.js" />
-    <Content Include="js\jquery-1.4.1.min.js" />
-    <Content Include="js\jquery-func.js" />
-    <Content Include="js\jquery.jcarousel.pack.js" />
+    <Content Include="boostrap\css\bootstrap-theme.css" />
+    <Content Include="boostrap\css\bootstrap-theme.min.css" />
+    <Content Include="boostrap\css\bootstrap.css" />
+    <Content Include="boostrap\css\bootstrap.min.css" />
+    <Content Include="boostrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="boostrap\js\bootstrap.js" />
+    <Content Include="boostrap\js\bootstrap.min.js" />
+    <Content Include="boostrap\js\npm.js" />
+    <Content Include="carrito.aspx" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="login\css\reset.css" />
+    <Content Include="login\css\style.css" />
+    <Content Include="login\js\index.js" />
+    <Content Include="MiPerfil.aspx" />
+    <Content Include="PaginaPrincipal.aspx" />
+    <Content Include="registrado.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="template base\css\ie6.css" />
+    <Content Include="template base\css\images\bebidas.jpg" />
+    <Content Include="template base\css\images\bebidas2.jpg" />
+    <Content Include="template base\css\images\body.gif" />
+    <Content Include="template base\css\images\bul.gif" />
+    <Content Include="template base\css\images\cart-link.gif" />
+    <Content Include="template base\css\images\cat.gif" />
+    <Content Include="template base\css\images\h2-arr.gif" />
+    <Content Include="template base\css\images\header.gif" />
+    <Content Include="template base\css\images\ico1.gif" />
+    <Content Include="template base\css\images\ico2.gif" />
+    <Content Include="template base\css\images\ico3.gif" />
+    <Content Include="template base\css\images\ico4.gif" />
+    <Content Include="template base\css\images\indice 6.jpg" />
+    <Content Include="template base\css\images\indice3.jpg" />
+    <Content Include="template base\css\images\indice5.jpg" />
+    <Content Include="template base\css\images\indice7.jpg" />
+    <Content Include="template base\css\images\info.png" />
+    <Content Include="template base\css\images\logo.gif" />
+    <Content Include="template base\css\images\next.gif" />
+    <Content Include="template base\css\images\prev.gif" />
+    <Content Include="template base\css\images\promo 1.jpg" />
+    <Content Include="template base\css\images\promo 3.jpg" />
+    <Content Include="template base\css\images\promo5.png" />
+    <Content Include="template base\css\images\índice.jpg" />
+    <Content Include="template base\css\images\índice1.jpg" />
+    <Content Include="template base\css\images\índice2.jpg" />
+    <Content Include="template base\css\images\índice4.jpg" />
+    <Content Include="template base\css\images\índice8.jpg" />
+    <Content Include="template base\css\style.css" />
+    <Content Include="template base\js\jquery-1.4.1.min.js" />
+    <Content Include="template base\js\jquery-func.js" />
+    <Content Include="template base\js\jquery.jcarousel.pack.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -98,9 +115,22 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Base.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="carrito.aspx.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carrito.aspx.designer.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -111,20 +141,43 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Base.aspx.cs">
-      <DependentUpon>Base.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Base.aspx.designer.cs">
-      <DependentUpon>Base.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaPrincipal.aspx.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaPrincipal.aspx.designer.cs">
+      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registrado.aspx.cs">
+      <DependentUpon>registrado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrado.aspx.designer.cs">
+      <DependentUpon>registrado.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="scss\style.scss" />
+    <None Include="boostrap\css\bootstrap-theme.css.map" />
+    <None Include="boostrap\css\bootstrap-theme.min.css.map" />
+    <None Include="boostrap\css\bootstrap.css.map" />
+    <None Include="boostrap\css\bootstrap.min.css.map" />
+    <None Include="boostrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="boostrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="boostrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="boostrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="login\scss\style.scss" />
+    <None Include="template base\css\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

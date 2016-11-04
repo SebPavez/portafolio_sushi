@@ -6,3 +6,7 @@ C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebAp
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
+C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
+C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
+C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
+C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
