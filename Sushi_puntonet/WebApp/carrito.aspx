@@ -26,6 +26,13 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
+    <style type="text/css">
+        .style1
+        {
+            height: 37px;
+        }
+    </style>
+	
 </head>
 <body>
 	<!-- Header -->	
@@ -63,10 +70,10 @@
           <td>1000</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>sushi roll tradicional</td>
-          <td>sushi roll</td>
-          <td>4000</td>
+          <td class="style1">2</td>
+          <td class="style1">sushi roll tradicional</td>
+          <td class="style1">sushi roll</td>
+          <td class="style1">4000</td>
         </tr>
         <tr class="success">
           <td>3</td>

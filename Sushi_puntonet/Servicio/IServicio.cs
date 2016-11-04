@@ -30,6 +30,9 @@ namespace Servicio
         [OperationContract]
         bool GenerarPedido(Pedido nuevoPedido);
 
+        [OperationContract]
+        bool ListarProductos(Pedido listarProducto);
+
     }
     
 }
