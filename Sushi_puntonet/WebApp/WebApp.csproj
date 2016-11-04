@@ -59,6 +59,7 @@
     <Content Include="boostrap\js\bootstrap.js" />
     <Content Include="boostrap\js\bootstrap.min.js" />
     <Content Include="boostrap\js\npm.js" />
+    <Content Include="carrito.aspx" />
     <Content Include="Contactenos.aspx" />
     <Content Include="login.aspx" />
     <Content Include="login\css\reset.css" />
@@ -116,6 +117,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="carrito.aspx.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carrito.aspx.designer.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contactenos.aspx.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

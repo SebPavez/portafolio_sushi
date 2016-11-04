@@ -21,7 +21,7 @@
 		<div id="navigation">
 			<ul>
 			    <li><a href="/registrado.aspx">Tienda</a></li>
-                <li><a href="#">Mi carrito</a></li>
+                <li><a href="/carrito.aspx">Mi carrito</a></li>
                 <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
 			    <li><a href="/Contactenos.aspx">Contactenos</a></li>
                 <li><a href="/login.aspx">Salir</a></li>
