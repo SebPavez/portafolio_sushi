@@ -19,19 +19,19 @@ namespace Servicio
             try{
                 using (Entidades contexto = new Entidades())
                 {
-                    DAL.CLIENTE ClienteDal = new DAL.CLIENTE();
-                    ClienteDal.CLIENTE_RUN = nuevoCliente.Run;
-                    ClienteDal.NOMBRE_COMPLETO = nuevoCliente.NombreCompleto;
-                    ClienteDal.DIRECCION = nuevoCliente.Direccion;
-                    ClienteDal.COMUNA = nuevoCliente.Comuna;
-                    ClienteDal.PROVINCIA = nuevoCliente.Provincia;
-                    ClienteDal.REGION = nuevoCliente.Region;
-                    ClienteDal.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
-                    ClienteDal.GENERO = nuevoCliente.Genero;
-                    ClienteDal.CORREO_ELECTRONICO = nuevoCliente.Email;
-                    ClienteDal.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
-                    ClienteDal.PASSWORD = nuevoCliente.Password;
-                    contexto.AddToCLIENTEs(ClienteDal);
+                    DAL.CLIENTE clienteDal = new DAL.CLIENTE();
+                    clienteDal.CLIENTE_RUN = nuevoCliente.Run;
+                    clienteDal.NOMBRE_COMPLETO = nuevoCliente.NombreCompleto;
+                    clienteDal.DIRECCION = nuevoCliente.Direccion;
+                    clienteDal.COMUNA = nuevoCliente.Comuna;
+                    clienteDal.PROVINCIA = nuevoCliente.Provincia;
+                    clienteDal.REGION = nuevoCliente.Region;
+                    clienteDal.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
+                    clienteDal.GENERO = nuevoCliente.Genero;
+                    clienteDal.CORREO_ELECTRONICO = nuevoCliente.Email;
+                    clienteDal.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
+                    clienteDal.PASSWORD = nuevoCliente.Password;
+                    contexto.AddToCLIENTEs(clienteDal);
                     contexto.SaveChanges();
                     contexto.Dispose();
                 }
@@ -45,7 +45,29 @@ namespace Servicio
 
         public bool EditarUsuario(Cliente clienteEditado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (Entidades contexto = new Entidades())
+                {
+                    DAL.CLIENTE clienteEditar = contexto.CLIENTEs.Where(p => p.CLIENTE_RUN == clienteEditado.Run).First();
+                    clienteEditar.NOMBRE_COMPLETO = clienteEditado.NombreCompleto;
+                    clienteEditar.DIRECCION = clienteEditado.Direccion;
+                    clienteEditar.COMUNA = clienteEditado.Comuna;
+                    clienteEditar.PROVINCIA = clienteEditado.Provincia;
+                    clienteEditar.REGION = clienteEditado.Region;
+                    //clienteEditar.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
+                    clienteEditar.GENERO = clienteEditado.Genero;
+                    clienteEditar.CORREO_ELECTRONICO = clienteEditado.Email;
+                    //clienteEditar.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
+                    clienteEditar.PASSWORD = clienteEditado.Password;                    
+                    contexto.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false; 
+            }
         }
 
         public bool EliminarUsuario(string runCliente)
@@ -103,6 +125,7 @@ namespace Servicio
             return resultado;           
         }
 
+        //TO_DO
         public bool GenerarPedido(Pedido nuevoPedido)
         {
             if (nuevoPedido != null)
@@ -123,31 +146,6 @@ namespace Servicio
             }
             else
                 return false;
-        }
-
-        bool IsAnyNullOrEmpty(object myObject)
-        {
-            foreach (PropertyInfo pi in myObject.GetType().GetProperties())
-            {
-                if (pi.PropertyType == typeof(string))
-                {
-                    string value = (string)pi.GetValue(myObject, null);
-                    if (string.IsNullOrEmpty(value))
-                    {
-                        return true;
-                    }
-                }
-                else if (pi.PropertyType == typeof(DateTime))
-                {
-                    DateTime valor = (DateTime)pi.GetValue(myObject, null);
-                    if (valor == null)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-        
+        }                
     }
 }
