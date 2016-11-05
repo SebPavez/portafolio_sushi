@@ -10,7 +10,7 @@ public class Pedido {
     private double totalVenta;
     private String fechaHoraPedido;
     private ArrayList<DetallePedido> detallePedido;
-    private Clientes cliente;
+    private Cliente cliente;
     private int idEstado;
 
     public int getId() {
@@ -53,11 +53,11 @@ public class Pedido {
         this.fechaHoraPedido = fechaHoraPedido;
     }
 
-    public Clientes getClientes() {
+    public Cliente getClientes() {
         return cliente;
     }
 
-    public void setCliente(Clientes cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace WebApp
 {
@@ -31,17 +32,16 @@ namespace WebApp
                 {
                     lblResult.Text = "registrado con éxito";
                 }
-                else {
+                else
+                {
                     lblResult.Text = "falla al registrar";
                 }
-
-
-                
             }
             catch (Exception exc)
             {
-                lblResult.Text = "falla en el registro: "+exc.Message;
+                lblResult.Text = "falla en el registro: " + exc.Message;
             }
+
         }
     }
 }

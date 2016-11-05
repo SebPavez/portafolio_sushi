@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApp.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sushi Fukusuke</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sushi Fukusuke</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                <AnonymousTemplate>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav  navbar-nav pull-right">
+                            <li><a href="/registrado.aspx">Tienda</a></li>
+                            <li><a href="/Contactenos.aspx">Contactenos</a></li>
+                            <li><a href="/login.aspx">Ingresar</a></li>
+                        </ul>
+                    </div>                    
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav  navbar-nav pull-right">
+                            <li><a href="/registrado.aspx">Tienda</a></li>
+                            <li><a href="/carrito.aspx">Mi carrito</a></li>
+                            <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
+                            <li><a href="/Contactenos.aspx">Contactenos</a></li>
+                            <li>Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [   <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" LogoutPageUrl="~/"/></li>                            
+                        </ul>
+                    </div>
+                </LoggedInTemplate>
+            </asp:LoginView>            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Búsqueda de productos</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="control-label" for="nombre">
+                            </label>
+                            <input name="nombre" type="text" class="form-control" placeholder="Nombre producto"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cmbCategoria" class="control-label">
+                            </label>
+                            <select class="form-control" name="cmbCategoria" id="cmbCategoria">
+                                <option value="">-- Selecciona producto --</option>
+                                <option value="">Sushi roll</option>
+                                <option value="">Promociones</option>
+                                <option value="">Bebidas</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-danger">
+                            Buscar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form id="form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <div class="container">
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright &copy; Sushi Fukusuke 2016</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

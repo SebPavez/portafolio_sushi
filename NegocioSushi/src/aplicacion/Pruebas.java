@@ -11,7 +11,7 @@ public class Pruebas {
         ClienteDaoImplementado testCliente = new ClienteDaoImplementado();
 
         //Objeto Cliente para prueba
-        Clientes nuevoCliente = new Clientes();
+        Clientes nuevoCliente = new Cliente();
 
         nuevoCliente.setNombreCompleto("Sebastián");
 
@@ -266,7 +266,7 @@ public class Pruebas {
         listaDetalle.add(nuevoDetalleDos);
         
         
-        Clientes nuevoCliente = new Clientes();
+        Cliente nuevoCliente = new Cliente();
         nuevoCliente.setClienteRun("17706258-8");
         nuevoCliente.setComuna("Pudahuel");
         nuevoCliente.setCorreoElectronico("seb.pavez@gmail.com");

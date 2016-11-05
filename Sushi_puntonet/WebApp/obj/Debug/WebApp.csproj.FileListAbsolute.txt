@@ -2,21 +2,18 @@ C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin
 C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
 C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
-<<<<<<< HEAD
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.dll
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.pdb
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-=======
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
->>>>>>> 256b3f72c1cc240e674a03ef839e4fb5d0917fdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb

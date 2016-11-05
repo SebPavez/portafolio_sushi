@@ -140,7 +140,22 @@ namespace Servicio
                     using (Entidades contexto = new Entidades())
                     {
                         DAL.PEDIDO pedidoDAL = new DAL.PEDIDO();
-
+                        pedidoDAL.RUN_CLIENTE = nuevoPedido.RunCliente;
+                        pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
+                        pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
+                        pedidoDAL.TOTAL_VENTA = nuevoPedido.TotalVenta;
+                        pedidoDAL.FECHA_HORA = DateTime.Now;                                                   
+                        contexto.AddToPEDIDOes(pedidoDAL);
+                        contexto.SaveChanges();
+                        foreach (Negocio.DetallePedido item in nuevoPedido.DetallePedido)
+                        {
+                            DAL.DETALLE_PEDIDO nuevoDetalle = new DAL.DETALLE_PEDIDO();
+                            nuevoDetalle.ID_PRODUCTO = item.IdDetalle;
+                            nuevoDetalle.CANTIDAD = item.Cantidad;
+                            nuevoDetalle.ID_PEDIDO = pedidoDAL.ID_PEDIDO;
+                            contexto.AddToDETALLE_PEDIDO(nuevoDetalle);
+                        }
+                        contexto.SaveChanges();
                     }
                     return true;
                 }
@@ -153,24 +168,36 @@ namespace Servicio
                 return false;
         }
 
-        public bool ListarProductos(Pedido listarProducto)
+        public List<Negocio.Producto> ListarProductos()
         {
+            List<Negocio.Producto> listaResultado = new List<Producto>();
             try
             {
                 using (Entidades contexto = new Entidades())
                 {
-                    IQueryable<PRODUCTO> productsQuery = from producto in contexto.PRODUCTOes
-                                                         select producto;
-
-                    List<PRODUCTO> lista = productsQuery.ToList();
+                    List<DAL.PRODUCTO> lista = contexto.PRODUCTOes.ToList<DAL.PRODUCTO>();
+                    
+                    foreach (DAL.PRODUCTO item in lista)
+                    {
+                        Negocio.Producto producto = new Negocio.Producto();
+                        producto.IdProducto = (int)item.ID_PRODUCTO;
+                        producto.Nombre = item.NOMBRE;
+                        producto.PrecioNormal = (int)item.PRECIO_NORMAL;
+                        producto.PrecioOferta = (int)item.PRECIO_OFERTA;
+                        producto.EnOferta = item.EN_OFERTA;
+                        producto.Descripcion = item.DESCRIPCION;
+                        producto.Categoria = item.CATEGORIA_PRODUCTO.CATEGORIA;
+                        //producto.LinkInternet = item.
+                        listaResultado.Add(producto);
+                    }
 
                 }
-                return true;
+                return listaResultado;
 
             }
             catch (Exception)
             {
-                return false;
+                return listaResultado;
             }
         }
 

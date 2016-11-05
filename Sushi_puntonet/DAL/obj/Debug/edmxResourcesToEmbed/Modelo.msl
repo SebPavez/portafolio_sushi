@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="Entidades">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entidades">
     <EntitySetMapping Name="CATEGORIA_PRODUCTO">
-      <EntityTypeMapping TypeName="Modelo.CATEGORIA_PRODUCTO">
+      <EntityTypeMapping TypeName="Model.CATEGORIA_PRODUCTO">
         <MappingFragment StoreEntitySet="CATEGORIA_PRODUCTO">
           <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
           <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CLIENTEs">
-      <EntityTypeMapping TypeName="Modelo.CLIENTE">
+      <EntityTypeMapping TypeName="Model.CLIENTE">
         <MappingFragment StoreEntitySet="CLIENTE">
           <ScalarProperty Name="CLIENTE_RUN" ColumnName="CLIENTE_RUN" />
           <ScalarProperty Name="NOMBRE_COMPLETO" ColumnName="NOMBRE_COMPLETO" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DETALLE_PEDIDO">
-      <EntityTypeMapping TypeName="Modelo.DETALLE_PEDIDO">
+      <EntityTypeMapping TypeName="Model.DETALLE_PEDIDO">
         <MappingFragment StoreEntitySet="DETALLE_PEDIDO">
           <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
           <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
@@ -37,7 +37,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EMPLEADOes">
-      <EntityTypeMapping TypeName="Modelo.EMPLEADO">
+      <EntityTypeMapping TypeName="Model.EMPLEADO">
         <MappingFragment StoreEntitySet="EMPLEADO">
           <ScalarProperty Name="RUN" ColumnName="RUN" />
           <ScalarProperty Name="FECHA_CONTRATO" ColumnName="FECHA_CONTRATO" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ESTADO_PEDIDO">
-      <EntityTypeMapping TypeName="Modelo.ESTADO_PEDIDO">
+      <EntityTypeMapping TypeName="Model.ESTADO_PEDIDO">
         <MappingFragment StoreEntitySet="ESTADO_PEDIDO">
           <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
@@ -66,7 +66,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PEDIDOes">
-      <EntityTypeMapping TypeName="Modelo.PEDIDO">
+      <EntityTypeMapping TypeName="Model.PEDIDO">
         <MappingFragment StoreEntitySet="PEDIDO">
           <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
           <ScalarProperty Name="FORMA_ENTREGA" ColumnName="FORMA_ENTREGA" />
@@ -79,7 +79,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PRODUCTOes">
-      <EntityTypeMapping TypeName="Modelo.PRODUCTO">
+      <EntityTypeMapping TypeName="Model.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
           <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
           <ScalarProperty Name="STOCK" ColumnName="STOCK" />
@@ -89,15 +89,7 @@
           <ScalarProperty Name="EN_OFERTA" ColumnName="EN_OFERTA" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
           <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
-          <ScalarProperty Name="TIPO_PRODUCTO" ColumnName="TIPO_PRODUCTO" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TIPO_PRODUCTO">
-      <EntityTypeMapping TypeName="Modelo.TIPO_PRODUCTO">
-        <MappingFragment StoreEntitySet="TIPO_PRODUCTO">
-          <ScalarProperty Name="ID_TIPO_PRODUCTO" ColumnName="ID_TIPO_PRODUCTO" />
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="LINK_INTERNET" ColumnName="LINK_INTERNET" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

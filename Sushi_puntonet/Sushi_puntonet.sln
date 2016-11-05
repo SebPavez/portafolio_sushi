@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csp
 		{DD1DBF9B-5144-48AE-B29B-9D56918792C5} = {DD1DBF9B-5144-48AE-B29B-9D56918792C5}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{DD9175DA-C326-4C37-BECB-1961F8F8D07C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,16 @@ Global
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DD9175DA-C326-4C37-BECB-1961F8F8D07C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -47,9 +47,9 @@ namespace Negocio
             set { intPrecioOferta = value; }
         }
 
-        private bool blnEnOferta;
+        private string blnEnOferta;
 
-        public bool EnOferta
+        public string EnOferta
         {
             get { return blnEnOferta; }
             set { blnEnOferta = value; }
@@ -63,12 +63,12 @@ namespace Negocio
             set { strDescripcion = value; }
         }
 
-        private int intIdCategoria;
+        private string strCategoria;
 
-        public int IdCategoria
+        public string Categoria
         {
-            get { return intIdCategoria; }
-            set { intIdCategoria = value; }
+            get { return strCategoria; }
+            set { strCategoria = value; }
         }
 
         private string strLinkInternet;

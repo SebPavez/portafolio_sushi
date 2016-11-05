@@ -3,46 +3,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Registro</title>
-    <link rel="stylesheet" href="login/css/reset.css" />
-    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900' />
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' />
-    <link rel="stylesheet" href="login/css/style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous" />
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="template base/css/style.css" type="text/css" media="all" />
-    <meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-    <meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-    <script src="template base/js/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="template base/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
-    <script src="template base/js/jquery-func.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registro Sushi</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <div class="shell">
-        <!-- Header -->
-        <div id="header">
-            <!-- Navigation -->
-            <div id="navigation">
-                <ul>
-                    <li><a href="/PaginaPrincipal.aspx">Tienda</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sushi Fukusuke</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav  navbar-nav pull-right">                    
+                    <li><a href="/MainPage.aspx">Volver</a></li>
                 </ul>
             </div>
-            <!-- End Navigation -->
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
-    <!-- End Header -->
-    <!-- Form Mixin-->
-    <!-- Input Mixin-->
-    <!-- Button Mixin-->
-    <!-- Pen Title-->
+        <!-- /.container -->
+    </nav>
     <div class="pen-title">
         <h1>
             Fukusuke Sushi-Delivery</h1>
@@ -51,8 +56,7 @@
     <div class="module form-module">
         <div class="toggle">
             <i class="fa fa-times fa-pencil"></i>
-            <div class="tooltip">
-                Registrate</div>
+            <div class="tooltip">Regístrate</div>
         </div>
         <!--Autenticar usuario-->
         <div class="form">
@@ -77,7 +81,7 @@
             <div class="form-group">
                 <label for="sel1">
                     Genero</label>
-                <select class="form-control" name="cmbGenero" required>
+                <select class="form-control" name="cmbGenero">
                     <option>Masculino</option>
                     <option>Femenino</option>
                     <option>Otro</option>
@@ -96,7 +100,7 @@
         </div>
         <div class="cta">
             <a href="#">¿Olvidaste tu contraseña?</a></div>
-    </div>
+ 
     <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script type="text/javascript" src='http://codepen.io/andytran/pen/vLmRVp.js'></script>
     <script type="text/javascript" src="login/js/index.js"></script>    

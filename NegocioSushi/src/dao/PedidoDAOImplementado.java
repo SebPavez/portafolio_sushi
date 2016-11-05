@@ -18,7 +18,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
             crear.setString(1, nuevoPedido.getFormaEntrega());         
             crear.setString(2, nuevoPedido.getComentario());
             crear.setDouble(3, nuevoPedido.getTotalVenta());
-            crear.setString(4, nuevoPedido.getClientes().getClienteRun()); 
+            crear.setString(4, nuevoPedido.getCliente().getClienteRun()); 
             crear.setInt(5,nuevoPedido.getIdEstado());
             crear.registerOutParameter(6, Types.INTEGER);            
             crear.execute();            

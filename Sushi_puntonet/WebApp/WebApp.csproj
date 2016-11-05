@@ -53,24 +53,26 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="boostrap\css\bootstrap-theme.css" />
-    <Content Include="boostrap\css\bootstrap-theme.min.css" />
-    <Content Include="boostrap\css\bootstrap.css" />
-    <Content Include="boostrap\css\bootstrap.min.css" />
-    <Content Include="boostrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="boostrap\js\bootstrap.js" />
-    <Content Include="boostrap\js\bootstrap.min.js" />
-    <Content Include="boostrap\js\npm.js" />
     <Content Include="carrito.aspx" />
     <Content Include="Contactenos.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\shop-homepage.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="login.aspx" />
     <Content Include="login\css\reset.css" />
     <Content Include="login\css\style.css" />
     <Content Include="login\js\index.js" />
+    <Content Include="MainPage.aspx" />
     <Content Include="MiPerfil.aspx" />
-    <Content Include="PaginaPrincipal.aspx" />
-    <Content Include="registrado.aspx" />
     <Content Include="registrar.aspx" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Service References\ServicioCompras\Servicio.disco" />
     <None Include="Service References\ServicioCompras\configuration91.svcinfo" />
     <None Include="Service References\ServicioCompras\configuration.svcinfo" />
@@ -83,39 +85,6 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="template base\css\ie6.css" />
-    <Content Include="template base\css\images\bebidas.jpg" />
-    <Content Include="template base\css\images\bebidas2.jpg" />
-    <Content Include="template base\css\images\body.gif" />
-    <Content Include="template base\css\images\bul.gif" />
-    <Content Include="template base\css\images\cart-link.gif" />
-    <Content Include="template base\css\images\cat.gif" />
-    <Content Include="template base\css\images\h2-arr.gif" />
-    <Content Include="template base\css\images\header.gif" />
-    <Content Include="template base\css\images\ico1.gif" />
-    <Content Include="template base\css\images\ico2.gif" />
-    <Content Include="template base\css\images\ico3.gif" />
-    <Content Include="template base\css\images\ico4.gif" />
-    <Content Include="template base\css\images\indice 6.jpg" />
-    <Content Include="template base\css\images\indice3.jpg" />
-    <Content Include="template base\css\images\indice5.jpg" />
-    <Content Include="template base\css\images\indice7.jpg" />
-    <Content Include="template base\css\images\info.png" />
-    <Content Include="template base\css\images\logo.gif" />
-    <Content Include="template base\css\images\next.gif" />
-    <Content Include="template base\css\images\prev.gif" />
-    <Content Include="template base\css\images\promo 1.jpg" />
-    <Content Include="template base\css\images\promo 3.jpg" />
-    <Content Include="template base\css\images\promo5.png" />
-    <Content Include="template base\css\images\índice.jpg" />
-    <Content Include="template base\css\images\índice1.jpg" />
-    <Content Include="template base\css\images\índice2.jpg" />
-    <Content Include="template base\css\images\índice4.jpg" />
-    <Content Include="template base\css\images\índice8.jpg" />
-    <Content Include="template base\css\style.css" />
-    <Content Include="template base\js\jquery-1.4.1.min.js" />
-    <Content Include="template base\js\jquery-func.js" />
-    <Content Include="template base\js\jquery.jcarousel.pack.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -151,6 +120,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MiPerfil.aspx.cs">
       <DependentUpon>MiPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -158,21 +134,7 @@
     <Compile Include="MiPerfil.aspx.designer.cs">
       <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PaginaPrincipal.aspx.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaginaPrincipal.aspx.designer.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="registrado.aspx.cs">
-      <DependentUpon>registrado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="registrado.aspx.designer.cs">
-      <DependentUpon>registrado.aspx</DependentUpon>
-    </Compile>
     <Compile Include="registrar.aspx.cs">
       <DependentUpon>registrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,19 +147,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="boostrap\css\bootstrap-theme.css.map" />
-    <None Include="boostrap\css\bootstrap-theme.min.css.map" />
-    <None Include="boostrap\css\bootstrap.css.map" />
-    <None Include="boostrap\css\bootstrap.min.css.map" />
-    <None Include="boostrap\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="boostrap\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="boostrap\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="boostrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="login\scss\style.scss" />
     <None Include="Service References\ServicioCompras\Servicio.wsdl" />
     <None Include="Service References\ServicioCompras\Servicio.xsd">
@@ -209,7 +170,7 @@
     <None Include="Service References\ServicioCompras\Servicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="template base\css\images\Thumbs.db" />
+    <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
