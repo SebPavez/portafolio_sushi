@@ -11,7 +11,7 @@ public class Pruebas {
         ClienteDaoImplementado testCliente = new ClienteDaoImplementado();
 
         //Objeto Cliente para prueba
-        Clientes nuevoCliente = new Cliente();
+        Cliente nuevoCliente = new Cliente();
 
         nuevoCliente.setNombreCompleto("Sebastián");
 
@@ -42,8 +42,8 @@ public class Pruebas {
         if (testCliente.almacenarCliente(nuevoCliente)) {
             System.out.println("Ingresado con éxito");
         }
-        ArrayList<Clientes> lista = testCliente.listarClientes();
-        for (Clientes cliente : lista) {
+        ArrayList<Cliente> lista = testCliente.listarClientes();
+        for (Cliente cliente : lista) {
             System.out.println(cliente.toString());
 
         }

@@ -3,7 +3,7 @@ package dao;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
-import negocio.Clientes;
+import negocio.Cliente;
 import negocio.Pedido;
 import oracleSql.Conexion;
 
@@ -82,7 +82,7 @@ public class PedidoDAOImplementado implements PedidoDAO{
             actualizar.setString(2, nuevoPedido.getComentario());
             actualizar.setDouble(3, nuevoPedido.getTotalVenta());
             actualizar.setInt(4, nuevoPedido.getIdEstado());            
-            actualizar.setString(5, nuevoPedido.getClientes().getClienteRun()); 
+            actualizar.setString(5, nuevoPedido.getCliente().getClienteRun()); 
             actualizar.setInt(6, nuevoPedido.getId());
             actualizar.execute();            
             if (actualizar.getUpdateCount()>-1)

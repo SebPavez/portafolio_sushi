@@ -1,6 +1,6 @@
 package aplicacion;
 
-import vistas.VentanaPrincipal;
+import vistas.Login;
 
 public class App {
     
@@ -15,7 +15,7 @@ public class App {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new Login().setVisible(true);
             }
         });
         

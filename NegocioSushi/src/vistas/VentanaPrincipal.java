@@ -145,7 +145,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEstadoActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        Cliente instancia = new Cliente();
+        Clientes instancia = new Clientes();
         instancia.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnClienteActionPerformed

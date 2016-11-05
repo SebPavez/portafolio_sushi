@@ -53,7 +53,7 @@ public class Pedido {
         this.fechaHoraPedido = fechaHoraPedido;
     }
 
-    public Cliente getClientes() {
+    public Cliente getCliente() {
         return cliente;
     }
 
