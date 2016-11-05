@@ -11,12 +11,13 @@ using Negocio;
 using DAL;
 
 namespace Servicio
-{    
+{
     public class Servicio : IServicio
     {
         public bool RegistrarUsuario(Negocio.Cliente nuevoCliente)
         {
-            try{
+            try
+            {
                 using (Entidades contexto = new Entidades())
                 {
                     DAL.CLIENTE clienteDal = new DAL.CLIENTE();
@@ -40,8 +41,8 @@ namespace Servicio
             catch (Exception)
             {
                 return false;
-            }                       
-        }        
+            }
+        }
 
         public bool EditarUsuario(Negocio.Cliente clienteEditado)
         {
@@ -59,14 +60,18 @@ namespace Servicio
                     clienteEditar.GENERO = clienteEditado.Genero;
                     clienteEditar.CORREO_ELECTRONICO = clienteEditado.Email;
                     clienteEditar.NUMERO_TELEFONICO = clienteEditado.NumeroTelefonico;
+<<<<<<< HEAD
                     clienteEditar.PASSWORD = clienteEditado.Password;                    
+=======
+                    clienteEditar.PASSWORD = clienteEditado.Password;
+>>>>>>> 256b3f72c1cc240e674a03ef839e4fb5d0917fdb
                     contexto.SaveChanges();
                     return true;
                 }
             }
             catch (Exception)
             {
-                return false; 
+                return false;
             }
         }
 
@@ -74,9 +79,10 @@ namespace Servicio
         {
             try
             {
-                using (Entidades contexto = new Entidades()) {
+                using (Entidades contexto = new Entidades())
+                {
                     contexto.DeleteObject(contexto.CLIENTEs.Where(p => p.CLIENTE_RUN == runCliente).First());
-                    contexto.SaveChanges();                    
+                    contexto.SaveChanges();
                 }
                 return true;
             }
@@ -89,21 +95,24 @@ namespace Servicio
         public bool AutenticarCliente(string correo, string password)
         {
             bool resultado = false;
-            if (correo != null && password != null) {
-                using (Entidades contexto = new Entidades()) {
+            if (correo != null && password != null)
+            {
+                using (Entidades contexto = new Entidades())
+                {
                     CLIENTE cliente = contexto.CLIENTEs.Where(p => p.CORREO_ELECTRONICO == correo && p.PASSWORD == password).First();
-                    if(cliente!=null)
+                    if (cliente != null)
                         resultado = true;
                 }
             }
             return resultado;
-            
+
         }
 
         public bool AnularPedido(int idPedido)
         {
             bool resultado = false;
-            if (idPedido != null) {
+            if (idPedido != 0)
+            {
                 try
                 {
                     using (Entidades contexto = new Entidades())
@@ -120,9 +129,9 @@ namespace Servicio
                 catch (Exception)
                 {
                     resultado = false;
-                }                     
+                }
             }
-            return resultado;           
+            return resultado;
         }
 
         //TO_DO
@@ -146,6 +155,28 @@ namespace Servicio
             }
             else
                 return false;
-        }                
+        }
+
+        public bool ListarProductos(Pedido listarProducto)
+        {
+            try
+            {
+                using (Entidades contexto = new Entidades())
+                {
+                    IQueryable<PRODUCTO> productsQuery = from producto in contexto.PRODUCTOes
+                                                         select producto;
+
+                    List<PRODUCTO> lista = productsQuery.ToList();
+
+                }
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
