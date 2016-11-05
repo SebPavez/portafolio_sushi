@@ -2,7 +2,6 @@ C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DA
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.pdb
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Oracle.DataAccess.dll
-C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
 C:\Users\David Perez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config

@@ -14,7 +14,7 @@ namespace Servicio
 {    
     public class Servicio : IServicio
     {
-        public bool RegistrarUsuario(Cliente nuevoCliente)
+        public bool RegistrarUsuario(Negocio.Cliente nuevoCliente)
         {
             try{
                 using (Entidades contexto = new Entidades())
@@ -43,7 +43,7 @@ namespace Servicio
             }                       
         }        
 
-        public bool EditarUsuario(Cliente clienteEditado)
+        public bool EditarUsuario(Negocio.Cliente clienteEditado)
         {
             try
             {
@@ -55,10 +55,10 @@ namespace Servicio
                     clienteEditar.COMUNA = clienteEditado.Comuna;
                     clienteEditar.PROVINCIA = clienteEditado.Provincia;
                     clienteEditar.REGION = clienteEditado.Region;
-                    //clienteEditar.FECHA_NACIMIENTO = nuevoCliente.FechaNacimiento;
+                    clienteEditar.FECHA_NACIMIENTO = clienteEditado.FechaNacimiento;
                     clienteEditar.GENERO = clienteEditado.Genero;
                     clienteEditar.CORREO_ELECTRONICO = clienteEditado.Email;
-                    //clienteEditar.NUMERO_TELEFONICO = nuevoCliente.NumeroTelefonico;
+                    clienteEditar.NUMERO_TELEFONICO = clienteEditado.NumeroTelefonico;
                     clienteEditar.PASSWORD = clienteEditado.Password;                    
                     contexto.SaveChanges();
                     return true;
@@ -126,7 +126,7 @@ namespace Servicio
         }
 
         //TO_DO
-        public bool GenerarPedido(Pedido nuevoPedido)
+        public bool GenerarPedido(Negocio.Pedido nuevoPedido)
         {
             if (nuevoPedido != null)
             {

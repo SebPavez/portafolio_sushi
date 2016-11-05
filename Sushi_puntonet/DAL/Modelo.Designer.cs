@@ -46,6 +46,7 @@ namespace DAL
         public Entidades() : base("name=Entidades", "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.ProxyCreationEnabled = false;
             OnContextCreated();
         }
     
@@ -55,6 +56,7 @@ namespace DAL
         public Entidades(string connectionString) : base(connectionString, "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.ProxyCreationEnabled = false;
             OnContextCreated();
         }
     
@@ -64,6 +66,7 @@ namespace DAL
         public Entidades(EntityConnection connection) : base(connection, "Entidades")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
+            this.ContextOptions.ProxyCreationEnabled = false;
             OnContextCreated();
         }
     

@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using Negocio;
 
 namespace Servicio
 {    
@@ -13,10 +12,10 @@ namespace Servicio
     public interface IServicio
     {
         [OperationContract]
-        bool RegistrarUsuario(Cliente nuevoCliente);
+        bool RegistrarUsuario(Negocio.Cliente nuevoCliente);
 
         [OperationContract]
-        bool EditarUsuario(Cliente clienteEditado);
+        bool EditarUsuario(Negocio.Cliente clienteEditado);
 
         [OperationContract]
         bool EliminarUsuario(string runCliente);
@@ -28,7 +27,7 @@ namespace Servicio
         bool AnularPedido(int idPedido);
 
         [OperationContract]
-        bool GenerarPedido(Pedido nuevoPedido);
+        bool GenerarPedido(Negocio.Pedido nuevoPedido);
 
     }
     

@@ -10,24 +10,24 @@
 namespace WebApp {
     
     
-    public partial class login {
+    public partial class registrar {
         
         /// <summary>
-        /// LoginForm control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm LoginForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// controlLogin control.
+        /// lblResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Login controlLogin;
+        protected global::System.Web.UI.WebControls.Label lblResult;
     }
 }

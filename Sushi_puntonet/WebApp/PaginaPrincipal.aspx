@@ -7,30 +7,24 @@
 	<title>Proyecto sushi</title>
 	<link rel="stylesheet" href="template base/css/style.css" type="text/css" media="all" />
 	<!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
-	
-	<meta name="keywwords" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-	<meta name="description" content="Shop Around - Great free html template for on-line shop. Use it as a start point for your on line business. The template can be easily implemented in many open source E-commerce platforms" />
-	
 	<!-- JS -->
 	<script src="template base/js/jquery-1.4.1.min.js" type="text/javascript"></script>	
 	<script src="template base/js/jquery.jcarousel.pack.js" type="text/javascript"></script>	
 	<script src="template base/js/jquery-func.js" type="text/javascript"></script>	
-	<!-- End JS -->
-	
+	<!-- End JS -->	
 </head>
 <body>
 	
 <!-- Shell -->	
-<div class="shell">
-	
+<div class="shell">	
 	<!-- Header -->	
 	<div id="header">
-		<h1 id="logo"><a href="#">shoparound</a></h1>	
+		<h1 id="logo"><a href="#">fukusuke sushi</a></h1>	
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
 			    <li><a href="/PaginaPrincipal.aspx">Tienda</a></li>
-                <li><a href="/login.aspx">Registrate</a></li>
+                <li><a href="/login.aspx">Ingresar / Registrarse</a></li>
 			</ul>
 		</div>
 		<!-- End Navigation -->
@@ -116,7 +110,7 @@
 				    		<h3>sushi roll</h3>
 				    		<div class="product-desc">
 								<h4>Sushi</h4>
-				    			<p>suhi roll con chia  15 piezas</p>
+				    			<p>sushi roll con chia  15 piezas</p>
 				    			<strong class="price">$7000</strong>
 				    		</div>
 				    	</div>

@@ -8,8 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicio", "Servicio\Servicio.csproj", "{DD1DBF9B-5144-48AE-B29B-9D56918792C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{397A15A4-DE2C-4F81-9120-A54DD1836A3A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "Pruebas\Pruebas.csproj", "{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DD1DBF9B-5144-48AE-B29B-9D56918792C5} = {DD1DBF9B-5144-48AE-B29B-9D56918792C5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,16 +62,6 @@ Global
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{397A15A4-DE2C-4F81-9120-A54DD1836A3A}.Release|x86.ActiveCfg = Release|Any CPU
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Debug|x86.ActiveCfg = Debug|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Debug|x86.Build.0 = Debug|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Release|Any CPU.ActiveCfg = Release|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Release|Mixed Platforms.Build.0 = Release|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Release|x86.ActiveCfg = Release|x86
-		{E323675A-2D17-4B0B-AD8D-F8411A5D6A50}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

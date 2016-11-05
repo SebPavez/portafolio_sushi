@@ -10,6 +10,12 @@ namespace Negocio
     public class Pedido
     {
         private int intIdPedido;
+        private string strFormaEntrega;
+        private string strComentario;
+        private int intTotalVenta;
+        private DateTime dtFechaHoraPedido;
+        private string strRunCliente;
+        private List<DetallePedido> detallePedido;
 
         public int IdPedido
         {
@@ -17,39 +23,30 @@ namespace Negocio
             set { intIdPedido = value; }
         }
 
-        private string strFormaEntrega;
-
         public string FormaEntrega
         {
             get { return strFormaEntrega; }
             set { strFormaEntrega = value; }
         }
-
-        private string strComentario;
-
+        
         public string Comentario
         {
             get { return strComentario; }
             set { strComentario = value; }
         }
-
-        private int intTotalVenta;
-
+        
         public int TotalVenta
         {
             get { return intTotalVenta; }
             set { intTotalVenta = value; }
         }
 
-        private DateTime dtFechaHoraPedido;
 
         public DateTime FechaHoraPedido
         {
             get { return dtFechaHoraPedido; }
             set { dtFechaHoraPedido = value; }
         }
-
-        private string strRunCliente;
 
         public string RunCliente
         {
@@ -64,8 +61,6 @@ namespace Negocio
             get { return idEstado; }
             set { idEstado = value; }
         }
-
-        private List<DetallePedido> detallePedido;
 
         public List<DetallePedido> DetallePedido
         {
