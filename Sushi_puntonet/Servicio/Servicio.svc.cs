@@ -60,11 +60,7 @@ namespace Servicio
                     clienteEditar.GENERO = clienteEditado.Genero;
                     clienteEditar.CORREO_ELECTRONICO = clienteEditado.Email;
                     clienteEditar.NUMERO_TELEFONICO = clienteEditado.NumeroTelefonico;
-<<<<<<< HEAD
-                    clienteEditar.PASSWORD = clienteEditado.Password;                    
-=======
                     clienteEditar.PASSWORD = clienteEditado.Password;
->>>>>>> 256b3f72c1cc240e674a03ef839e4fb5d0917fdb
                     contexto.SaveChanges();
                     return true;
                 }

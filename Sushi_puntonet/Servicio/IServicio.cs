@@ -30,7 +30,7 @@ namespace Servicio
         bool GenerarPedido(Negocio.Pedido nuevoPedido);
 
         [OperationContract]
-        bool ListarProductos(Pedido listarProducto);
+        bool ListarProductos(Negocio.Pedido listarProducto);
 
     }
     
