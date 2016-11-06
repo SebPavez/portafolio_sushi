@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vistas;
+
 import negocio.EmpleadoRun;
 import dao.EmpleadoRunImplementado;
 import javax.swing.JOptionPane;
+
 public class Empleado extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Empleado
-     */
     public Empleado() {
         initComponents();
     }
@@ -153,7 +147,7 @@ public class Empleado extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -253,39 +247,37 @@ public class Empleado extends javax.swing.JFrame {
                         .addComponent(rdMasculino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rdFemenino)))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addComponent(jLabel13)
+                        .addGap(61, 61, 61)
+                        .addComponent(txbComunaEmpleado))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(61, 61, 61)
-                                .addComponent(txbComunaEmpleado))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txbTelefonoEmpleado))
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19))
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txbTelefonoEmpleado))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txbSueldoBrutoEmpleado)
-                                            .addComponent(txbSueldoLiquidoEmpleado)
-                                            .addComponent(txbFechaNacimientoEmpleado)
-                                            .addComponent(txbFechaContrato)
-                                            .addComponent(cmbTipoEmpleado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(btnAgregarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(54, Short.MAX_VALUE))))
+                                    .addComponent(txbSueldoBrutoEmpleado)
+                                    .addComponent(txbSueldoLiquidoEmpleado)
+                                    .addComponent(txbFechaNacimientoEmpleado)
+                                    .addComponent(txbFechaContrato)
+                                    .addComponent(cmbTipoEmpleado, 0, 129, Short.MAX_VALUE))))))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAgregarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,15 +326,12 @@ public class Empleado extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addComponent(txbTelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(txbProvinciaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnAgregarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                        .addGap(20, 20, 20))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(txbProvinciaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAgregarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
 
         jTabbedPane1.addTab("Agregar", jPanel3);
@@ -377,7 +366,7 @@ public class Empleado extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnListarEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -427,7 +416,7 @@ public class Empleado extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnEliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                     .addComponent(btnEdEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Editar/Eliminar", jPanel6);
@@ -462,8 +451,6 @@ public class Empleado extends javax.swing.JFrame {
 
         jLabel33.setText("Numero Telefonico");
 
-        txbRunEmpleadoEditar.setEnabled(false);
-
         buttonGroup2.add(cbMasculinoEmpleadoEditar);
         cbMasculinoEmpleadoEditar.setText("Masculino");
 
@@ -473,6 +460,11 @@ public class Empleado extends javax.swing.JFrame {
         cmbTipoEmpleadoEditar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Repartidor", "Cocinero", "Part Time", "Full Yime" }));
 
         btnEditarEmpleado.setText("Actualizar");
+        btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEmpleadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -592,7 +584,7 @@ public class Empleado extends javax.swing.JFrame {
                             .addComponent(txbProvinciaEmpleadoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(btnEditarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(btnEditarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                         .addGap(19, 19, 19))))
         );
 
@@ -606,9 +598,7 @@ public class Empleado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -623,8 +613,8 @@ public class Empleado extends javax.swing.JFrame {
         emp.setPassword(txbPassEmpleado.getText().trim());
         if(rdMasculino.isSelected())
          emp.setGenero("maculino");
-        else  
-         emp.setGenero("femenino");
+        else
+        emp.setGenero("femenino");
         emp.setDireccion(txbDireccionEmpleado.getText().trim());
         emp.setRegion(txbRegionEmpleado.getText().trim());
         emp.setProvincia(txbProvinciaEmpleado.getText().trim());
@@ -636,12 +626,12 @@ public class Empleado extends javax.swing.JFrame {
         emp.setFechaContrato(txbFechaContrato.getText().trim());
         emp.setNumeroTelefonico(txbTelefonoEmpleado.getText().trim());
         eri.almacenarEmpleado(emp);
-        
-        
+
+        JOptionPane.showMessageDialog(this, "Empleado Agregado");
     }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
 
     private void btnListarEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEmpleadosActionPerformed
-       EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+        EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
         txaListarEmpleados.setText(eri.listarEmpleados().toString());
     }//GEN-LAST:event_btnListarEmpleadosActionPerformed
 
@@ -653,16 +643,26 @@ public class Empleado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
 
     private void btnEdEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdEmpleadoActionPerformed
-        EmpleadoRun emp = new EmpleadoRun();
+     
+        this.jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_btnEdEmpleadoActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        VentanaPrincipal instancia = new VentanaPrincipal();
+        instancia.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
+    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
+       EmpleadoRun emp = new EmpleadoRun();
         EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
-        emp.setRun(txbBuscarEmpleado.getText().trim());
+        emp.setRun(txbRunEmpleadoEditar.getText().trim());
         emp.setNombre(txbRunNombreEditar.getText().trim());
         emp.setCorreoElectronico(txbCorreoEmpleadoEditar.getText().trim());
         emp.setPassword(txbPassEmpleadoEliminar.getText().trim());
-        if(cbMasculinoEmpleadoEditar.isSelected())
-         emp.setGenero("maculino");
-        else  
-         emp.setGenero("femenino");
+        if (cbMasculinoEmpleadoEditar.isSelected())
+            emp.setGenero("maculino");
+        else
+            emp.setGenero("femenino");
         emp.setDireccion(txbDirEmpleadoEditar.getText().trim());
         emp.setRegion(txbRegionEmpleadoEditar.getText().trim());
         emp.setProvincia(txbProvinciaEmpleadoEditar.getText().trim());
@@ -674,14 +674,9 @@ public class Empleado extends javax.swing.JFrame {
         emp.setFechaContrato(txbFechaContratoEmpleadoEditar.getText().trim());
         emp.setNumeroTelefonico(txbNumeroEmpleadoEditar.getText().trim());
         eri.modificarEmpleado(emp);
-        this.jTabbedPane1.setSelectedIndex(3);
-        
-    }//GEN-LAST:event_btnEdEmpleadoActionPerformed
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        VentanaPrincipal instancia = new VentanaPrincipal();
-        instancia.setVisible(true);
-    }//GEN-LAST:event_formWindowClosing
+        JOptionPane.showMessageDialog(this, "Empleado Modificado");
+    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments

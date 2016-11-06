@@ -11,7 +11,7 @@ public class Conexion {
             //jdbc:oracle:thin:@localhost:1521:XE [sushi on Default schema]
             String driverURI = "jdbc:oracle:thin:@localhost:1521";
             Class.forName(driverClassName);
-            connection = DriverManager.getConnection(driverURI, "sushi", "sushi");
+            connection = DriverManager.getConnection(driverURI, "6", "6");
         }catch (Exception e){
             System.out.println("Error en conexión a Oracle: "+e.getMessage());
         }

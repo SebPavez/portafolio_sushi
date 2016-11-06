@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import negocio.Producto;
@@ -34,7 +30,7 @@ public class ProductoDaoImplementado {
             System.out.println("Error al crear producto: "+exc.getMessage());
         }       
         return agregado;
-    };
+    }
     
     public Producto buscarProducto(int idProducto){
     Producto prod = null;
@@ -63,14 +59,14 @@ public class ProductoDaoImplementado {
             System.out.println("Error al buscar producto: "+exc.getMessage());
         }   
         return prod;
-    };
+    }
     
     public boolean actualizarProducto (Producto producto){
       boolean logrado = false;
         try {
             Connection conexion = Conexion.getConexion();            
-             String query = "update producto"
-                    + " set nombre = ?,"
+             String query = "update producto  set "
+                    + "nombre = ?,"
                     + "stock=?,"
                     + "precio_normal=?,"
                     + "precio_oferta=?,"
@@ -98,7 +94,7 @@ public class ProductoDaoImplementado {
             System.out.println("Error al actualizar producto: "+exc.getMessage());
         }       
         return logrado;
-    };
+    }
     
     public boolean eliminarProducto (int idProducto){
         boolean eliminado = false;

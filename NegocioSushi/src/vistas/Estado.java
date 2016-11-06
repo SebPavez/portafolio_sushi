@@ -169,7 +169,7 @@ public class Estado extends javax.swing.JFrame {
             }
         });
 
-        btnSeleccionEditarEstado.setText("Editar");
+        btnSeleccionEditarEstado.setText("Buscar");
         btnSeleccionEditarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionEditarEstadoActionPerformed(evt);
@@ -242,20 +242,17 @@ public class Estado extends javax.swing.JFrame {
      
      estado.setEstado(txbNombreEstado.getText().trim());
      edi.crearEstado(estado);
+     
+     JOptionPane.showMessageDialog(this,"Estado Agregado");
     }//GEN-LAST:event_btnAgregarEstadoActionPerformed
 
     private void btnListarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEstadoActionPerformed
        EstadoDAOImplementado edi = new EstadoDAOImplementado();
-        txaListarEstados.setText(edi.listarEstados().toString());
+       txaListarEstados.setText(edi.listarEstados().toString());
     }//GEN-LAST:event_btnListarEstadoActionPerformed
 
     private void btnSeleccionEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionEditarEstadoActionPerformed
-     EstadoPedido estado = new EstadoPedido();
-     EstadoDAOImplementado edi = new EstadoDAOImplementado();
-     int id = Integer.parseInt(txbEstadoBuscar.getText().trim());
-     estado.setIdEstado(id);
-     estado.setEstado(txbEstadoNombreEditar.getText().trim());
-     edi.modificarEstado(estado);
+   this.jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_btnSeleccionEditarEstadoActionPerformed
 
     private void btnEliminarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEstadoActionPerformed
@@ -271,8 +268,13 @@ public class Estado extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoActionPerformed
-        //TO_DO obtener datos
-        this.jTabbedPane1.setSelectedIndex(3);
+     EstadoPedido estado = new EstadoPedido();
+     EstadoDAOImplementado edi = new EstadoDAOImplementado();
+     int id = Integer.parseInt(txbEstadoBuscar.getText().trim());
+     estado.setIdEstado(id);
+     estado.setEstado(txbEstadoNombreEditar.getText().trim());
+     edi.modificarEstado(estado);
+     JOptionPane.showMessageDialog(this,"Estado Modificado"); 
     }//GEN-LAST:event_btnEditarEstadoActionPerformed
 
     /**

@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 package vistas;
+
 import dao.ProductoDaoImplementado;
 import javax.swing.JOptionPane;
 import negocio.Producto;
-    
+
 public class Productos extends javax.swing.JFrame {
 
     public Productos() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -64,7 +64,7 @@ public class Productos extends javax.swing.JFrame {
         txaEditarDescripcion = new javax.swing.JTextArea();
         btnActualizar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -110,7 +110,7 @@ public class Productos extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese el id para realizar accion");
 
-        btnEditarProducto.setText("Editar");
+        btnEditarProducto.setText("Buscar");
         btnEditarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarProductoActionPerformed(evt);
@@ -291,6 +291,11 @@ public class Productos extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txaEditarDescripcion);
 
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -390,23 +395,28 @@ public class Productos extends javax.swing.JFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         Producto prod = new Producto();
         ProductoDaoImplementado produc = new ProductoDaoImplementado();
-        int stock = Integer.parseInt(txbStockProducto.getText().trim());
-        int preNormal = Integer.parseInt(txbPrecioNormalProducto.getText().trim());
-        int preOf= Integer.parseInt(txbPrecioOfertaProducto.getText().trim());
-        
+//        int stock = Integer.parseInt(txbStockProducto.getText().trim());
+//        int preNormal = Integer.parseInt(txbPrecioNormalProducto.getText().trim());
+//        int preOf= Integer.parseInt(txbPrecioOfertaProducto.getText().trim());
+
         prod.setNombre(txbNombreProducto.getText().trim());
-        prod.setStock(stock);
-        prod.setPrecio_normal(preNormal);
-        prod.setPrecio_oferta(preOf);
-        if(chkOfertaProducto.isSelected())
-          prod.setEn_oferta(true);
-        else
-          prod.setEn_oferta(false);
+//        prod.setStock(stock);
+//        prod.setPrecio_normal(preNormal);
+//        prod.setPrecio_oferta(preOf);
+        prod.setStock(Integer.parseInt(txbStockProducto.getText().trim()));
+        prod.setPrecio_normal(Integer.parseInt(txbPrecioNormalProducto.getText().trim()));
+        prod.setPrecio_oferta(Integer.parseInt(txbPrecioOfertaProducto.getText().trim()));
+        if (chkOfertaProducto.isSelected()) {
+            prod.setEn_oferta(true);
+        } else {
+            prod.setEn_oferta(false);
+        }
         prod.setCategoriaProducto(cmbCategoriaProducto.getSelectedItem().toString().trim());
         prod.setDescripcion(txaDescripcion.getText().trim());
-        
+
         produc.agregarProducto(prod);
-        
+
+        JOptionPane.showMessageDialog(this, "Producto Agregado");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -418,37 +428,39 @@ public class Productos extends javax.swing.JFrame {
         ProductoDaoImplementado produc = new ProductoDaoImplementado();
         int id = Integer.parseInt(txbIdEleccion.getText().trim());
         produc.eliminarProducto(id);
-        JOptionPane.showMessageDialog(this,"Producto Eliminado"); 
+        JOptionPane.showMessageDialog(this, "Producto Eliminado");
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
     private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
-        ProductoDaoImplementado produc = new ProductoDaoImplementado();
-        Producto prod = new Producto();
-        int id = Integer.parseInt(txbIdEleccion.getText().trim());
-        int stock = Integer.parseInt(txbEditarStock.getText().trim());
-        int preNormal= Integer.parseInt(txbEditarPrecioNormal.getText().trim());
-        int preOf= Integer.parseInt(txbEditarPrecioOferta.getText().trim());
-        
-        prod.setNombre(txbEditarNombre.getText().trim());
-        prod.setStock(stock);
-        prod.setPrecio_normal(preNormal);
-        prod.setPrecio_oferta(preOf);
-       if(chkEditarEnOferta.isSelected())
-        prod.setEn_oferta(true);
-       else
-        prod.setEn_oferta(false);
-       prod.setCategoriaProducto(cmbEditarCategoria.getSelectedItem().toString().trim());
-       prod.setDescripcion(txaEditarDescripcion.getText().trim());
-       produc.actualizarProducto(prod);
-       
-       this.jTabbedPane1.setSelectedIndex(3);
+        this.jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnEditarProductoActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         VentanaPrincipal instancia = new VentanaPrincipal();
-        instancia.setVisible(true);        
+        instancia.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        ProductoDaoImplementado produc = new ProductoDaoImplementado();
+        Producto prod = new Producto();
+        int id = Integer.parseInt(txbIdEleccion.getText().trim());
+
+        prod.setNombre(txbEditarNombre.getText().trim());
+        prod.setStock(Integer.parseInt(txbEditarStock.getText().trim()));
+        prod.setPrecio_normal(Integer.parseInt(txbEditarPrecioNormal.getText().trim()));
+        prod.setPrecio_oferta(Integer.parseInt(txbEditarPrecioOferta.getText().trim()));
+        prod.setIdProducto(id);
+        if (chkEditarEnOferta.isSelected())
+            prod.setEn_oferta(true);
+        else
+            prod.setEn_oferta(false);
+        prod.setCategoriaProducto(cmbEditarCategoria.getSelectedItem().toString().trim());
+        prod.setDescripcion(txaEditarDescripcion.getText().trim());
+        produc.actualizarProducto(prod);
+
+        JOptionPane.showMessageDialog(this,"Producto Modificado");
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
