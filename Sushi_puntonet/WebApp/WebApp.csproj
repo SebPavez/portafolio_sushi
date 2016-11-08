@@ -77,6 +77,8 @@
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Global.asax" />
+    <None Include="Properties\DataSources\Negocio.Producto.datasource" />
     <None Include="Service References\ServicioCompras\Servicio.disco" />
     <None Include="Service References\ServicioCompras\configuration91.svcinfo" />
     <None Include="Service References\ServicioCompras\configuration.svcinfo" />
@@ -84,7 +86,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -94,6 +95,16 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Service References\ServicioCompras\Servicio.wsdl" />
+    <None Include="Service References\ServicioCompras\Servicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCompras\Servicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioCompras\Servicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="carrito.aspx.cs">
@@ -160,16 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="login\scss\style.scss" />
-    <None Include="Service References\ServicioCompras\Servicio.wsdl" />
-    <None Include="Service References\ServicioCompras\Servicio.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioCompras\Servicio1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioCompras\Servicio2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Site1.Master" />
   </ItemGroup>
   <ItemGroup>

@@ -91,17 +91,23 @@ namespace Servicio
         public bool AutenticarCliente(string correo, string password)
         {
             bool resultado = false;
-            if (correo != null && password != null)
+            try
             {
-                using (Entidades contexto = new Entidades())
+                if (correo != null && password != null)
                 {
-                    CLIENTE cliente = contexto.CLIENTEs.Where(p => p.CORREO_ELECTRONICO == correo && p.PASSWORD == password).First();
-                    if (cliente != null)
-                        resultado = true;
+                    using (Entidades contexto = new Entidades())
+                    {
+                        CLIENTE cliente = contexto.CLIENTEs.Where(p => p.CORREO_ELECTRONICO == correo && p.PASSWORD == password).First();
+                        if (cliente != null)
+                            resultado = true;
+                    }
                 }
+                return resultado;
             }
-            return resultado;
-
+            catch (Exception)
+            {
+                return resultado;
+            }
         }
 
         public bool AnularPedido(int idPedido)

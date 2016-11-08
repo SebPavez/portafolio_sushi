@@ -19,7 +19,8 @@
             <h1 class="login-heading">
                 <strong>Bienvenido</strong>, ingrese sus datos.</h1>
             <form runat="server">
-            <asp:Login ID="controlLogin" OnAuthenticate="controlLogin_Authenticate" runat="server">
+            <asp:Label ID="lblEstadoIngreso" Text="" runat="server"></asp:Label>
+            <asp:Login ID="controlLogin" runat="server">
                 <LayoutTemplate>
                 <asp:TextBox runat="server" ID="UserName" type="text" name="correo" placeholder="Correo" required="required" class="input-txt" />
                 <asp:TextBox runat="server" ID="Password" type="password" name="pass" placeholder="Password" required="required" class="input-txt" />
@@ -30,8 +31,7 @@
                     <a class="lnk" href="MainPage.aspx">
                         <span class="icon icon--min">¯\(ツ)/¯</span> Volver a Inicio
                     </a>        
-
-                    <asp:Button runat="server" ID="LoginButton" type="submit" Text="Ingresar" class="btn btn--right" />
+                    <asp:Button runat="server" ID="LoginButton" OnClick="controlLogin_Authenticate" CommandName="Login" type="submit" Text="Ingresar" class="btn btn--right" />
                 </div>
                 </LayoutTemplate>
             </asp:Login>                

@@ -32,6 +32,9 @@ namespace WebApp.ServicioCompras {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/GenerarPedido", ReplyAction="http://tempuri.org/IServicio/GenerarPedidoResponse")]
         bool GenerarPedido(Negocio.Pedido nuevoPedido);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/ListarProductos", ReplyAction="http://tempuri.org/IServicio/ListarProductosResponse")]
+        Negocio.Producto[] ListarProductos();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +86,10 @@ namespace WebApp.ServicioCompras {
         
         public bool GenerarPedido(Negocio.Pedido nuevoPedido) {
             return base.Channel.GenerarPedido(nuevoPedido);
+        }
+        
+        public Negocio.Producto[] ListarProductos() {
+            return base.Channel.ListarProductos();
         }
     }
 }

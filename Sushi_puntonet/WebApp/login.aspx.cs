@@ -15,12 +15,17 @@ namespace WebApp
                   
         }
 
-        protected void controlLogin_Authenticate(object sender, AuthenticateEventArgs e) {
+        protected void controlLogin_Authenticate(object sender, EventArgs e) {
             ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
-            if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password)) {
-                e.Authenticated = true;
+            if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password))
+            {
+                Session["UserName"] = controlLogin.UserName.Trim();
                 FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
             }
+            else {
+                lblEstadoIngreso.Text = "Error al autenticar, intente nuevamente";
+            }
+            
 
         }       
 

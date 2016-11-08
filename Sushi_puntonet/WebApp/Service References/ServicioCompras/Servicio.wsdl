@@ -43,6 +43,12 @@
   <wsdl:message name="IServicio_GenerarPedido_OutputMessage">
     <wsdl:part name="parameters" element="tns:GenerarPedidoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServicio_ListarProductos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProductos" />
+  </wsdl:message>
+  <wsdl:message name="IServicio_ListarProductos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProductosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServicio">
     <wsdl:operation name="RegistrarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicio/RegistrarUsuario" message="tns:IServicio_RegistrarUsuario_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="GenerarPedido">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicio/GenerarPedido" message="tns:IServicio_GenerarPedido_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicio/GenerarPedidoResponse" message="tns:IServicio_GenerarPedido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProductos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarProductos" message="tns:IServicio_ListarProductos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarProductosResponse" message="tns:IServicio_ListarProductos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="GenerarPedido">
       <soap:operation soapAction="http://tempuri.org/IServicio/GenerarPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProductos">
+      <soap:operation soapAction="http://tempuri.org/IServicio/ListarProductos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
