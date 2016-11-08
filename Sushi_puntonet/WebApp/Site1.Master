@@ -14,7 +14,6 @@
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -39,7 +38,6 @@
                 <AnonymousTemplate>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
-                            <li><a href="/registrado.aspx">Tienda</a></li>
                             <li><a href="/Contactenos.aspx">Contactenos</a></li>
                             <li><a href="/login.aspx">Ingresar</a></li>
                         </ul>
@@ -48,7 +46,6 @@
                 <LoggedInTemplate>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
-                            <li><a href="/registrado.aspx">Tienda</a></li>
                             <li><a href="/carrito.aspx">Mi carrito</a></li>
                             <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
                             <li><a href="/Contactenos.aspx">Contactenos</a></li>

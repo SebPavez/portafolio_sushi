@@ -12,13 +12,7 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack) {
-                ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
-                if (seguridad.AutenticarCliente(UserName, Password))
-                {
-                    FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
-                }            
-            }       
+                  
         }
 
         protected void controlLogin_Authenticate(object sender, AuthenticateEventArgs e) {
@@ -26,8 +20,9 @@ namespace WebApp
             if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password)) {
                 e.Authenticated = true;
                 FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
-            }            
-        }
+            }
+
+        }       
 
     }
 }
