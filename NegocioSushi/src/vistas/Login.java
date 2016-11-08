@@ -93,12 +93,12 @@ public class Login extends javax.swing.JFrame {
 
        Connection conec = Conexion.getConexion();
         
-        String correo = txbCorreoIngresar.getText().toLowerCase().trim();
-        String pass = String.valueOf(txbPassIngresar.getPassword());
+//        String correo = txbCorreoIngresar.getText().toLowerCase().trim();
+//        String pass = String.valueOf(txbPassIngresar.getPassword());
         
         
         try {
-            String sql = "select * from cliente where correo=? and password=?";
+            String sql = "select * from empleado where correo_electronico=? and password=?";
             PreparedStatement prepare =  conec.prepareStatement(sql);
             prepare.setString(1, txbCorreoIngresar.getText());
             prepare.setString(2, txbPassIngresar.getText());
