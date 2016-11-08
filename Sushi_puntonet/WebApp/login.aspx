@@ -72,6 +72,7 @@
             </asp:Login>
             </form>
         </div>
+
         <!--Crear usuario-->
         <div class="form">
             <h2>Crear una cuenta</h2>
