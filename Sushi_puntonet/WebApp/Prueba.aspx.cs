@@ -8,27 +8,21 @@ using System.Web.UI.HtmlControls;
 
 namespace WebApp
 {
-    public partial class MainPage : System.Web.UI.Page
+    public partial class Prueba : System.Web.UI.Page
     {
-        Negocio.CarroCompras carrito;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            int contador = 0;
+            while (contador < 10)
             {
-                carrito = new Negocio.CarroCompras();
-                //CargasProductosEnPagina();
-            }
-            else {
-                carrito = (Negocio.CarroCompras)Session["carrito"];
-            }
+                Negocio.Producto item = new Negocio.Producto();
+                item.Nombre = "dummy";
+                item.IdProducto = contador;
+                item.LinkInternet = "http://placehold.it/320x150";
+                item.EnOferta = "1";
+                item.PrecioOferta = 89990;
+                item.Descripcion = "bla bla bla bla descripción, bla";
 
-        }
-
-        protected void CargasProductosEnPagina() {
-            ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient();
-            Negocio.Producto[] listadoProductos = servicio.ListarProductos();
-            foreach (Negocio.Producto item in listadoProductos)
-            {
                 HtmlGenericControl colDiv = new HtmlGenericControl("div");
                 colDiv.Attributes.Add("class", "col-sm-4 col-sm-4 col-sm-4");
 
@@ -36,8 +30,7 @@ namespace WebApp
                 thumb.Attributes.Add("class", "thumbnail");
 
                 HtmlImage imagen = new HtmlImage();
-                //imagen.Src = item.LinkInternet;
-                imagen.Src = "http://placehold.it/320x150";
+                imagen.Src = item.LinkInternet;
 
                 HtmlGenericControl detalles = new HtmlGenericControl("div");
                 detalles.Attributes.Add("class", "caption");
@@ -45,13 +38,13 @@ namespace WebApp
                 HtmlGenericControl headerPrecio = new HtmlGenericControl("h4");
                 headerPrecio.Attributes.Add("class", "pull-right");
                 if (item.EnOferta.Equals("1"))
-                    headerPrecio.InnerText = item.PrecioOferta.ToString();
+                    headerPrecio.InnerText = "$" + item.PrecioOferta.ToString();
                 else
                     headerPrecio.InnerText = item.PrecioNormal.ToString();
 
                 HtmlGenericControl headerNombre = new HtmlGenericControl("h4");
                 HtmlAnchor anclaInterna = new HtmlAnchor();
-                anclaInterna.HRef = "#";
+                anclaInterna.HRef = item.IdProducto.ToString();
                 anclaInterna.InnerText = item.Nombre;
                 headerNombre.Controls.Add(anclaInterna);
 
@@ -69,6 +62,7 @@ namespace WebApp
 
                 filaElementos.Controls.Add(colDiv);
 
+                contador++;
             }
         }
     }

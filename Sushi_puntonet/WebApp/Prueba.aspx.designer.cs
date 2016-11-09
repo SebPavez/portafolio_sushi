@@ -10,7 +10,7 @@
 namespace WebApp {
     
     
-    public partial class MainPage {
+    public partial class Prueba {
         
         /// <summary>
         /// filaElementos control.
