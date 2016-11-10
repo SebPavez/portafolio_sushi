@@ -9,4 +9,5 @@ public interface EmpleadoRunDao {
     public boolean eliminarEmpleado(String empleadoRun);
     public boolean modificarEmpleado(EmpleadoRun empleadoModificado);
     public ArrayList<EmpleadoRun> listarEmpleados();
+    public boolean autenticarEmpleado(String correo, String pass);
 }

@@ -9,7 +9,7 @@ public class Conexion {
         try{
             String driverClassName = "oracle.jdbc.driver.OracleDriver";
             //jdbc:oracle:thin:@localhost:1521:XE [sushi on Default schema]
-            String driverURI = "jdbc:oracle:thin:@localhost:1521";
+            String driverURI = "jdbc:oracle:thin:@localhost:1521:XE";
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(driverURI, "sushi", "sushi");
         }catch (Exception e){

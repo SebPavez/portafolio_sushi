@@ -1,5 +1,6 @@
 package vistas;
 
+import dao.EmpleadoRunImplementado;
 import javax.swing.JOptionPane;
 import oracleSql.Conexion;
 import java.sql.*;
@@ -18,8 +19,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
-        txbCorreoIngresar = new javax.swing.JTextField();
-        txbPassIngresar = new javax.swing.JPasswordField();
+        txtCorreoIngresar = new javax.swing.JTextField();
+        txtPassIngresar = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -34,7 +35,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txbCorreoIngresar.setText("ejemplo@ejemplo.com");
+        txtCorreoIngresar.setText("ejemplo@ejemplo.com");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -52,8 +53,8 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(jLabel1)))
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txbCorreoIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txbPassIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCorreoIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -65,11 +66,11 @@ public class Login extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txbCorreoIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCorreoIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txbPassIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -90,33 +91,16 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-
-       Connection conec = Conexion.getConexion();
-        
-//        String correo = txbCorreoIngresar.getText().toLowerCase().trim();
-//        String pass = String.valueOf(txbPassIngresar.getPassword());
-        
-        
-        try {
-            String sql = "select * from empleado where correo_electronico=? and password=?";
-            PreparedStatement prepare =  conec.prepareStatement(sql);
-            prepare.setString(1, txbCorreoIngresar.getText());
-            prepare.setString(2, txbPassIngresar.getText());
-            
-            ResultSet rs = prepare.executeQuery();
-            if(rs.next()) {
-                JOptionPane.showMessageDialog(null, "El usuario y contraseña son correctos");
+        String correo = txtCorreoIngresar.getText().toLowerCase().trim();
+        String pass = new String(txtPassIngresar.getPassword());
+        if(new EmpleadoRunImplementado().autenticarEmpleado(correo, pass)) {
+                JOptionPane.showMessageDialog(this, "El usuario y contraseña son correctos");
                 VentanaPrincipal v = new VentanaPrincipal();
                 v.setVisible(true);
                 this.dispose();
-            }else {
-                JOptionPane.showMessageDialog(null, "Usuario y contraseña incorrectos, ingrese los datos nuevamente");
-            }
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
+        }else {
+            JOptionPane.showMessageDialog(this, "Usuario y contraseña incorrectos, ingrese los datos nuevamente");
+        }           
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -159,7 +143,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JTextField txbCorreoIngresar;
-    public static javax.swing.JPasswordField txbPassIngresar;
+    public static javax.swing.JTextField txtCorreoIngresar;
+    public static javax.swing.JPasswordField txtPassIngresar;
     // End of variables declaration//GEN-END:variables
 }

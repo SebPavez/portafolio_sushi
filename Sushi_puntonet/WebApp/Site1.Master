@@ -49,10 +49,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
                             <li><a href="/carrito.aspx">Mi carrito</a></li>
-                            <li><a href="/MiPerfil.aspx">Mi Perfil</a></li>
                             <li><a href="/Contactenos.aspx">Contactenos</a></li>
-                            <li>Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [   <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" LogoutPageUrl="~/MainPage.aspx"/></li>                            
+                            <li><a href="/MiPerfil.aspx"> Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span> </a> </li>
+                            <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" LogoutPageUrl="~/MainPage.aspx"/></li>                            
                         </ul>
                     </div>
                 </LoggedInTemplate>

@@ -177,4 +177,26 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
         return lista;
     }
 
+    @Override
+    public boolean autenticarEmpleado(String correo, String pass) {
+        boolean resultado = false;
+        
+        try {
+            Connection conec = Conexion.getConexion();
+            String sql = "select * from empleado where correo_electronico=? and password=?";
+            PreparedStatement prepare =  conec.prepareStatement(sql);
+            prepare.setString(1, correo);
+            prepare.setString(2, pass);
+            
+            ResultSet rs = prepare.executeQuery();
+            if(rs.next())
+                resultado = true;
+            prepare.close();
+            conec.close();
+            return resultado;                     
+        } catch (Exception e) {
+            return resultado;
+        }
+    }
+
 }
