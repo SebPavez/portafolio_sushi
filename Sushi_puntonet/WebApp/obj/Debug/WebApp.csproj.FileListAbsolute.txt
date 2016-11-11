@@ -17,10 +17,7 @@ C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negoc
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
-<<<<<<< HEAD
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Oracle.DataAccess.dll
-=======
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.dll
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.pdb
 C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
->>>>>>> 000509fe8a360b4a0705b37524e6e4c3b6ba8b3c
