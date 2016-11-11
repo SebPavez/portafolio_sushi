@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package negocio;
 
-/**
- *
- * @author David Perez
- */
 public class Producto {
   private int idProducto;
   private int stock;
@@ -18,6 +9,24 @@ public class Producto {
   private Boolean en_oferta;
   private String descripcion;
   private String categoriaProducto;
+  private int idCategoriaProducto;
+  private String urlImagen;
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+    
+    public int getIdCategoriaProducto() {
+        return idCategoriaProducto;
+    }
+
+    public void setIdCategoriaProducto(int idCategoriaProducto) {
+        this.idCategoriaProducto = idCategoriaProducto;
+    }
 
     public Producto() {
         this.stock = 0;

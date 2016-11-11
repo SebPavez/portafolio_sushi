@@ -5,10 +5,18 @@
  */
 package negocio;
 
-import java.util.Objects;
 
 public class CategoriaProducto {
+  private int id_categoria;
   private String categoria_producto;
+
+    public int getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
+    }
   
 
     public CategoriaProducto() {
@@ -27,9 +35,11 @@ public class CategoriaProducto {
 
     @Override
     public String toString() {
-        return "CategoriaProducto{" + "categoria_producto=" + categoria_producto + '}';
+        return this.getCategoria_producto();
     }
-  
-  
+    
+    public String datosCategoria(){
+        return this.getId_categoria()+" || "+this.getCategoria_producto();
+    }
     
 }

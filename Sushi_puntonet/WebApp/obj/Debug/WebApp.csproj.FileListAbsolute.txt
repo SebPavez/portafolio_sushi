@@ -17,3 +17,4 @@ C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negoc
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Oracle.DataAccess.dll

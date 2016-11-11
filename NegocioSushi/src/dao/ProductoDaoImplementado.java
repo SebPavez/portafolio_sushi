@@ -11,7 +11,7 @@ public class ProductoDaoImplementado {
         boolean agregado = false;
         try{
           Connection conexion = Conexion.getConexion();
-          String query = "insert into producto(id_producto, stock, nombre, precio_normal, precio_oferta,en_oferta, descripcion, categoria) values (seq_id_producto.NEXTVAL,?,?,?,?,?,?,?)";
+          String query = "insert into producto(id_producto, stock, nombre, precio_normal, precio_oferta,en_oferta, descripcion, categoria, link_internet) values (seq_id_producto.NEXTVAL,?,?,?,?,?,?,?,?)";
           CallableStatement crear = conexion.prepareCall(query);
           crear.setInt(1,producto.getStock());
           crear.setString(2, producto.getNombre());
@@ -19,7 +19,8 @@ public class ProductoDaoImplementado {
           crear.setInt(4, producto.getPrecio_oferta());
           crear.setBoolean(5, producto.getEn_oferta());
           crear.setString(6, producto.getDescripcion());
-          crear.setString(7, producto.getCategoriaProducto());
+          crear.setInt(7, producto.getIdCategoriaProducto());
+          crear.setString(8, "no disponible");
           crear.execute();
           crear.close();
           conexion.close();
@@ -49,7 +50,7 @@ public class ProductoDaoImplementado {
               prod.setStock(resultado.getInt("stock"));
               prod.setEn_oferta(resultado.getBoolean("en_oferta"));
               prod.setDescripcion(resultado.getString("descripcion"));
-              prod.setCategoriaProducto(resultado.getString("categoria"));
+              prod.setIdCategoriaProducto(resultado.getInt("categoria"));              
             }
             buscar.close();
             conexion.close();
@@ -148,35 +149,5 @@ public class ProductoDaoImplementado {
         }
         return lista;
     }
-    
-//     public ArrayList<Producto> listarPorCategoria(String categoria) {
-//        ArrayList<Producto> lista = null;
-//        try {            
-//            Connection conexion=Conexion.getConexion();
-//            String query="select * from producto where categoria = ?";
-//            PreparedStatement buscar= conexion.prepareStatement(query);
-//            buscar.setString(1, categoria);            
-//            ResultSet rs= buscar.executeQuery();
-//            lista = new ArrayList<Producto>();
-//             while(rs.next()){                
-//                Producto instancia = new Producto();
-//                instancia.setIdProducto(rs.getInt("idProducto"));
-//                instancia.setNombre(rs.getString("nombre"));
-//                instancia.setPrecio_normal(rs.getInt("precio_normal"));
-//                instancia.setPrecio_oferta(rs.getInt("precio_oferta"));
-//                instancia.setEn_oferta(rs.getBoolean("en_oferta"));
-//                instancia.setDescripcion(rs.getString("descripcion"));
-//                instancia.setCategoriaProducto(rs.getString("categoria"));
-//                lista.add(instancia);                
-//            }
-//            buscar.close();
-//            conexion.close();
-//        } catch (SQLException w) {
-//            System.out.println("Error SQL al listar productos por categoria. " + w.getMessage());
-//        } catch (Exception e) {
-//            System.out.println("Error al listar productos por categoria " + e.getMessage());
-//        }
-//        return lista;
-//    }
 
 }

@@ -164,7 +164,7 @@ public class ClienteDaoImplementado implements ClienteDao {
             Connection conexion = Conexion.getConexion();
             String query = "SELECT * FROM cliente WHERE cliente_run = ?";
             PreparedStatement buscar = conexion.prepareStatement(query);
-            buscar.setString(0, runCliente);
+            buscar.setString(1, runCliente);
             ResultSet rs = buscar.executeQuery();
             if (rs.next()) {                    
                     nuevoCliente.setClienteRun(runCliente);

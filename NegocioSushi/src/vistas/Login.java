@@ -2,8 +2,6 @@ package vistas;
 
 import dao.EmpleadoRunImplementado;
 import javax.swing.JOptionPane;
-import oracleSql.Conexion;
-import java.sql.*;
 
 public class Login extends javax.swing.JFrame {
  
@@ -94,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         String correo = txtCorreoIngresar.getText().toLowerCase().trim();
         String pass = new String(txtPassIngresar.getPassword());
         if(new EmpleadoRunImplementado().autenticarEmpleado(correo, pass)) {
-                JOptionPane.showMessageDialog(this, "El usuario y contraseña son correctos");
+                JOptionPane.showMessageDialog(this, "Bienvenido :D");
                 VentanaPrincipal v = new VentanaPrincipal();
                 v.setVisible(true);
                 this.dispose();

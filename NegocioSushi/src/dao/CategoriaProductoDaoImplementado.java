@@ -1,35 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import negocio.CategoriaProducto;
 import oracleSql.Conexion;
 
-/**
- *
- * @author David Perez
- */
-public class CategoriaProductoDaoImplementado {
+
+public class CategoriaProductoDaoImplementado implements CategoriaDao {
+    
+    @Override
     public boolean agregarCategoria(String cat){
         boolean agregado = false;
         try{
             Connection conexion = Conexion.getConexion();
-            String query = "insert into tipo_producto values (?)";
+            String query = "insert into categoria_producto values ( seq_id_categoria.nextval , ?)";
             CallableStatement add = conexion.prepareCall(query);
-            add.setString(1, cat);
+            add.setString(1, cat.toLowerCase());
             add.execute();
             add.close();
             conexion.close();
             agregado=true;
        } catch (SQLException sqlExc){
-            System.out.println("Error SQL al crear pedido: "+sqlExc.getMessage());
+            System.out.println("Error SQL al agregar categoria: "+sqlExc.getMessage());
         } catch (Exception exc){
-            System.out.println("Error al crear pedido: "+exc.getMessage());
+            System.out.println("Error al agregar categoria: "+exc.getMessage());
         }       
         return agregado;
     }
@@ -75,13 +69,15 @@ public class CategoriaProductoDaoImplementado {
 //        } 
 //      return update;
 //   }
+    
+    @Override
      public boolean eliminarCategoria(String categoria) {
         boolean logrado = false;
         try {
             Connection conexion = Conexion.getConexion();            
-            String query = "DELETE FROM tipo_producto WHERE nombre = ?";
+            String query = "DELETE FROM categoria_producto WHERE categoria = ?";
             PreparedStatement eliminar = conexion.prepareStatement(query);
-            eliminar.setString(1, categoria);         
+            eliminar.setString(1, categoria.toLowerCase());         
             eliminar.execute();         
             if (eliminar.getUpdateCount()>-1)
                 logrado = true;                            
@@ -95,17 +91,23 @@ public class CategoriaProductoDaoImplementado {
         return logrado;
     }       
    
+    /**
+     *
+     * @return
+     */
+    @Override
     public ArrayList<CategoriaProducto> listarCategoria() {
         ArrayList<CategoriaProducto> lista = null;
         try {            
             Connection conexion=Conexion.getConexion();
-            String query="select * from tipo_producto ";
+            String query="select * from categoria_producto ";
             PreparedStatement buscar= conexion.prepareStatement(query);
             ResultSet rs= buscar.executeQuery();
             lista = new ArrayList<CategoriaProducto>();
             while(rs.next()){
                 CategoriaProducto instancia = new CategoriaProducto();
-                instancia.setCategoria_producto(rs.getString("nombre"));
+                instancia.setId_categoria(rs.getInt("id_categoria"));
+                instancia.setCategoria_producto(rs.getString("categoria"));
                 lista.add(instancia);                
             }
             buscar.close();
@@ -113,9 +115,19 @@ public class CategoriaProductoDaoImplementado {
         } catch (SQLException w) {
             System.out.println("Error SQL al listar categorias . " + w.getMessage());
         } catch (Exception e) {
-            System.out.println("Error al listar cateogiras " + e.getMessage());
+            System.out.println("Error al listar categorias " + e.getMessage());
         }
         return lista;
+    }
+
+    @Override
+    public CategoriaProducto buscarCategoria(String cat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean actualizaCategoria(CategoriaProducto categoria) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
  
 }

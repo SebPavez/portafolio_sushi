@@ -6,6 +6,7 @@
 package vistas;
 import negocio.EstadoPedido;
 import dao.EstadoDAOImplementado;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class Estado extends javax.swing.JFrame {
 
@@ -247,8 +248,12 @@ public class Estado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarEstadoActionPerformed
 
     private void btnListarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEstadoActionPerformed
-       EstadoDAOImplementado edi = new EstadoDAOImplementado();
-       txaListarEstados.setText(edi.listarEstados().toString());
+       String textoSalida = "";
+       ArrayList<EstadoPedido> listado = new EstadoDAOImplementado().listarEstados();
+        for (EstadoPedido item : listado) {
+            textoSalida += item.getEstado();
+        }
+       txaListarEstados.setText(textoSalida);
     }//GEN-LAST:event_btnListarEstadoActionPerformed
 
     private void btnSeleccionEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionEditarEstadoActionPerformed

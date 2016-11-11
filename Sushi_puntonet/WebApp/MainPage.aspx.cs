@@ -16,7 +16,7 @@ namespace WebApp
             if (!IsPostBack)
             {
                 carrito = new Negocio.CarroCompras();
-                //CargasProductosEnPagina();
+                CargasProductosEnPagina();
             }
             else {
                 carrito = (Negocio.CarroCompras)Session["carrito"];

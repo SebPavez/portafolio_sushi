@@ -6,6 +6,7 @@
 package vistas;
 import negocio.CategoriaProducto;
 import dao.CategoriaProductoDaoImplementado;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class Categoria extends javax.swing.JFrame {
 
@@ -191,13 +192,23 @@ public class Categoria extends javax.swing.JFrame {
     private void btnAgregarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCategoriaActionPerformed
        CategoriaProductoDaoImplementado cpdi = new CategoriaProductoDaoImplementado();
        String cat = txbAgregarCategoria.getText().trim();
-       cpdi.agregarCategoria(cat);
+       if(cpdi.agregarCategoria(cat)){
+          JOptionPane.showMessageDialog(this, "Categoría agregada!");
+       }else{
+           JOptionPane.showMessageDialog(this, "Error al agregar!");
+       }
+       
        
     }//GEN-LAST:event_btnAgregarCategoriaActionPerformed
 
     private void btnListarCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarCategoriasActionPerformed
         CategoriaProductoDaoImplementado cpdi = new CategoriaProductoDaoImplementado();
-        txaListar.setText(cpdi.listarCategoria().toString());
+        String textoSalida = "";
+        ArrayList<CategoriaProducto> listado = cpdi.listarCategoria();
+        for (CategoriaProducto categoriaProducto : listado) {
+            textoSalida += categoriaProducto.getCategoria_producto()+"\n";
+        }
+        txaListar.setText(textoSalida);
         
     }//GEN-LAST:event_btnListarCategoriasActionPerformed
 

@@ -5,6 +5,7 @@
  */
 package vistas;
 import dao.ClienteDaoImplementado;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import negocio.Cliente;
 public class Clientes extends javax.swing.JFrame {
@@ -509,13 +510,36 @@ public class Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        ClienteDaoImplementado cdi = new ClienteDaoImplementado();
-        txaListarClientes.setText(cdi.listarClientes().toString());
+        String textoSalida = "";
+        ArrayList<Cliente> lista = new ClienteDaoImplementado().listarClientes();
+        for (Cliente cliente : lista) {
+            textoSalida += cliente.toString()+"\n";
+        }
+        this.txaListarClientes.setText(textoSalida);
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-      //TO_DO obtener datos a editar
-      this.jTabbedPane1.setSelectedIndex(3);
+      //TO_DO obtener datos a editar     
+      String runEditar = txbEditarEliminarCliente.getText();
+      ClienteDaoImplementado cdi = new ClienteDaoImplementado();
+      Cliente clienteEditar = cdi.buscarCliente(runEditar);
+      this.jTabbedPane1.setSelectedIndex(3);      
+      this.txbRutEditar.setText(clienteEditar.getClienteRun());
+      this.txbNombreEditar.setText(clienteEditar.getNombreCompleto());
+      this.txbCorreoEditar.setText(clienteEditar.getCorreoElectronico());
+      this.txbPassEditar.setText(clienteEditar.getPassword());
+      this.txbDireccionEditar.setText(clienteEditar.getDireccion());
+      this.txbRegEditar.setText(clienteEditar.getRegion());
+      this.txbComEditar.setText(clienteEditar.getRegion());
+      this.txbProvEditar.setText(clienteEditar.getProvincia());
+      if(clienteEditar.getGenero().equalsIgnoreCase("masculino"))
+          this.rbMasculino.setSelected(true);
+      else
+          this.rbFemenino.setSelected(true);
+      this.txbFechaEditar.setText(clienteEditar.getFechaNacimiento());
+      this.txbNumTelEditar.setText(clienteEditar.getNumeroTelefonico());
+        
+      
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

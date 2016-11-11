@@ -20,7 +20,8 @@ namespace WebApp
             if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password))
             {
                 Session["UserName"] = controlLogin.UserName.Trim();
-                FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
+                //FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
+                //Response.Redirect("MainPage.aspx", true);
             }
             else {
                 lblEstadoIngreso.Text = "Error al autenticar, intente nuevamente";
