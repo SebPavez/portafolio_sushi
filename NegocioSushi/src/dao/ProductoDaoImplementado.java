@@ -82,7 +82,7 @@ public class ProductoDaoImplementado {
             actualizar.setInt(4, producto.getPrecio_oferta());            
             actualizar.setBoolean(5, producto.getEn_oferta());
             actualizar.setString(6, producto.getDescripcion());
-            actualizar.setString(7, producto.getCategoriaProducto());
+            actualizar.setInt(7, producto.getIdCategoriaProducto());
             actualizar.setInt(8, producto.getIdProducto());            
             actualizar.execute();            
             if (actualizar.getUpdateCount()>-1)

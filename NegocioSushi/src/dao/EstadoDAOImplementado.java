@@ -15,10 +15,9 @@ public class EstadoDAOImplementado implements EstadoDAO{
         boolean logrado = false;
         try {
             Connection conexion = Conexion.getConexion();
-            String query = "INSERT INTO estado_pedido VALUES (?,?)";
-            PreparedStatement crear = conexion.prepareStatement(query);
-            crear.setInt(1, nuevoEstado.getIdEstado());         
-            crear.setString(2, nuevoEstado.getEstado());
+            String query = "INSERT INTO estado_pedido VALUES (sec_id_estado.NEXTVAL,?)";
+            PreparedStatement crear = conexion.prepareStatement(query);                 
+            crear.setString(1, nuevoEstado.getEstado());
             crear.execute();            
             crear.close();
             conexion.close();

@@ -443,7 +443,14 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarProductosActionPerformed
 
     private void btnEditarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarProductoActionPerformed
+        
+        Producto productoEditar = new ProductoDaoImplementado().buscarProducto(Integer.parseInt(this.txbIdEleccion.getText()));
         this.jTabbedPane1.setSelectedIndex(3);
+        this.txbEditarNombre.setText(productoEditar.getNombre());
+        this.txbEditarStock.setText(String.valueOf(productoEditar.getStock()));
+        this.txbEditarPrecioNormal.setText(String.valueOf(productoEditar.getPrecio_normal()));
+        this.txbEditarPrecioOferta.setText(String.valueOf(productoEditar.getPrecio_oferta()));
+        this.txaEditarDescripcion.setText(productoEditar.getDescripcion());
     }//GEN-LAST:event_btnEditarProductoActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -455,6 +462,7 @@ public class Productos extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         ProductoDaoImplementado produc = new ProductoDaoImplementado();
         Producto prod = new Producto();
+        
         int id = Integer.parseInt(txbIdEleccion.getText().trim());
 
         prod.setNombre(txbEditarNombre.getText().trim());
@@ -466,11 +474,16 @@ public class Productos extends javax.swing.JFrame {
             prod.setEn_oferta(true);
         else
             prod.setEn_oferta(false);
-        prod.setCategoriaProducto(cmbEditarCategoria.getSelectedItem().toString().trim());
+        CategoriaProducto cate = (CategoriaProducto)cmbEditarCategoria.getSelectedItem();
+        prod.setIdCategoriaProducto(cate.getId_categoria());
         prod.setDescripcion(txaEditarDescripcion.getText().trim());
-        produc.actualizarProducto(prod);
+        if(produc.actualizarProducto(prod)){
+            JOptionPane.showMessageDialog(this, "Producto Modificado");
+        }else{
+            JOptionPane.showMessageDialog(this, "Error al modificar");
+        }
 
-        JOptionPane.showMessageDialog(this,"Producto Modificado");
+        
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vistas;
 import negocio.EstadoPedido;
 import dao.EstadoDAOImplementado;
@@ -28,15 +23,10 @@ public class Estado extends javax.swing.JFrame {
         btnListarEstado = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaListarEstados = new javax.swing.JTextArea();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        txbEstadoNombreEditar = new javax.swing.JTextField();
-        btnEditarEstado = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txbEstadoBuscar = new javax.swing.JTextField();
         btnEliminarEstado = new javax.swing.JButton();
-        btnSeleccionEditarEstado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -80,7 +70,7 @@ public class Estado extends javax.swing.JFrame {
                 .addComponent(txbNombreEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgregarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregrar", jPanel2);
@@ -122,58 +112,12 @@ public class Estado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Listar", jPanel3);
 
-        jLabel3.setText("Nombre Estado");
-
-        btnEditarEstado.setText("Editar");
-        btnEditarEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarEstadoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3)
-                        .addGap(34, 34, 34)
-                        .addComponent(txbEstadoNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(btnEditarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txbEstadoNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnEditarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Editar", jPanel4);
-
         jLabel2.setText("Ingrese el estado y escoja opcion");
 
         btnEliminarEstado.setText("Eliminar");
         btnEliminarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarEstadoActionPerformed(evt);
-            }
-        });
-
-        btnSeleccionEditarEstado.setText("Buscar");
-        btnSeleccionEditarEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeleccionEditarEstadoActionPerformed(evt);
             }
         });
 
@@ -185,14 +129,12 @@ public class Estado extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(txbEstadoBuscar)
+                .addComponent(txbEstadoBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
                 .addComponent(btnEliminarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btnSeleccionEditarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,13 +144,11 @@ public class Estado extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txbEstadoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSeleccionEditarEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(btnEliminarEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addComponent(btnEliminarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Buscar", jPanel5);
+        jTabbedPane1.addTab("Eliminar", jPanel5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -251,14 +191,10 @@ public class Estado extends javax.swing.JFrame {
        String textoSalida = "";
        ArrayList<EstadoPedido> listado = new EstadoDAOImplementado().listarEstados();
         for (EstadoPedido item : listado) {
-            textoSalida += item.getEstado();
+            textoSalida += item.toString()+"\n";
         }
        txaListarEstados.setText(textoSalida);
     }//GEN-LAST:event_btnListarEstadoActionPerformed
-
-    private void btnSeleccionEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionEditarEstadoActionPerformed
-   this.jTabbedPane1.setSelectedIndex(2);
-    }//GEN-LAST:event_btnSeleccionEditarEstadoActionPerformed
 
     private void btnEliminarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEstadoActionPerformed
         EstadoDAOImplementado edi = new EstadoDAOImplementado();
@@ -271,16 +207,6 @@ public class Estado extends javax.swing.JFrame {
         VentanaPrincipal instancia =  new VentanaPrincipal();
         instancia.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
-
-    private void btnEditarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEstadoActionPerformed
-     EstadoPedido estado = new EstadoPedido();
-     EstadoDAOImplementado edi = new EstadoDAOImplementado();
-     int id = Integer.parseInt(txbEstadoBuscar.getText().trim());
-     estado.setIdEstado(id);
-     estado.setEstado(txbEstadoNombreEditar.getText().trim());
-     edi.modificarEstado(estado);
-     JOptionPane.showMessageDialog(this,"Estado Modificado"); 
-    }//GEN-LAST:event_btnEditarEstadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,23 +245,18 @@ public class Estado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarEstado;
-    private javax.swing.JButton btnEditarEstado;
     private javax.swing.JButton btnEliminarEstado;
     private javax.swing.JButton btnListarEstado;
-    private javax.swing.JButton btnSeleccionEditarEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea txaListarEstados;
     private javax.swing.JTextField txbEstadoBuscar;
-    private javax.swing.JTextField txbEstadoNombreEditar;
     private javax.swing.JTextField txbNombreEstado;
     // End of variables declaration//GEN-END:variables
 }
