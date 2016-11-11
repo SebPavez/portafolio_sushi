@@ -19,9 +19,8 @@ namespace WebApp
             ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
             if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password))
             {
-                Session["UserName"] = controlLogin.UserName.Trim();
-                //FormsAuthentication.RedirectFromLoginPage(controlLogin.UserName, false);
-                //Response.Redirect("MainPage.aspx", true);
+                FormsAuthentication.SetAuthCookie(controlLogin.UserName, true);                
+                Response.Redirect("MainPage.aspx", true);
             }
             else {
                 lblEstadoIngreso.Text = "Error al autenticar, intente nuevamente";
