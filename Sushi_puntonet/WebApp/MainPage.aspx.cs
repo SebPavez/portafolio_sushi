@@ -27,6 +27,7 @@ namespace WebApp
         protected void CargasProductosEnPagina() {
             ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient();
             Negocio.Producto[] listadoProductos = servicio.ListarProductos();
+
             foreach (Negocio.Producto item in listadoProductos)
             {
                 HtmlGenericControl colDiv = new HtmlGenericControl("div");
