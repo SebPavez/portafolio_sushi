@@ -29,3 +29,9 @@ C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb

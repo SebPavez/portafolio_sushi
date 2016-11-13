@@ -30,3 +30,10 @@ C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\De
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb

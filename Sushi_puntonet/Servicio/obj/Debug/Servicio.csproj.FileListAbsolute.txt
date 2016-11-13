@@ -39,3 +39,12 @@ C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\N
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.csprojResolveAssemblyReference.cache
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.csprojResolveAssemblyReference.cache
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
+E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
