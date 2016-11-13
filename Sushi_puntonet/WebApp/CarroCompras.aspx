@@ -8,7 +8,7 @@
     <asp:Label Text="" ID="estadoCarro" runat="server" />
 </div>
 <div class="row">
-    <asp:GridView ID="grillaCompras" AutoGenerateColumns="false" runat="server" 
+    <asp:GridView ID="grillaCompras" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" 
         onprerender="grillaCompras_PreRender">
         <Columns>
             <asp:BoundField DataField="Nombre" HeaderText="Nombre" />

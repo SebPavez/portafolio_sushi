@@ -23,3 +23,10 @@ C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debu
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.dll
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.pdb
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.dll
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.pdb
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
+C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb
