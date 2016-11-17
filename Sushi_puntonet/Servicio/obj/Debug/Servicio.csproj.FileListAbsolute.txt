@@ -48,3 +48,12 @@ E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
 E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.csprojResolveAssemblyReference.cache
 E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
 E:\PortableGit\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.pdb
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.csprojResolveAssemblyReference.cache
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb

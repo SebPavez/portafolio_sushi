@@ -24,4 +24,17 @@
     <asp:Button ID="BtnComprar" Text="Comprar" CssClass="btn btn-success" 
         runat="server" onclick="BtnComprar_Click" />
 </div>    
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#grillaCompras').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "zeroRecords": "No se encuentran registros",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "No hay registros disponibles",
+                "infoFiltered": "(Filtrado de un total de _MAX_ registros)"
+            }
+        });
+    });
+    </script>
 </asp:Content>

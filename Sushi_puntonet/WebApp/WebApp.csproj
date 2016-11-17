@@ -54,7 +54,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="carrito.aspx" />
     <Content Include="CarroCompras.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -136,13 +135,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="carrito.aspx.cs">
-      <DependentUpon>carrito.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="carrito.aspx.designer.cs">
-      <DependentUpon>carrito.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CarroCompras.aspx.cs">
       <DependentUpon>CarroCompras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

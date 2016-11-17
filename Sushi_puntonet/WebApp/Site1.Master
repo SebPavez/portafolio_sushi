@@ -52,7 +52,7 @@
                 <LoggedInTemplate>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
-                            <li><a href="/carrito.aspx">Mi carrito</a></li>
+                            <li><a href="/CarroCompras.aspx">Mi carrito</a></li>
                             <li><a href="/Contacto.aspx">Contactenos</a></li>
                             <li><a href="/Perfil.aspx"> Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>(Perfil)</a> </li>
                             <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" LogoutPageUrl="~/MainPage.aspx"/></li>                            
@@ -115,23 +115,7 @@
             </div>
         </footer>
     </div>
-    <!-- /.container -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#grillaCompras').DataTable({
-                "language": {
-                    "lengthMenu": "Mostrar _MENU_ registros por página",
-                    "zeroRecords": "No se encuentran registros",
-                    "info": "Mostrando página _PAGE_ de _PAGES_",
-                    "infoEmpty": "No hay registros disponibles",
-                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)"
-                }
-            });
-        });
-    </script>
-
-
-    
+    <!-- /.container -->  
     </form>
 </body>
 </html>
