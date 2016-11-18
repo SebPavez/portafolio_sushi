@@ -9,15 +9,11 @@ using System.Web.UI.HtmlControls;
 namespace WebApp
 {
     public partial class CarroCompras : System.Web.UI.Page
-    {       
-        
-        Negocio.CarroCompras carrito;
-
+    {
         protected void Page_Load(object sender, EventArgs e)
         {
-            PruebaCarro();
-            //CargarTablaCarro();
-            
+            //PruebaCarro();
+            CargarTablaCarro();            
         }
 
         protected void CargarTablaCarro() {
@@ -29,12 +25,10 @@ namespace WebApp
                 BtnComprar.Visible = false;
             }
             else {
+                Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
                 grillaCompras.DataSource = carrito.ProductosEnCarro;
-                grillaCompras.DataBind();
-                
+                grillaCompras.DataBind();                
             }
-
-
         }
 
         protected void PruebaCarro() {
@@ -66,12 +60,31 @@ namespace WebApp
 
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
+            using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient()) {
+                Negocio.CarroCompras carro = (Negocio.CarroCompras)Session["carrito"];
+                Negocio.Pedido nuevoPedido = new Negocio.Pedido();
+                nuevoPedido.RunCliente = (String)Session["runCliente"];
+                //nuevoPedido.FormaEntrega = 
+                //nuevoPedido.Comentario =
+                nuevoPedido.TotalVenta = carro.TotalCompra;
+                List<Negocio.DetallePedido> listaDetalle = new List<Negocio.DetallePedido>();
+                foreach (Negocio.Producto item in carro.ProductosEnCarro)
+                {
+                    Negocio.DetallePedido detalle = new Negocio.DetallePedido();
+                    detalle.Producto = item;
+                    detalle.Cantidad = item.Stock;
+                }
+                //nuevoPedido.DetallePedido = ;
+
+                servicio.GenerarPedido(nuevoPedido);
+            }
 
         }
 
         protected void BtnAnular_Click(object sender, EventArgs e)
         {
             Session["carrito"] = null;
+            Response.Redirect("MainPage.aspx");
         }
 
         protected void grillaCompras_PreRender(object sender, EventArgs e)
@@ -82,4 +95,4 @@ namespace WebApp
                 grillaCompras.FooterRow.TableSection = TableRowSection.TableFooter;        
         }
     }
-}
+} 0

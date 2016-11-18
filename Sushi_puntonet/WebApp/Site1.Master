@@ -26,8 +26,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server" >
-    
+    <form runat="server">
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -44,22 +43,27 @@
                 <AnonymousTemplate>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
-                            <li><a href="/Contactenos.aspx">Contactenos</a></li>
+                            <li><a href="/Contacto.aspx">Contactenos</a></li>
                             <li><a href="/login.aspx">Ingresar</a></li>
                         </ul>
-                    </div>                    
+                    </div>
                 </AnonymousTemplate>
                 <LoggedInTemplate>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav  navbar-nav pull-right">
                             <li><a href="/CarroCompras.aspx">Mi carrito</a></li>
                             <li><a href="/Contacto.aspx">Contactenos</a></li>
-                            <li><a href="/Perfil.aspx"> Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>(Perfil)</a> </li>
-                            <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion" LogoutPageUrl="~/MainPage.aspx"/></li>                            
+                            <li><a href="/Perfil.aspx">Bienvenido <span class="bold">
+                                <asp:LoginName ID="HeadLoginName" runat="server" />
+                            </span>(Perfil)</a> </li>
+                            <li>
+                                <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesion"
+                                    LogoutPageUrl="~/MainPage.aspx" />
+                            </li>
                         </ul>
                     </div>
                 </LoggedInTemplate>
-            </asp:LoginView>            
+            </asp:LoginView>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -67,38 +71,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Búsqueda de productos</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="control-label" for="nombre">
-                            </label>
-                            <input name="nombre" type="text" class="form-control" placeholder="Nombre producto"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cmbCategoria" class="control-label">
-                            </label>
-                            <select class="form-control" name="cmbCategoria" id="cmbCategoria">
-                                <option value="">-- Selecciona producto --</option>
-                                <option value="">Sushi roll</option>
-                                <option value="">Promociones</option>
-                                <option value="">Bebidas</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-danger">
-                            Buscar</button>
-                    </div>
-                </div>
+                <asp:ContentPlaceHolder ID="ContentPLaceHolder2" runat="server" ></asp:ContentPlaceHolder>
             </div>
             <div class="col-md-9">
-                
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
-                
             </div>
         </div>
     </div>
@@ -115,7 +92,7 @@
             </div>
         </footer>
     </div>
-    <!-- /.container -->  
+    <!-- /.container -->
     </form>
 </body>
 </html>

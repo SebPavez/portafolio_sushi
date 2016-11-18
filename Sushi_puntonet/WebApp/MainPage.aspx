@@ -1,6 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="WebApp.MainPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPLaceHolder2" runat="server">
+<div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Búsqueda de productos</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="control-label" for="nombre">
+                            </label>
+                            <input name="nombre" type="text" class="form-control" placeholder="Nombre producto"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cmbCategoria" class="control-label">
+                            </label>
+                            <select class="form-control" name="cmbCategoria" id="cmbCategoria">
+                                <option value="">-- Selecciona producto --</option>
+                                <option value="">Sushi roll</option>
+                                <option value="">Promociones</option>
+                                <option value="">Bebidas</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-danger">
+                            Buscar</button>
+                    </div>
+                </div>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- modal para el carrito -->
  <!-- Trigger the modal with a button -->

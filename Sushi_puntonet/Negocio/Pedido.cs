@@ -12,7 +12,7 @@ namespace Negocio
         private int intIdPedido;
         private string strFormaEntrega;
         private string strComentario;
-        private int intTotalVenta;
+        private double intTotalVenta;
         private DateTime dtFechaHoraPedido;
         private string strRunCliente;
         private List<DetallePedido> detallePedido;
@@ -35,7 +35,7 @@ namespace Negocio
             set { strComentario = value; }
         }
         
-        public int TotalVenta
+        public double TotalVenta
         {
             get { return intTotalVenta; }
             set { intTotalVenta = value; }
