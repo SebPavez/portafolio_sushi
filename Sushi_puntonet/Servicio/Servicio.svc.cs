@@ -149,7 +149,7 @@ namespace Servicio
                         pedidoDAL.RUN_CLIENTE = nuevoPedido.RunCliente;
                         pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
                         pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
-                        pedidoDAL.TOTAL_VENTA = nuevoPedido.TotalVenta;
+                        pedidoDAL.TOTAL_VENTA = (decimal) nuevoPedido.TotalVenta;
                         pedidoDAL.FECHA_HORA = DateTime.Now;                                                   
                         contexto.AddToPEDIDOes(pedidoDAL);
                         contexto.SaveChanges();

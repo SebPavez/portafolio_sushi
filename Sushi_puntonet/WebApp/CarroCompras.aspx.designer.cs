@@ -31,6 +31,42 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.GridView grillaCompras;
         
         /// <summary>
+        /// panelComentario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelComentario;
+        
+        /// <summary>
+        /// txbComentario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbComentario;
+        
+        /// <summary>
+        /// panelFormaEntrega control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelFormaEntrega;
+        
+        /// <summary>
+        /// dropFormaEntrega control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropFormaEntrega;
+        
+        /// <summary>
         /// BtnAnular control.
         /// </summary>
         /// <remarks>

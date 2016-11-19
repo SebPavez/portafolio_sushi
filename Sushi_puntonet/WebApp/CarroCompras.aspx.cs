@@ -12,15 +12,16 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //PruebaCarro();
             CargarTablaCarro();            
         }
 
         protected void CargarTablaCarro() {
             if (Session["carrito"] == null)
             {
-                this.estadoCarro.Text = "Carro vacio";
+                this.estadoCarro.Text = "Carro vacio";                
                 grillaCompras.Visible = false;
+                panelComentario.Visible = false;
+                panelFormaEntrega.Visible = false;
                 BtnAnular.Visible = false;
                 BtnComprar.Visible = false;
             }
@@ -29,34 +30,7 @@ namespace WebApp
                 grillaCompras.DataSource = carrito.ProductosEnCarro;
                 grillaCompras.DataBind();                
             }
-        }
-
-        protected void PruebaCarro() {
-            Negocio.Producto producto1 = new Negocio.Producto();
-            producto1.Nombre = "dummy1";
-            producto1.EnOferta = "0";
-            producto1.PrecioNormal = 80000;
-            producto1.PrecioOferta = 65000;
-            producto1.Stock = 3;
-
-            Negocio.Producto producto2 = new Negocio.Producto();
-            producto2.Nombre = "dummy2";
-            producto2.EnOferta = "1";
-            producto2.PrecioNormal = 40000;
-            producto2.PrecioOferta = 34000;
-            producto2.Stock = 8;
-
-            Negocio.CarroCompras carroDummy = new Negocio.CarroCompras();
-            List<Negocio.Producto> listado = new List<Negocio.Producto>();
-            listado.Add(producto1);
-            listado.Add(producto2);
-
-            carroDummy.ProductosEnCarro = listado;
-            carroDummy.TotalCompra = 000000;
-
-            grillaCompras.DataSource = carroDummy.ProductosEnCarro;
-            grillaCompras.DataBind();
-        }
+        }       
 
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
@@ -64,8 +38,8 @@ namespace WebApp
                 Negocio.CarroCompras carro = (Negocio.CarroCompras)Session["carrito"];
                 Negocio.Pedido nuevoPedido = new Negocio.Pedido();
                 nuevoPedido.RunCliente = (String)Session["runCliente"];
-                //nuevoPedido.FormaEntrega = 
-                //nuevoPedido.Comentario =
+                nuevoPedido.FormaEntrega = this.dropFormaEntrega.SelectedItem.Text;
+                nuevoPedido.Comentario = this.txbComentario.Text;
                 nuevoPedido.TotalVenta = carro.TotalCompra;
                 List<Negocio.DetallePedido> listaDetalle = new List<Negocio.DetallePedido>();
                 foreach (Negocio.Producto item in carro.ProductosEnCarro)
@@ -74,9 +48,16 @@ namespace WebApp
                     detalle.Producto = item;
                     detalle.Cantidad = item.Stock;
                 }
-                //nuevoPedido.DetallePedido = ;
+                nuevoPedido.DetallePedido = listaDetalle;
+                if (servicio.GenerarPedido(nuevoPedido))
+                {
+                    this.estadoCarro.Text = "Pedido realizado con éxito";
+                    Session["carrito"] = null;
+                }
+                else {
+                    this.estadoCarro.Text = "Falla al realizar pedido, intente más tarde";
+                }
 
-                servicio.GenerarPedido(nuevoPedido);
             }
 
         }
@@ -95,4 +76,4 @@ namespace WebApp
                 grillaCompras.FooterRow.TableSection = TableRowSection.TableFooter;        
         }
     }
-} 0
+} 

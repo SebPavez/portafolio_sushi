@@ -58,7 +58,7 @@
     <Key>
       <PropertyRef Name="ID_DETALLE" />
     </Key>
-    <Property Name="ID_DETALLE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ID_DETALLE" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
     <Property Name="ID_PRODUCTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
     <Property Name="CANTIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
@@ -97,7 +97,7 @@
     <Key>
       <PropertyRef Name="ID_PEDIDO" />
     </Key>
-    <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FORMA_ENTREGA" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="COMENTARIO" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="TOTAL_VENTA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
