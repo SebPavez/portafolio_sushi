@@ -17,8 +17,9 @@ namespace WebApp
 
         protected void controlLogin_Authenticate(object sender, EventArgs e) {
             ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
-            if (seguridad.AutenticarCliente(controlLogin.UserName, controlLogin.Password))
+            if (seguridad.AutenticarCliente(controlLogin.UserName.ToLower(), controlLogin.Password))
             {
+                Session["runCliente"] = seguridad.RecuperarUsuario(controlLogin.UserName.ToLower());
                 FormsAuthentication.SetAuthCookie(controlLogin.UserName, true);                
                 Response.Redirect("MainPage.aspx", true);
             }

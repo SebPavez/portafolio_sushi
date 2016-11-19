@@ -19,7 +19,7 @@
     </div>    
 </div>
 <div class="form-group">
-    <label for="txbFechaNacimiento" class="col-lg-3 control-label">Nombre Completo</label>
+    <label for="txbFechaNacimiento" class="col-lg-3 control-label">Fecha Nacimiento</label>
     <div class="col-lg-9">
         <input type="text" class="form-control" name="txbFechaNacimiento" id="txbFechaNacimiento">
     </div>    

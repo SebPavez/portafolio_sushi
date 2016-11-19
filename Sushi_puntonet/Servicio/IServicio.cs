@@ -32,6 +32,11 @@ namespace Servicio
         [OperationContract]
         List<Negocio.Producto> ListarProductos();
 
+        [OperationContract]
+        List<Negocio.Pedido> ListarHistorial();
+
+        [OperationContract]
+        Negocio.Cliente RecuperarUsuario();
     }
     
 }

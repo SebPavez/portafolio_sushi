@@ -19,7 +19,7 @@ namespace WebApp
                 nuevoCliente.Run = HttpUtility.HtmlEncode(Request.Form["txbRutRegister"]);
                 nuevoCliente.NombreCompleto = HttpUtility.HtmlEncode(Request.Form["txbNombreRegister"]);
                 nuevoCliente.Genero = HttpUtility.HtmlEncode(Request.Form["cmbGenero"]);
-                nuevoCliente.Email = HttpUtility.HtmlEncode(Request.Form["txbEmailRegister"]);
+                nuevoCliente.Email = HttpUtility.HtmlEncode(Request.Form["txbEmailRegister"]).ToLower();
                 nuevoCliente.Password = HttpUtility.HtmlEncode(Request.Form["txbContraseñaRegister"]);
                 nuevoCliente.FechaNacimiento = DateTime.Parse(HttpUtility.HtmlEncode(Request.Form["txbFechaRegister"]));
                 nuevoCliente.Region = HttpUtility.HtmlEncode(Request.Form["txbRegionRegister"]);

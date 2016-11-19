@@ -62,6 +62,7 @@ namespace Servicio
                     clienteEditar.NUMERO_TELEFONICO = clienteEditado.NumeroTelefonico;
                     clienteEditar.PASSWORD = clienteEditado.Password;
                     contexto.SaveChanges();
+                    contexto.Dispose();
                     return true;
                 }
             }
@@ -79,6 +80,7 @@ namespace Servicio
                 {
                     contexto.DeleteObject(contexto.CLIENTEs.Where(p => p.CLIENTE_RUN == runCliente).First());
                     contexto.SaveChanges();
+                    contexto.Dispose();
                 }
                 return true;
             }
@@ -126,6 +128,7 @@ namespace Servicio
                             contexto.SaveChanges();
                             resultado = true;
                         }
+                        contexto.Dispose();
                     }
                 }
                 catch (Exception)
@@ -136,7 +139,6 @@ namespace Servicio
             return resultado;
         }
 
-        //TO_DO
         public bool GenerarPedido(Negocio.Pedido nuevoPedido)
         {
             if (nuevoPedido != null)
@@ -162,6 +164,7 @@ namespace Servicio
                             contexto.AddToDETALLE_PEDIDO(nuevoDetalle);
                         }
                         contexto.SaveChanges();
+                        contexto.Dispose();
                     }
                     return true;
                 }
@@ -194,11 +197,12 @@ namespace Servicio
                         producto.Descripcion = item.DESCRIPCION;
                         producto.Categoria = item.CATEGORIA_PRODUCTO.CATEGORIA;
                         //producto.LinkInternet = item.
-                        listaResultado.Add(producto);
+                        listaResultado.Add(producto);                        
                     }
-
+                    contexto.Dispose();
                 }
                 return listaResultado;
+                
 
             }
             catch (Exception)
@@ -207,5 +211,15 @@ namespace Servicio
             }
         }
 
+        //TO_DO
+        public List<Negocio.Pedido> ListarHistorial() {
+            List<Negocio.Pedido> listaRetorno = null;
+            return listaRetorno;
+        }
+
+        //TO_DO
+        public Negocio.Cliente RecuperarUsuario(string correo) {
+            return new Negocio.Cliente();
+        }
     }
 }

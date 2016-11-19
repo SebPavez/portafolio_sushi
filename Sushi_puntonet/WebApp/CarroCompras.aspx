@@ -66,3 +66,6 @@
     });
     </script>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPLaceHolder2" runat="server">
+    <a href="HistorialCompras.aspx" class="btn btn-primary btn-lg">Ir al historial de compras</a>
+</asp:Content>
