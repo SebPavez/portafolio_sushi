@@ -43,3 +43,11 @@ C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebAp
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\WebApp.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Oracle.DataAccess.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\bin\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\WebApp\obj\Debug\WebApp.pdb

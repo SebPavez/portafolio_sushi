@@ -20,6 +20,7 @@ namespace WebApp
             }
             else {
                 carrito = (Negocio.CarroCompras)Session["carrito"];
+                CargarProductosAlCarrito();
             }
 
         }
@@ -27,7 +28,6 @@ namespace WebApp
         protected void CargasProductosEnPagina() {
             ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient();
             Negocio.Producto[] listadoProductos = servicio.ListarProductos();
-
             foreach (Negocio.Producto item in listadoProductos)
             {
                 HtmlGenericControl colDiv = new HtmlGenericControl("div");
@@ -52,7 +52,7 @@ namespace WebApp
 
                 HtmlGenericControl headerNombre = new HtmlGenericControl("h4");
                 HtmlAnchor anclaInterna = new HtmlAnchor();
-                anclaInterna.HRef = "#";
+                anclaInterna.HRef = "/MainPage.aspx?idProducto="+item.IdProducto;
                 anclaInterna.InnerText = item.Nombre;
                 headerNombre.Controls.Add(anclaInterna);
 
@@ -71,6 +71,15 @@ namespace WebApp
                 filaElementos.Controls.Add(colDiv);
 
             }
+        }
+
+        // Metodo que trae el id de la base desde la url y lo pasa a la consulta lo cual devuelve un producto
+        // este guarda el producto al carrito
+        protected void CargarProductosAlCarrito() {
+            ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient();
+            int id = int.Parse(Request.QueryString["idProducto"]);
+            Negocio.Producto producto = servicio.buscarProductoID(id);
+            servicio.agregarAlCarrito(producto);
         }
     }
 }

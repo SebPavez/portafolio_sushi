@@ -44,3 +44,10 @@ C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negoc
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\bin\Debug\DAL.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Negocio\obj\Debug\Negocio.pdb

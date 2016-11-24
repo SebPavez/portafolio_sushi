@@ -19,7 +19,7 @@ namespace WebApp
             ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
             if (seguridad.AutenticarCliente(controlLogin.UserName.ToLower(), controlLogin.Password))
             {
-                Session["runCliente"] = seguridad.RecuperarUsuario(controlLogin.UserName.ToLower());
+                //Session["runCliente"] = seguridad.RecuperarUsuario(controlLogin.UserName.ToLower());
                 FormsAuthentication.SetAuthCookie(controlLogin.UserName, true);                
                 Response.Redirect("MainPage.aspx", true);
             }

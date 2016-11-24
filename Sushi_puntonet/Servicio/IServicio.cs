@@ -36,7 +36,13 @@ namespace Servicio
         List<Negocio.Pedido> ListarHistorial();
 
         [OperationContract]
-        Negocio.Cliente RecuperarUsuario();
+        Negocio.Producto buscarProductoID(int id);
+
+        [OperationContract]
+        void agregarAlCarrito(Negocio.Producto producto);
+
+       // [OperationContract]
+        //Negocio.Cliente RecuperarUsuario();
     }
     
 }

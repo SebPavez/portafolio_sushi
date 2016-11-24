@@ -221,5 +221,41 @@ namespace Servicio
         public Negocio.Cliente RecuperarUsuario(string correo) {
             return new Negocio.Cliente();
         }
-    }
+
+        public Negocio.Producto buscarProductoID(int id) {
+            Negocio.Producto producto = new Negocio.Producto();
+            try
+            {
+                using (Entidades contexto = new Entidades()) 
+                {
+                    var salida = (from b in contexto.PRODUCTOes
+                                  where b.ID_PRODUCTO == id
+                                  select b).FirstOrDefault();
+                    producto.IdProducto = (int)salida.ID_PRODUCTO;
+                    producto.Stock = (int)salida.STOCK;
+                    producto.Nombre = salida.NOMBRE;
+                    producto.PrecioNormal = (int)salida.PRECIO_NORMAL;
+                    producto.PrecioOferta = (int)salida.PRECIO_OFERTA;
+                    producto.EnOferta = salida.EN_OFERTA;
+                    producto.Descripcion = salida.DESCRIPCION;
+                    producto.Categoria = salida.CATEGORIA.ToString();
+                    producto.LinkInternet = salida.LINK_INTERNET;
+                }
+                return producto;
+            }
+            catch (Exception)
+            {
+
+                return producto;
+            }
+
+        }
+
+        public void agregarAlCarrito(Negocio.Producto producto)
+        {
+            Negocio.CarroCompras carrito = new Negocio.CarroCompras();
+            carrito.ProductosEnCarro.Add(producto);
+        }
+
+}
 }
