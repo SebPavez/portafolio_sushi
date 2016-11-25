@@ -106,6 +106,7 @@
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Global.asax" />
+    <None Include="Properties\DataSources\Negocio.Pedido.datasource" />
     <None Include="Properties\DataSources\Negocio.Producto.datasource" />
     <None Include="Service References\ServicioCompras\Servicio.disco" />
     <None Include="Service References\ServicioCompras\configuration91.svcinfo" />
