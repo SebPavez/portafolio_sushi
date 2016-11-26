@@ -40,10 +40,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Producto" nillable="true" type="tns:Producto" />
-  <xs:complexType name="ArrayOfPedido">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pedido" nillable="true" type="tns:Pedido" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPedido" nillable="true" type="tns:ArrayOfPedido" />
 </xs:schema>

@@ -9,8 +9,6 @@ namespace Negocio
     {
         #region atributos
         private int intIdDetalle;
-        //private int idPedido;
-        //private int idProducto;
         private Producto producto;
         private int intCantidad;
 
@@ -21,19 +19,7 @@ namespace Negocio
         {
             get { return intIdDetalle; }
             set { intIdDetalle = value; }
-        }
-
-        //public int IdPedido
-        //{
-        //    get { return idPedido; }
-        //    set { idPedido = value; }
-        //}
-
-        //public int IdProducto
-        //{
-        //    get { return idProducto; }
-        //    set { idProducto = value; }
-        //}
+        }        
 
         public Producto Producto
         {

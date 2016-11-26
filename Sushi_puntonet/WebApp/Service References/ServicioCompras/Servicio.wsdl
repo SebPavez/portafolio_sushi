@@ -49,24 +49,6 @@
   <wsdl:message name="IServicio_ListarProductos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarProductosResponse" />
   </wsdl:message>
-  <wsdl:message name="IServicio_ListarHistorial_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListarHistorial" />
-  </wsdl:message>
-  <wsdl:message name="IServicio_ListarHistorial_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListarHistorialResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServicio_buscarProductoID_InputMessage">
-    <wsdl:part name="parameters" element="tns:buscarProductoID" />
-  </wsdl:message>
-  <wsdl:message name="IServicio_buscarProductoID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:buscarProductoIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServicio_agregarAlCarrito_InputMessage">
-    <wsdl:part name="parameters" element="tns:agregarAlCarrito" />
-  </wsdl:message>
-  <wsdl:message name="IServicio_agregarAlCarrito_OutputMessage">
-    <wsdl:part name="parameters" element="tns:agregarAlCarritoResponse" />
-  </wsdl:message>
   <wsdl:portType name="IServicio">
     <wsdl:operation name="RegistrarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicio/RegistrarUsuario" message="tns:IServicio_RegistrarUsuario_InputMessage" />
@@ -95,18 +77,6 @@
     <wsdl:operation name="ListarProductos">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarProductos" message="tns:IServicio_ListarProductos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarProductosResponse" message="tns:IServicio_ListarProductos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListarHistorial">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarHistorial" message="tns:IServicio_ListarHistorial_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarHistorialResponse" message="tns:IServicio_ListarHistorial_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="buscarProductoID">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/buscarProductoID" message="tns:IServicio_buscarProductoID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/buscarProductoIDResponse" message="tns:IServicio_buscarProductoID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="agregarAlCarrito">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/agregarAlCarrito" message="tns:IServicio_agregarAlCarrito_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/agregarAlCarritoResponse" message="tns:IServicio_agregarAlCarrito_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
@@ -167,33 +137,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListarProductos">
       <soap:operation soapAction="http://tempuri.org/IServicio/ListarProductos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListarHistorial">
-      <soap:operation soapAction="http://tempuri.org/IServicio/ListarHistorial" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="buscarProductoID">
-      <soap:operation soapAction="http://tempuri.org/IServicio/buscarProductoID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="agregarAlCarrito">
-      <soap:operation soapAction="http://tempuri.org/IServicio/agregarAlCarrito" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

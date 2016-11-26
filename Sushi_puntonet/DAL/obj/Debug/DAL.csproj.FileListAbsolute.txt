@@ -49,4 +49,3 @@ C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Or
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
-C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Oracle.DataAccess.dll
