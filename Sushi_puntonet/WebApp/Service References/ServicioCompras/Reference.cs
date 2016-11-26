@@ -35,6 +35,15 @@ namespace WebApp.ServicioCompras {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/ListarProductos", ReplyAction="http://tempuri.org/IServicio/ListarProductosResponse")]
         Negocio.Producto[] ListarProductos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/ListarHistorial", ReplyAction="http://tempuri.org/IServicio/ListarHistorialResponse")]
+        Negocio.Pedido[] ListarHistorial();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/buscarProductoID", ReplyAction="http://tempuri.org/IServicio/buscarProductoIDResponse")]
+        Negocio.Producto buscarProductoID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/agregarAlCarrito", ReplyAction="http://tempuri.org/IServicio/agregarAlCarritoResponse")]
+        void agregarAlCarrito(Negocio.Producto producto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -90,6 +99,18 @@ namespace WebApp.ServicioCompras {
         
         public Negocio.Producto[] ListarProductos() {
             return base.Channel.ListarProductos();
+        }
+        
+        public Negocio.Pedido[] ListarHistorial() {
+            return base.Channel.ListarHistorial();
+        }
+        
+        public Negocio.Producto buscarProductoID(int id) {
+            return base.Channel.buscarProductoID(id);
+        }
+        
+        public void agregarAlCarrito(Negocio.Producto producto) {
+            base.Channel.agregarAlCarrito(producto);
         }
     }
 }

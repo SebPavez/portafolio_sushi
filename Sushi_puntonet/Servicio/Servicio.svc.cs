@@ -196,7 +196,6 @@ namespace Servicio
                         producto.EnOferta = item.EN_OFERTA;
                         producto.Descripcion = item.DESCRIPCION;
                         producto.Categoria = item.CATEGORIA_PRODUCTO.CATEGORIA;
-                        //producto.LinkInternet = item.
                         listaResultado.Add(producto);                        
                     }
                     contexto.Dispose();
@@ -257,5 +256,5 @@ namespace Servicio
             carrito.ProductosEnCarro.Add(producto);
         }
 
-}
+    }
 }
