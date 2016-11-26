@@ -22,6 +22,10 @@ namespace Negocio
             get { return totalCompra; }
             set { totalCompra = value; }
         }
+
+        public CarroCompras() {
+            this.productoEnCarro = new List<Producto>();
+        }
         
 	
 	

@@ -89,9 +89,10 @@
 
                 </div>
 
+                <asp:UpdatePanel>
                 <div class="row" id="filaElementos" runat="server">
 
                 </div>
-
+                </asp:UpdatePanel>
             </div>
 </asp:Content>
