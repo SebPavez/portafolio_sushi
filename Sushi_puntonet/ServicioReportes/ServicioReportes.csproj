@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD1DBF9B-5144-48AE-B29B-9D56918792C5}</ProjectGuid>
+    <ProjectGuid>{299F5AAF-4D28-4717-81DF-4EDF2DC339D3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Servicio</RootNamespace>
-    <AssemblyName>Servicio</AssemblyName>
+    <RootNamespace>ServicioReportes</RootNamespace>
+    <AssemblyName>ServicioReportes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -34,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -54,7 +53,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Servicio.svc" />
     <Content Include="ServicioReporte.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -66,10 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IServicioReporte.cs" />
-    <Compile Include="Servicio.svc.cs">
-      <DependentUpon>Servicio.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioReporte.svc.cs">
       <DependentUpon>ServicioReporte.svc</DependentUpon>
@@ -77,16 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{3C764B57-C0C1-4BDF-B4C2-2B66FA7C7601}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{CEAD623A-1D72-463F-B7A5-82380646DA52}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -96,7 +80,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62494</DevelopmentServerPort>
+          <DevelopmentServerPort>56762</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -35,12 +35,20 @@ namespace WebApp
                 }
                 else
                 {
-                    lblResult.Text = "falla al registrar";
+                    lblResult.Text = "falla al registrar, intente nuevamente ";
+                    HtmlAnchor linkRegistro = new HtmlAnchor();
+                    linkRegistro.InnerText = "Volver a página de registro";
+                    linkRegistro.HRef = "login.aspx";
+                    lblResult.Parent.Controls.Add(linkRegistro);
                 }
             }
             catch (Exception exc)
             {
                 lblResult.Text = "falla en el registro: " + exc.Message;
+                HtmlAnchor linkRegistro = new HtmlAnchor();
+                linkRegistro.InnerText = "Volver a página de registro";
+                linkRegistro.HRef = "login.aspx";
+                lblResult.Parent.Controls.Add(linkRegistro);
             }
 
         }

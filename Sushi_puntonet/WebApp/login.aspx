@@ -46,7 +46,7 @@
             <form method="post" action="registrar.aspx">
                 <input class="input-txt" type="text" placeholder="Rut: ej: 19188621-6" name="txbRutRegister" required />
                 <input class="input-txt" type="text" placeholder="Nombre: ej: Roberto Carlos" name="txbNombreRegister" required />
-                <select class="input-txt" class="form-control" name="cmbGenero">
+                <select class="form-control" name="cmbGenero">
                         <option>Masculino</option>
                         <option>Femenino</option>
                         <option>Otro</option>
@@ -66,7 +66,7 @@
                     <a class="lnk" href="MainPage.aspx">
                         <span class="icon icon--min">¯\(ツ)/¯</span> Volver a Inicio
                     </a>            
-                    <button type="submit" class="btn btn--right">Registrar</button>
+                    <button type="submit" onclick="" class="btn btn--right">Registrar</button>
                 </div>
             </form>
         </div>

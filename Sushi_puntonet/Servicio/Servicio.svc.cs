@@ -5,15 +5,15 @@ using System.Data.Entity;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Text;
-using System.Reflection;
 using Negocio;
 using DAL;
+using System.ServiceModel.Activation;
 
 namespace Servicio
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Servicio : IServicio
-    {
+    {        
         public bool RegistrarUsuario(Negocio.Cliente nuevoCliente)
         {
             try
