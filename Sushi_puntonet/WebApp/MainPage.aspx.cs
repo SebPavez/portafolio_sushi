@@ -10,19 +10,23 @@ namespace WebApp
 {
     public partial class MainPage : System.Web.UI.Page
     {
-        Negocio.CarroCompras carrito;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                carrito = new Negocio.CarroCompras();
-                CargasProductosEnPagina();
+                Negocio.CarroCompras carrito = new Negocio.CarroCompras();
+                Session["carrito"] = carrito;
             }
             else {
-                carrito = (Negocio.CarroCompras)Session["carrito"];
-                CargarProductosAlCarrito();
+                Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
+                if (Request.Params.Get("__EVENTARGUMENT").Equals("ejecutar")){
+                    CargarProductosAlCarrito();
+                }
+                if(Request.QueryString["idProducto"]!=null)
+                    CargarProductosAlCarrito();
             }
-
+            CargasProductosEnPagina();
         }
 
         protected void CargasProductosEnPagina() {
@@ -51,9 +55,15 @@ namespace WebApp
 
                 HtmlGenericControl headerNombre = new HtmlGenericControl("h4");
                 HtmlAnchor anclaInterna = new HtmlAnchor();
-                anclaInterna.HRef = "/MainPage.aspx?idProducto="+item.IdProducto;
+                //anclaInterna.HRef = "/MainPage.aspx?idProducto="+item.IdProducto;
                 anclaInterna.InnerText = item.Nombre;
+                anclaInterna.Attributes.Add("runat", "server");
+                anclaInterna.Attributes.Add("onclick", "__doPostBack('"+item.IdProducto+"', 'ejecutar')");
+                anclaInterna.ClientIDMode = ClientIDMode.Static;
+                anclaInterna.Attributes.Add("id",  item.IdProducto.ToString());
+                anclaInterna.ServerClick += Ancla_click;
                 headerNombre.Controls.Add(anclaInterna);
+
 
                 HtmlGenericControl descripcion = new HtmlGenericControl("p");
                 descripcion.InnerText = item.Descripcion;
@@ -72,13 +82,25 @@ namespace WebApp
             }
         }
 
+        protected void Ancla_click(object sender, EventArgs e) {
+            int id = Int32.Parse(((HtmlAnchor)sender).ID);
+            Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
+            carrito.ProductosEnCarro.Add(new ServicioCompras.ServicioClient().buscarProductoID(id));
+            Session["carrito"] = carrito;
+        }
+
         // Metodo que trae el id de la base desde la url y lo pasa a la consulta lo cual devuelve un producto
         // este guarda el producto al carrito
         protected void CargarProductosAlCarrito() {
-            ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient();
-            int id = int.Parse(Request.QueryString["idProducto"]);
-            Negocio.Producto producto = servicio.buscarProductoID(id);
-            servicio.agregarAlCarrito(producto);
+            using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient())
+            {
+
+                int id = Int32.Parse(Request.Params.Get("__EVENTTARGET"));
+                Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
+                carrito.ProductosEnCarro.Add(servicio.buscarProductoID(id));
+                Session["carrito"] = carrito;
+                servicio.Close();
+            }
         }
     }
 }

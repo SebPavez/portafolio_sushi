@@ -12,33 +12,34 @@ namespace Servicio
     public interface IServicio
     {
         [OperationContract]
+        
         bool RegistrarUsuario(Negocio.Cliente nuevoCliente);
 
-        [OperationContract]
+        [OperationContract]        
         bool EditarUsuario(Negocio.Cliente clienteEditado);
 
-        [OperationContract]
+        [OperationContract]        
         bool EliminarUsuario(string runCliente);
 
-        [OperationContract]
+        [OperationContract]        
         bool AutenticarCliente(string correo, string password);
 
-        [OperationContract]
+        [OperationContract]        
         bool AnularPedido(int idPedido);
 
-        [OperationContract]
+        [OperationContract]        
         bool GenerarPedido(Negocio.Pedido nuevoPedido);
 
-        [OperationContract]
+        [OperationContract]        
         List<Negocio.Producto> ListarProductos();
 
-        [OperationContract]
+        [OperationContract]        
         List<Negocio.Pedido> ListarHistorial();
 
-        [OperationContract]
+        [OperationContract]        
         Negocio.Producto buscarProductoID(int id);
 
-        [OperationContract]
+        [OperationContract]        
         void agregarAlCarrito(Negocio.Producto producto);
 
        // [OperationContract]
