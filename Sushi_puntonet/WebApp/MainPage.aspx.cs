@@ -37,7 +37,6 @@ namespace WebApp
                 thumb.Attributes.Add("class", "thumbnail");
 
                 HtmlImage imagen = new HtmlImage();
-                //imagen.Src = item.LinkInternet;
                 imagen.Src = "http://placehold.it/320x150";
 
                 HtmlGenericControl detalles = new HtmlGenericControl("div");
