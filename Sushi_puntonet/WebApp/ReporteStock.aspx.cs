@@ -15,12 +15,5 @@ namespace WebApp
 
         }
 
-        protected void btnEnviar_Click(object sender, EventArgs e)
-        {
-            //ServicioReporte.ServicioReporteClient servicio = new ServicioReporte.ServicioReporteClient();
-            //int id = producto.IdProducto;
-            //gridStock.DataSource = servicio.Stock().ToString();
-            //gridStock.DataBind();
-        }
     }
 }
