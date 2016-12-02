@@ -19,7 +19,9 @@ namespace WebApp
             ServicioCompras.ServicioClient seguridad = new ServicioCompras.ServicioClient();
             if (seguridad.AutenticarCliente(controlLogin.UserName.ToLower(), controlLogin.Password))
             {
-                //Session["runCliente"] = seguridad.RecuperarUsuario(controlLogin.UserName.ToLower());
+                string run = seguridad.RecuperarRUNCliente(controlLogin.UserName); 
+                if (!run.Equals(""))
+                    Session["runCliente"] = run;
                 FormsAuthentication.SetAuthCookie(controlLogin.UserName, true);                
                 Response.Redirect("MainPage.aspx", true);
             }

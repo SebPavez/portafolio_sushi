@@ -11,12 +11,11 @@
     <asp:GridView ID="grillaCompras" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" 
         onprerender="grillaCompras_PreRender">
         <Columns>
-            <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-            <asp:BoundField DataField="PrecioNormal" HeaderText="Precio"  />
-            <asp:BoundField DataField="PrecioOferta" HeaderText="Precio oferta"  />
-            <asp:BoundField DataField="EnOferta" headerText="En oferta" />
-            <asp:BoundField DataField="Stock" HeaderText="Cantidad"  />            
-            <asp:ButtonField Text="Eliminar" />
+            <asp:BoundField DataField="Id" HeaderText="ID" />
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre"  />
+            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad"  />
+            <asp:BoundField DataField="PrecioUnidad" headerText="Precio Unitario" />              
+            <asp:BoundField DataField="TotalDetalle" headerText="Total detalle" />                          
         </Columns>
     </asp:GridView>    
 </div>

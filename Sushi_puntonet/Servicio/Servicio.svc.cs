@@ -152,13 +152,14 @@ namespace Servicio
                         pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
                         pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
                         pedidoDAL.TOTAL_VENTA = (decimal) nuevoPedido.TotalVenta;
-                        pedidoDAL.FECHA_HORA = DateTime.Now;                                                   
+                        pedidoDAL.FECHA_HORA = DateTime.Now;
+                        pedidoDAL.ID_ESTADO = 1;                        
                         contexto.AddToPEDIDOes(pedidoDAL);
                         contexto.SaveChanges();
                         foreach (Negocio.DetallePedido item in nuevoPedido.DetallePedido)
                         {
                             DAL.DETALLE_PEDIDO nuevoDetalle = new DAL.DETALLE_PEDIDO();
-                            nuevoDetalle.ID_PRODUCTO = item.IdDetalle;
+                            nuevoDetalle.ID_PRODUCTO = item.Producto.IdProducto;
                             nuevoDetalle.CANTIDAD = item.Cantidad;
                             nuevoDetalle.ID_PEDIDO = pedidoDAL.ID_PEDIDO;
                             contexto.AddToDETALLE_PEDIDO(nuevoDetalle);
@@ -221,7 +222,7 @@ namespace Servicio
             return new Negocio.Cliente();
         }
 
-        public Negocio.Producto buscarProductoID(int id) {
+        public Negocio.Producto BuscarProductoID(int id) {
             Negocio.Producto producto = new Negocio.Producto();
             try
             {
@@ -247,14 +248,25 @@ namespace Servicio
 
                 return producto;
             }
-
         }
+        
 
-        public void agregarAlCarrito(Negocio.Producto producto)
+        public string RecuperarRUNCliente(string correo)
         {
-            Negocio.CarroCompras carrito = new Negocio.CarroCompras();
-            carrito.ProductosEnCarro.Add(producto);
-        }
+            string run = "";
+            try
+            {
+                using (DAL.Entidades contexto = new DAL.Entidades()) {                    
+                    DAL.CLIENTE encontrado = contexto.CLIENTEs.First(obj => obj.CORREO_ELECTRONICO == correo);
+                    run = encontrado.CLIENTE_RUN;                    
+                }
 
+            }
+            catch (Exception)
+            {
+                run = "";                  
+            }            
+            return run;
+        }
     }
 }

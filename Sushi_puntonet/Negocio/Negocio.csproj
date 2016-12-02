@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CarroCompras.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="DetalleProductoCarro.cs" />
     <Compile Include="DetallePedido.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Pedido.cs" />

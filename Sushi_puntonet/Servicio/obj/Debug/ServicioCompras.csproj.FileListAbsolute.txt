@@ -7,3 +7,30 @@ C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servi
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\ServicioCompras.csprojResolveAssemblyReference.cache
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\ServicioCompras.csprojResolveAssemblyReference.cache
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
+C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\ServicioCompras.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.pdb
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\ServicioCompras.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb

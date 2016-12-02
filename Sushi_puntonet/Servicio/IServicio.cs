@@ -11,8 +11,7 @@ namespace Servicio
     [ServiceContract]
     public interface IServicio
     {
-        [OperationContract]
-        
+        [OperationContract]        
         bool RegistrarUsuario(Negocio.Cliente nuevoCliente);
 
         [OperationContract]        
@@ -37,13 +36,10 @@ namespace Servicio
         List<Negocio.Pedido> ListarHistorial();
 
         [OperationContract]        
-        Negocio.Producto buscarProductoID(int id);
+        Negocio.Producto BuscarProductoID(int id);
 
-        [OperationContract]        
-        void agregarAlCarrito(Negocio.Producto producto);
-
-       // [OperationContract]
-        //Negocio.Cliente RecuperarUsuario();
+        [OperationContract]
+        string RecuperarRUNCliente(string correo);
     }
     
 }

@@ -8,10 +8,10 @@ namespace Negocio
 {
     public class CarroCompras
     {
-        private List<Producto> productoEnCarro;
+        private List<DetalleProductoCarro> productoEnCarro;
         private double totalCompra;
 
-        public List<Producto> ProductosEnCarro
+        public List<DetalleProductoCarro> ProductosEnCarro
         {
             get { return productoEnCarro;}
             set { productoEnCarro = value;}
@@ -24,7 +24,7 @@ namespace Negocio
         }
 
         public CarroCompras() {
-            this.productoEnCarro = new List<Producto>();
+            this.productoEnCarro = new List<DetalleProductoCarro>();
         }
         
 	
