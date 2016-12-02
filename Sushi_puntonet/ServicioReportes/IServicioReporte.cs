@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using DAL;
+using Negocio;
 
 namespace Servicio
 {
@@ -12,12 +14,12 @@ namespace Servicio
     public interface IServicioReporte
     {
         [OperationContract]
-        Negocio.Producto Stock(int idProducto);
+        List<Negocio.Producto> Stock();
 
         [OperationContract]
-        List<Negocio.Pedido> ReporteVentasRealizadas();
+        List<Negocio.Pedido> ReporteVentasRealizadas(DateTime FechaDesde , DateTime FechaHasta);
 
         [OperationContract]
-        List<Negocio.Pedido> reporteVentasAnuladas();
+        List<Negocio.Pedido> reporteVentasAnuladas(DateTime FechaDesde, DateTime FechaHasta);
     }
 }

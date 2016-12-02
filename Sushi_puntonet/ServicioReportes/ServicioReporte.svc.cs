@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -12,29 +13,35 @@ namespace Servicio
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "ServicioReporte" en el código, en svc y en el archivo de configuración a la vez.
     public class ServicioReporte : IServicioReporte
     {
-        public Negocio.Producto Stock(int idProducto)
+        public List<Negocio.Producto> Stock()
         {
-            Negocio.Producto productoReporte = new Negocio.Producto();
+            Negocio.Producto productoStock = new Negocio.Producto();
+
+            List<Negocio.Producto> listaStock = new List<Negocio.Producto>();
+
             try
             {
                 using (Entidades contexto = new Entidades())
                 {
                     var devolverStock = (from stock in contexto.PRODUCTOes
-                                         where stock.ID_PRODUCTO == idProducto
+                                         where stock.ID_PRODUCTO == productoStock.IdProducto
                                          select stock).FirstOrDefault();
 
-                    productoReporte.Nombre = devolverStock.NOMBRE;
-                    productoReporte.Stock = (int)devolverStock.STOCK;
+                    productoStock.Nombre = devolverStock.NOMBRE;
+                    productoStock.IdProducto = (int)devolverStock.ID_PRODUCTO;
+                    productoStock.Stock = (int)devolverStock.STOCK;
+
+                    listaStock.Add(productoStock);
                 }
-                return productoReporte;
+                return listaStock;
             }
             catch
             {
-                return productoReporte;
+                return listaStock;
             }
         }
 
-        public List<Negocio.Pedido> ReporteVentasRealizadas()
+        public List<Negocio.Pedido> ReporteVentasRealizadas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<Negocio.Pedido> listaVentas = new List<Pedido>();
             List<Negocio.DetallePedido> listaDetallePedidos = new List<DetallePedido>();
@@ -44,13 +51,18 @@ namespace Servicio
                 {
                     List<DAL.PEDIDO> listaVentasRecorrer = contexto.PEDIDOes.ToList<DAL.PEDIDO>();
                     List<DAL.DETALLE_PEDIDO> detallePedidos = contexto.DETALLE_PEDIDO.ToList<DAL.DETALLE_PEDIDO>();
+
                     foreach (DAL.PEDIDO item in listaVentasRecorrer)
                     {
                         Negocio.Pedido pedido = new Negocio.Pedido();
                         pedido.FechaHoraPedido = item.FECHA_HORA;
                         pedido.IdPedido = (int)item.ID_PEDIDO;
                         pedido.TotalVenta = (int)item.TOTAL_VENTA;
-
+                        pedido.FormaEntrega = item.FORMA_ENTREGA;
+                        pedido.Comentario = item.COMENTARIO;
+                        pedido.TotalVenta = (int)item.TOTAL_VENTA;
+                        pedido.RunCliente = item.RUN_CLIENTE;
+                        pedido.Estado = (int)item.ID_ESTADO;
 
                         foreach (var det in detallePedidos)
                         {
@@ -68,7 +80,7 @@ namespace Servicio
 
                         listaVentas.Add(pedido);
                     }
-                    contexto.Dispose();
+
                 }
                 return listaVentas;
             }
@@ -78,10 +90,11 @@ namespace Servicio
             }
         }
 
-        public List<Negocio.Pedido> reporteVentasAnuladas()
+        public List<Negocio.Pedido> reporteVentasAnuladas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<Negocio.Pedido> listaVentasAnuladas = new List<Negocio.Pedido>();
             List<Negocio.DetallePedido> listaDetallePedidos = new List<Negocio.DetallePedido>();
+
             try
             {
                 using (Entidades contexto = new Entidades())
@@ -92,26 +105,26 @@ namespace Servicio
 
                     List<DAL.DETALLE_PEDIDO> listaAnuladasRecorrer = contexto.DETALLE_PEDIDO.ToList<DAL.DETALLE_PEDIDO>();
 
-
                     foreach (DAL.DETALLE_PEDIDO item in listaAnuladasRecorrer)
                     {
-                        DetallePedido d = new DetallePedido();
+                        DetallePedido detalle = new DetallePedido();
 
-                        d.IdDetalle = (int)item.ID_DETALLE;
-                        d.IdPedido = (int)item.ID_PEDIDO;
-                        d.IdProducto = (int)item.ID_PRODUCTO;
-                        d.Cantidad = (int)item.CANTIDAD;
+                        detalle.IdDetalle = (int)item.ID_DETALLE;
+                        detalle.IdPedido = (int)item.ID_PEDIDO;
+                        detalle.IdProducto = (int)item.ID_PRODUCTO;
+                        detalle.Cantidad = (int)item.CANTIDAD;
 
-                        listaDetallePedidos.Add(d);
+                        listaDetallePedidos.Add(detalle);
                     }
 
                     if (reporte == null)
                     {
-                        Pedido p = new Pedido();
+                        Pedido pedido = new Pedido();
 
-                        p.IdPedido = (int)reporte.ID_PEDIDO;
-                        p.DetallePedido = listaDetallePedidos;
-                        listaVentasAnuladas.Add(p);
+                        pedido.IdPedido = (int)reporte.ID_PEDIDO;
+                        pedido.TotalVenta = (int)reporte.TOTAL_VENTA;
+                        pedido.DetallePedido = listaDetallePedidos;
+                        listaVentasAnuladas.Add(pedido);
                     }
 
                 }
