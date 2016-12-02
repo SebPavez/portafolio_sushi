@@ -130,20 +130,14 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
     @Override
     public ArrayList<EmpleadoRun> listarEmpleados() {
         ArrayList<EmpleadoRun> lista = null;
-
         try {
             Connection conexion = Conexion.getConexion();
             String query = "SELECT * FROM empleado";
             PreparedStatement listar = conexion.prepareCall(query);
-
             ResultSet rs = listar.executeQuery();
-
             lista = new ArrayList<EmpleadoRun>();
-
             while (rs.next()) {
-
                 EmpleadoRun listarEmpleado = new EmpleadoRun();
-
                 listarEmpleado.setFechaContrato(rs.getString("fecha_contrato"));
                 listarEmpleado.setSueldoLiquido(rs.getInt("sueldo_liquido"));
                 listarEmpleado.setSueldoBruto(rs.getInt("sueldo_bruto"));
@@ -159,21 +153,16 @@ public class EmpleadoRunImplementado implements EmpleadoRunDao {
                 listarEmpleado.setCorreoElectronico(rs.getString("correo_electronico"));
                 listarEmpleado.setNumeroTelefonico(rs.getString("numero_telefonico"));
                 listarEmpleado.setPassword(rs.getString("password"));
-
                 lista.add(listarEmpleado);
-
             }
-
             listar.close();
             conexion.close();
-
         } catch (SQLException w) {
             System.out.println("Error sql al listar empleado " + w.getMessage());
         } catch (Exception e) {
 
             System.out.println("Error al listar a los empleados " + e.getMessage());
         }
-
         return lista;
     }
 

@@ -550,7 +550,7 @@ public class Clientes extends javax.swing.JFrame {
           this.rbFemenino.setSelected(true);
       String año = clienteEditar.getFechaNacimiento().substring(0, 4);
       String mes = clienteEditar.getFechaNacimiento().substring(5, 7);
-      String dia = clienteEditar.getFechaNacimiento().substring(9, 11);
+      String dia = clienteEditar.getFechaNacimiento().substring(8, 11);
       this.txbFechaEditar.setText(dia+"/"+mes+"/"+año);
       this.txbNumTelEditar.setText(clienteEditar.getNumeroTelefonico());
         
@@ -594,6 +594,7 @@ public class Clientes extends javax.swing.JFrame {
       ClienteDaoImplementado cdi = new ClienteDaoImplementado();
       cdi.eliminarCliente(txbEditarEliminarCliente.getText().trim());
       JOptionPane.showMessageDialog(this,"Cliente Eliminado"); 
+      txbEditarEliminarCliente.setText("");
               
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 

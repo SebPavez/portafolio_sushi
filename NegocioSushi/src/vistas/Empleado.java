@@ -632,6 +632,10 @@ public class Empleado extends javax.swing.JFrame {
 
     private void btnListarEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarEmpleadosActionPerformed
         EmpleadoRunImplementado eri = new EmpleadoRunImplementado();
+        String salida = " ";
+        for (int i = 0; i < eri.listarEmpleados().size(); i++) {
+           salida += eri.listarEmpleados().get(i).toString()+"\n";
+        }
         txaListarEmpleados.setText(eri.listarEmpleados().toString());
     }//GEN-LAST:event_btnListarEmpleadosActionPerformed
 
