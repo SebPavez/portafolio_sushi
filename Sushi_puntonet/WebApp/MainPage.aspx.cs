@@ -86,22 +86,65 @@ namespace WebApp
         protected void Ancla_click(object sender, EventArgs e) {
             int id = Int32.Parse(((HtmlAnchor)sender).ID);
             Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
-            carrito.ProductosEnCarro.Add(new ServicioCompras.ServicioClient().buscarProductoID(id));
-            Session["carrito"] = carrito;
+            //consulto si existe en el carrito de compras
+            if (carrito.ProductosEnCarro.Exists(obj => obj.Id == id))
+            {
+                Negocio.DetalleProductoCarro detalle = carrito.ProductosEnCarro.First(obj => obj.Id == id);
+                carrito.ProductosEnCarro.First(obj => obj.Id == id).Cantidad++;
+                carrito.ProductosEnCarro.First(obj => obj.Id == id).TotalDetalle = (detalle.Cantidad + 1) * detalle.PrecioUnidad;
+            }
+            //si no existe en el carrito, se busca en la bd, se mapea, y se agrega al carrito con cantidad 1
+            else
+            {
+                using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient())
+                {
+                    Negocio.DetalleProductoCarro nuevoDetalle = new Negocio.DetalleProductoCarro();
+                    Negocio.Producto productoClickeado = servicio.BuscarProductoID(id);
+                    nuevoDetalle.Id = id;
+                    nuevoDetalle.Nombre = productoClickeado.Nombre;
+                    nuevoDetalle.Cantidad = 1;
+                    if (productoClickeado.EnOferta.Equals("1"))
+                        nuevoDetalle.PrecioUnidad = productoClickeado.PrecioOferta;
+                    else
+                        nuevoDetalle.PrecioUnidad = productoClickeado.PrecioNormal;
+                    nuevoDetalle.TotalDetalle = nuevoDetalle.PrecioUnidad;
+                    carrito.ProductosEnCarro.Add(nuevoDetalle);
+                }
+            }
+            Session["carrito"] = carrito;            
         }
 
-        // Metodo que trae el id de la base desde la url y lo pasa a la consulta lo cual devuelve un producto
-        // este guarda el producto al carrito
+        
         protected void CargarProductosAlCarrito() {
-            using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient())
-            {
-
+            
                 int id = Int32.Parse(Request.Params.Get("__EVENTTARGET"));
-                Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];
-                carrito.ProductosEnCarro.Add(servicio.buscarProductoID(id));
-                Session["carrito"] = carrito;
-                servicio.Close();
-            }
+                Negocio.CarroCompras carrito = (Negocio.CarroCompras)Session["carrito"];                
+                //consulto si existe en el carrito de compras
+                if (carrito.ProductosEnCarro.Exists(obj => obj.Id == id))
+                {
+                    Negocio.DetalleProductoCarro detalle = carrito.ProductosEnCarro.First(obj => obj.Id == id);
+                    carrito.ProductosEnCarro.First(obj => obj.Id == id).Cantidad++;
+                    carrito.ProductosEnCarro.First(obj => obj.Id == id).TotalDetalle = detalle.Cantidad * detalle.PrecioUnidad;                    
+                }
+                //si no existe en el carrito, se busca en la bd, se mapea, y se agrega al carrito con cantidad 1
+                else 
+                {
+                    using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient())
+                    {
+                    Negocio.DetalleProductoCarro nuevoDetalle = new Negocio.DetalleProductoCarro();
+                    Negocio.Producto productoClickeado = servicio.BuscarProductoID(id);
+                    nuevoDetalle.Id = id;
+                    nuevoDetalle.Nombre = productoClickeado.Nombre;
+                    nuevoDetalle.Cantidad = 1;
+                    if (productoClickeado.EnOferta.Equals("1"))
+                        nuevoDetalle.PrecioUnidad = productoClickeado.PrecioOferta;
+                    else
+                        nuevoDetalle.PrecioUnidad = productoClickeado.PrecioNormal;
+                    nuevoDetalle.TotalDetalle = nuevoDetalle.PrecioUnidad;
+                    carrito.ProductosEnCarro.Add(nuevoDetalle);
+                    }
+                }                
+                Session["carrito"] = carrito;            
         }
     }
 }

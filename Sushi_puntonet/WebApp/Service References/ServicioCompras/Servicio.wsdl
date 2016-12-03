@@ -55,17 +55,17 @@
   <wsdl:message name="IServicio_ListarHistorial_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarHistorialResponse" />
   </wsdl:message>
-  <wsdl:message name="IServicio_buscarProductoID_InputMessage">
-    <wsdl:part name="parameters" element="tns:buscarProductoID" />
+  <wsdl:message name="IServicio_BuscarProductoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProductoID" />
   </wsdl:message>
-  <wsdl:message name="IServicio_buscarProductoID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:buscarProductoIDResponse" />
+  <wsdl:message name="IServicio_BuscarProductoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarProductoIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IServicio_agregarAlCarrito_InputMessage">
-    <wsdl:part name="parameters" element="tns:agregarAlCarrito" />
+  <wsdl:message name="IServicio_RecuperarRUNCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarRUNCliente" />
   </wsdl:message>
-  <wsdl:message name="IServicio_agregarAlCarrito_OutputMessage">
-    <wsdl:part name="parameters" element="tns:agregarAlCarritoResponse" />
+  <wsdl:message name="IServicio_RecuperarRUNCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarRUNClienteResponse" />
   </wsdl:message>
   <wsdl:portType name="IServicio">
     <wsdl:operation name="RegistrarUsuario">
@@ -100,13 +100,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServicio/ListarHistorial" message="tns:IServicio_ListarHistorial_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicio/ListarHistorialResponse" message="tns:IServicio_ListarHistorial_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="buscarProductoID">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/buscarProductoID" message="tns:IServicio_buscarProductoID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/buscarProductoIDResponse" message="tns:IServicio_buscarProductoID_OutputMessage" />
+    <wsdl:operation name="BuscarProductoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/BuscarProductoID" message="tns:IServicio_BuscarProductoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/BuscarProductoIDResponse" message="tns:IServicio_BuscarProductoID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="agregarAlCarrito">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/agregarAlCarrito" message="tns:IServicio_agregarAlCarrito_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/agregarAlCarritoResponse" message="tns:IServicio_agregarAlCarrito_OutputMessage" />
+    <wsdl:operation name="RecuperarRUNCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicio/RecuperarRUNCliente" message="tns:IServicio_RecuperarRUNCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicio/RecuperarRUNClienteResponse" message="tns:IServicio_RecuperarRUNCliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicio" type="tns:IServicio">
@@ -183,8 +183,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="buscarProductoID">
-      <soap:operation soapAction="http://tempuri.org/IServicio/buscarProductoID" style="document" />
+    <wsdl:operation name="BuscarProductoID">
+      <soap:operation soapAction="http://tempuri.org/IServicio/BuscarProductoID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -192,8 +192,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="agregarAlCarrito">
-      <soap:operation soapAction="http://tempuri.org/IServicio/agregarAlCarrito" style="document" />
+    <wsdl:operation name="RecuperarRUNCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicio/RecuperarRUNCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

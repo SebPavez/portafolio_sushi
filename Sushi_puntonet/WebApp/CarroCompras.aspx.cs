@@ -35,18 +35,20 @@ namespace WebApp
         protected void BtnComprar_Click(object sender, EventArgs e)
         {
             using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient()) {
-                Negocio.CarroCompras carro = (Negocio.CarroCompras)Session["carrito"];
+                Negocio.CarroCompras carro = (Negocio.CarroCompras)Session["carrito"];               
+
                 Negocio.Pedido nuevoPedido = new Negocio.Pedido();
-                nuevoPedido.RunCliente = (String)Session["runCliente"];
+                nuevoPedido.RunCliente = (string)Session["runCliente"];
                 nuevoPedido.FormaEntrega = this.dropFormaEntrega.SelectedItem.Text;
                 nuevoPedido.Comentario = this.txbComentario.Text;
                 nuevoPedido.TotalVenta = carro.TotalCompra;
+
                 List<Negocio.DetallePedido> listaDetalle = new List<Negocio.DetallePedido>();
-                foreach (Negocio.Producto item in carro.ProductosEnCarro)
+                foreach (Negocio.DetalleProductoCarro item in carro.ProductosEnCarro)
                 {
                     Negocio.DetallePedido detalle = new Negocio.DetallePedido();
-                    detalle.Producto = item;
-                    detalle.Cantidad = item.Stock;
+                    detalle.Producto = servicio.BuscarProductoID(item.Id);
+                    detalle.Cantidad = item.Cantidad;
                 }
                 nuevoPedido.DetallePedido = listaDetalle;
                 if (servicio.GenerarPedido(nuevoPedido))

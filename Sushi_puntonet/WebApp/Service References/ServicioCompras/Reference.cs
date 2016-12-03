@@ -39,11 +39,11 @@ namespace WebApp.ServicioCompras {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/ListarHistorial", ReplyAction="http://tempuri.org/IServicio/ListarHistorialResponse")]
         Negocio.Pedido[] ListarHistorial();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/buscarProductoID", ReplyAction="http://tempuri.org/IServicio/buscarProductoIDResponse")]
-        Negocio.Producto buscarProductoID(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/BuscarProductoID", ReplyAction="http://tempuri.org/IServicio/BuscarProductoIDResponse")]
+        Negocio.Producto BuscarProductoID(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/agregarAlCarrito", ReplyAction="http://tempuri.org/IServicio/agregarAlCarritoResponse")]
-        void agregarAlCarrito(Negocio.Producto producto);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicio/RecuperarRUNCliente", ReplyAction="http://tempuri.org/IServicio/RecuperarRUNClienteResponse")]
+        string RecuperarRUNCliente(string correo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace WebApp.ServicioCompras {
             return base.Channel.ListarHistorial();
         }
         
-        public Negocio.Producto buscarProductoID(int id) {
-            return base.Channel.buscarProductoID(id);
+        public Negocio.Producto BuscarProductoID(int id) {
+            return base.Channel.BuscarProductoID(id);
         }
         
-        public void agregarAlCarrito(Negocio.Producto producto) {
-            base.Channel.agregarAlCarrito(producto);
+        public string RecuperarRUNCliente(string correo) {
+            return base.Channel.RecuperarRUNCliente(correo);
         }
     }
 }

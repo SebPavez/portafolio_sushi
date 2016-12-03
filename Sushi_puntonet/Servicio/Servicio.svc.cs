@@ -221,7 +221,7 @@ namespace Servicio
             return new Negocio.Cliente();
         }
 
-        public Negocio.Producto buscarProductoID(int id) {
+        public Negocio.Producto BuscarProductoID(int id) {
             Negocio.Producto producto = new Negocio.Producto();
             try
             {
@@ -247,14 +247,25 @@ namespace Servicio
 
                 return producto;
             }
-
         }
+        
 
-        public void agregarAlCarrito(Negocio.Producto producto)
+        public string RecuperarRUNCliente(string correo)
         {
-            Negocio.CarroCompras carrito = new Negocio.CarroCompras();
-            carrito.ProductosEnCarro.Add(producto);
-        }
+            string run = "";
+            try
+            {
+                using (DAL.Entidades contexto = new DAL.Entidades()) {                    
+                    DAL.CLIENTE encontrado = contexto.CLIENTEs.First(obj => obj.CORREO_ELECTRONICO == correo);
+                    run = encontrado.CLIENTE_RUN;                    
+                }
 
+            }
+            catch (Exception)
+            {
+                run = "";                  
+            }            
+            return run;
+        }
     }
 }
