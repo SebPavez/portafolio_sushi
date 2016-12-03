@@ -152,13 +152,14 @@ namespace Servicio
                         pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
                         pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
                         pedidoDAL.TOTAL_VENTA = (decimal) nuevoPedido.TotalVenta;
-                        pedidoDAL.FECHA_HORA = DateTime.Now;                                                   
+                        pedidoDAL.FECHA_HORA = DateTime.Now;
+                        pedidoDAL.ID_ESTADO = 1;                        
                         contexto.AddToPEDIDOes(pedidoDAL);
                         contexto.SaveChanges();
                         foreach (Negocio.DetallePedido item in nuevoPedido.DetallePedido)
                         {
                             DAL.DETALLE_PEDIDO nuevoDetalle = new DAL.DETALLE_PEDIDO();
-                            nuevoDetalle.ID_PRODUCTO = item.IdDetalle;
+                            nuevoDetalle.ID_PRODUCTO = item.Producto.IdProducto;
                             nuevoDetalle.CANTIDAD = item.Cantidad;
                             nuevoDetalle.ID_PEDIDO = pedidoDAL.ID_PEDIDO;
                             contexto.AddToDETALLE_PEDIDO(nuevoDetalle);

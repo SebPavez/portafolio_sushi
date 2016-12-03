@@ -11,8 +11,7 @@ namespace Servicio
     [ServiceContract]
     public interface IServicio
     {
-        [OperationContract]
-        
+        [OperationContract]        
         bool RegistrarUsuario(Negocio.Cliente nuevoCliente);
 
         [OperationContract]        

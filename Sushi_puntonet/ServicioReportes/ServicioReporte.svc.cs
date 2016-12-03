@@ -44,6 +44,7 @@ namespace Servicio
         public List<Negocio.Pedido> ReporteVentasRealizadas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<Negocio.Pedido> listaVentas = new List<Pedido>();
+
             List<Negocio.DetallePedido> listaDetallePedidos = new List<DetallePedido>();
             try
             {

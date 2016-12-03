@@ -116,7 +116,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="ReporteStock.aspx" />
     <None Include="Service References\ServicioReporte\ServicioReporte.disco" />
     <None Include="Service References\ServicioReporte\configuration91.svcinfo" />
     <None Include="Service References\ServicioReporte\configuration.svcinfo" />
@@ -124,8 +123,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="ReporteVentas.aspx" />
-    <Content Include="ReporteVentasAnuladas.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -209,27 +206,6 @@
     </Compile>
     <Compile Include="registrar.aspx.designer.cs">
       <DependentUpon>registrar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteStock.aspx.cs">
-      <DependentUpon>ReporteStock.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReporteStock.aspx.designer.cs">
-      <DependentUpon>ReporteStock.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteVentas.aspx.cs">
-      <DependentUpon>ReporteVentas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReporteVentas.aspx.designer.cs">
-      <DependentUpon>ReporteVentas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteVentasAnuladas.aspx.cs">
-      <DependentUpon>ReporteVentasAnuladas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReporteVentasAnuladas.aspx.designer.cs">
-      <DependentUpon>ReporteVentasAnuladas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\ServicioCompras\Reference.cs">
       <AutoGen>True</AutoGen>
