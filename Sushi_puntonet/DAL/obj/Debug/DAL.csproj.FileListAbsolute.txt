@@ -13,7 +13,6 @@ C:\Users\davip\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DA
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.pdb
-C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
 C:\Users\hp\Downloads\PortableGit\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config
@@ -41,9 +40,13 @@ C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\b
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll.config
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\DAL.pdb
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Oracle.DataAccess.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.dll
 C:\Users\sebpa\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\DAL\bin\Debug\Oracle.DataAccess.dll
+>>>>>>> 9ca0dacde75c47430bf656c1b737235fb0020cb3
