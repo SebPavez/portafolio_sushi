@@ -1,7 +1,7 @@
 package negocio;
 
 public class EmpleadoRun {
-    private String    fechaContrato;
+    private String  fechaContrato;
     private Integer sueldoLiquido;
     private Integer sueldoBruto;
     private String  tipo;
@@ -142,7 +142,8 @@ public class EmpleadoRun {
 
     @Override
     public String toString() {
-        return "EmpleadoRun{" + "fechaContrato=" + fechaContrato + ", sueldoLiquido=" + sueldoLiquido + ", sueldoBruto=" + sueldoBruto + ", tipo=" + tipo + ", run=" + run + ", nombre=" + nombre + ", direccion=" + direccion + ", comuna=" + comuna + ", provincia=" + provincia + ", region=" + region + ", fechaNacimiento=" + fechaNacimiento + ", genero=" + genero + ", correoElectronico=" + correoElectronico + ", numeroTelefonico=" + numeroTelefonico + ", password=" + password + '}';
+        return "Rut" + " " + run +"\n"+ "Nombre"+ " " + nombre +"\n"+ "Tipo" + " " + tipo+"\n"+ "Sueldo Liquido" + " " +  sueldoLiquido+ "\n"+ "Sueldo Bruto"+ " " + sueldoBruto +"\n"+"Fecha contrato" +" " + fechaContrato+"\n"+ "Region" +" "+ region+"\n"+"Provincia" + " " +provincia+"\n"+ "Comuna"+" "+ comuna+"\n"+ "Direccion"+ direccion+"\n"+ "Fecha Nacimiento"+" "+ fechaNacimiento +"\n"+ "Genero" +" "+ genero+"\n"+  "Numero Telefonico"+" "+numeroTelefonico+"\n"+ "Correo"+ " "+ correoElectronico+"\n"+ "Password" +" "+ password+"\n"+ "\n";
+                       
     }
     
     

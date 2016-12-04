@@ -194,6 +194,7 @@ public class Categoria extends javax.swing.JFrame {
        String cat = txbAgregarCategoria.getText().trim();
        if(cpdi.agregarCategoria(cat)){
           JOptionPane.showMessageDialog(this, "Categoría agregada!");
+          txbAgregarCategoria.setText("");
        }else{
            JOptionPane.showMessageDialog(this, "Error al agregar!");
        }

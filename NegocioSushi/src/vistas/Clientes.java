@@ -489,6 +489,7 @@ public class Clientes extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
       Cliente clie = new Cliente();
+      
       ClienteDaoImplementado cdi = new ClienteDaoImplementado();
       clie.setClienteRun(txbRutCliente.getText().trim());
       clie.setNombreCompleto(txbNombreCliente.getText().trim());
@@ -504,9 +505,20 @@ public class Clientes extends javax.swing.JFrame {
     clie.setCorreoElectronico(txbCorreoCliente.getText().trim());
     clie.setPassword(txbPasswordCliente.getText().trim());
     clie.setNumeroTelefonico(txbTelefonoCliente.getText().trim());
-    cdi.almacenarCliente(clie);
-    
-    JOptionPane.showMessageDialog(this,"Cliente Agregado"); 
+    if(cdi.almacenarCliente(clie))
+      JOptionPane.showMessageDialog(this,"Cliente Agregado"); 
+    else
+      JOptionPane.showMessageDialog(this,"Error al agregregar :C"); 
+    txbRutCliente.setText("");
+    txbNombreCliente.setText("");
+    txbDireccionCliente.setText("");
+    txbComunaCliente.setText("");
+    txbProvinciaCliente.setText("");
+    txbRegionCliente.setText("");
+    txbFechaNacimientoCliente.setText("");
+    txbCorreoCliente.setText("");
+    txbPasswordCliente.setText("");
+    txbTelefonoCliente.setText("");
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -536,7 +548,10 @@ public class Clientes extends javax.swing.JFrame {
           this.rbMasculino.setSelected(true);
       else
           this.rbFemenino.setSelected(true);
-      this.txbFechaEditar.setText(clienteEditar.getFechaNacimiento());
+      String año = clienteEditar.getFechaNacimiento().substring(0, 4);
+      String mes = clienteEditar.getFechaNacimiento().substring(5, 7);
+      String dia = clienteEditar.getFechaNacimiento().substring(8, 11);
+      this.txbFechaEditar.setText(dia+"/"+mes+"/"+año);
       this.txbNumTelEditar.setText(clienteEditar.getNumeroTelefonico());
         
       
@@ -559,14 +574,27 @@ public class Clientes extends javax.swing.JFrame {
     clie.setCorreoElectronico(txbCorreoEditar.getText().trim());
     clie.setPassword(txbPassEditar.getText().trim());
     clie.setNumeroTelefonico(txbNumTelEditar.getText().trim());
-    cdi.modificarCliente(clie);
-    JOptionPane.showMessageDialog(this,"Cliente Modificado"); 
+      txbRutEditar.setText("");
+      txbNombreEditar.setText("");
+      txbDireccionEditar.setText("");
+      txbComEditar.setText("");
+      txbProvEditar.setText("");
+      txbRegEditar.setText("");
+      txbFechaEditar.setText("");
+      txbCorreoEditar.setText("");
+      txbPassEditar.setText("");
+      txbNumTelEditar.setText("");
+      if(cdi.modificarCliente(clie))
+          JOptionPane.showMessageDialog(this,"Cliente Modificado"); 
+      else
+          JOptionPane.showMessageDialog(this,"No se pudo modificar los datos intente nuevamente"); 
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
       ClienteDaoImplementado cdi = new ClienteDaoImplementado();
       cdi.eliminarCliente(txbEditarEliminarCliente.getText().trim());
       JOptionPane.showMessageDialog(this,"Cliente Eliminado"); 
+      txbEditarEliminarCliente.setText("");
               
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 

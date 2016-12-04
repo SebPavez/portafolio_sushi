@@ -16,3 +16,12 @@ C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReporte
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.dll
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.pdb
 C:\Users\Felipe\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\ServicioReportes.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\ServicioReportes.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\DAL.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\Negocio.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\DAL.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\bin\Negocio.pdb
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.dll
+C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\ServicioReportes\obj\Debug\ServicioReportes.pdb

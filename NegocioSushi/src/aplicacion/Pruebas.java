@@ -147,8 +147,8 @@ public class Pruebas {
         listaDetalle.add(nuevoDetalleDos);
 
         
-        if(detalleTest.crearDetalle(listaDetalle, 1))
-            System.out.println("agregado");
+//        if(detalleTest.crearDetalle(listaDetalle, 1))
+//            System.out.println("agregado");
        // detalleTest.eliminarDetalle(0);
        //detalleTest.listarDetalle(0);
        // detalleTest.actualizarDetalle(listaDetalle, 0);
@@ -297,27 +297,26 @@ public class Pruebas {
         if(testPedido.crearPedido(nuevoPedido)>0)
             System.out.println("Pedido Agregado"); 
         
-        if(detalleTest.crearDetalle(listaDetalle, 6))
-            System.out.println("Detalle agregado");        
+//        if(detalleTest.crearDetalle(listaDetalle, 6))
+//            System.out.println("Detalle agregado");        
         
         nuevoPedido.setComentario("nuevoComentario");
         
         if(testPedido.actualizarPedido(nuevoPedido))
             System.out.println("comentario pedido editado");
         
-        if(detalleTest.actualizarDetalle(listaDetalle, 6))        
-            System.out.println("detalle actualizado");
+//        if(detalleTest.actualizarDetalle(listaDetalle, 6))        
+//            System.out.println("detalle actualizado");
         
-        System.out.println("------------prueba listado detalle--------------");
-        
-        ArrayList<DetallePedido> listadoDetalleTest = detalleTest.listarDetalle(6);
-        
-        for (DetallePedido detallePedido : listadoDetalleTest) {
-            System.out.println(detallePedido.toString());
-        }
-        
-        System.out.println("PEDIDO BUSCADO: "+testPedido.buscarPedido(6).toString());
-        
+//        System.out.println("------------prueba listado detalle--------------");
+//        
+//        ArrayList<DetallePedido> listadoDetalleTest = detalleTest.listarDetalle(6);
+//        
+//        for (DetallePedido detallePedido : listadoDetalleTest) {
+//            System.out.println(detallePedido.toString());
+//        }
+//        
+//        System.out.println("PEDIDO BUSCADO: "+testPedido.buscarPedido(6).toString());
                 
         if(detalleTest.eliminarDetalle(6))
             System.out.println("Detalle eliminado");

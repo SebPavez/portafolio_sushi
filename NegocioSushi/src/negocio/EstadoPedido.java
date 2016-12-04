@@ -22,6 +22,6 @@ public class EstadoPedido {
 
     @Override
     public String toString() {
-        return "EstadoPedido{" + "idEstado=" + idEstado + ", estado=" + estado + '}';
+        return "Nombre"+ " "+ estado ;
     }
 }

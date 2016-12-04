@@ -430,7 +430,7 @@ public class Productos extends javax.swing.JFrame {
         ArrayList<Producto> listado = new ProductoDaoImplementado().listarProductos();
         String textoSalida = "";
         for (Producto producto : listado) {
-            textoSalida += producto.toString();
+            textoSalida += producto.toString()+"\n";
         }
         txaListarProductos.setText(textoSalida);
     }//GEN-LAST:event_btnListarActionPerformed
