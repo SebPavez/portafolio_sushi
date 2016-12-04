@@ -249,6 +249,74 @@ namespace DAL
 
         #endregion
 
+        #region Function Imports
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="fORMA">No Metadata Documentation available.</param>
+        /// <param name="dETALLE">No Metadata Documentation available.</param>
+        /// <param name="tOTAL">No Metadata Documentation available.</param>
+        /// <param name="rUN_CLIENTE">No Metadata Documentation available.</param>
+        /// <param name="eSTADO">No Metadata Documentation available.</param>
+        /// <param name="iD_SALIDA">No Metadata Documentation available.</param>
+        public int INSERTARPEDIDO(global::System.String fORMA, global::System.String dETALLE, Nullable<global::System.Decimal> tOTAL, global::System.String rUN_CLIENTE, Nullable<global::System.Decimal> eSTADO, ObjectParameter iD_SALIDA)
+        {
+            ObjectParameter fORMAParameter;
+            if (fORMA != null)
+            {
+                fORMAParameter = new ObjectParameter("FORMA", fORMA);
+            }
+            else
+            {
+                fORMAParameter = new ObjectParameter("FORMA", typeof(global::System.String));
+            }
+    
+            ObjectParameter dETALLEParameter;
+            if (dETALLE != null)
+            {
+                dETALLEParameter = new ObjectParameter("DETALLE", dETALLE);
+            }
+            else
+            {
+                dETALLEParameter = new ObjectParameter("DETALLE", typeof(global::System.String));
+            }
+    
+            ObjectParameter tOTALParameter;
+            if (tOTAL.HasValue)
+            {
+                tOTALParameter = new ObjectParameter("TOTAL", tOTAL);
+            }
+            else
+            {
+                tOTALParameter = new ObjectParameter("TOTAL", typeof(global::System.Decimal));
+            }
+    
+            ObjectParameter rUN_CLIENTEParameter;
+            if (rUN_CLIENTE != null)
+            {
+                rUN_CLIENTEParameter = new ObjectParameter("RUN_CLIENTE", rUN_CLIENTE);
+            }
+            else
+            {
+                rUN_CLIENTEParameter = new ObjectParameter("RUN_CLIENTE", typeof(global::System.String));
+            }
+    
+            ObjectParameter eSTADOParameter;
+            if (eSTADO.HasValue)
+            {
+                eSTADOParameter = new ObjectParameter("ESTADO", eSTADO);
+            }
+            else
+            {
+                eSTADOParameter = new ObjectParameter("ESTADO", typeof(global::System.Decimal));
+            }
+    
+            return base.ExecuteFunction("INSERTARPEDIDO", fORMAParameter, dETALLEParameter, tOTALParameter, rUN_CLIENTEParameter, eSTADOParameter, iD_SALIDA);
+        }
+
+        #endregion
+
     }
 
     #endregion

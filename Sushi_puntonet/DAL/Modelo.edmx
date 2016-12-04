@@ -184,7 +184,8 @@
           <Parameter Name="DETALLE" Type="varchar2" Mode="In" />
           <Parameter Name="TOTAL" Type="number" Mode="In" />
           <Parameter Name="RUN_CLIENTE" Type="varchar2" Mode="In" />
-          <Parameter Name="ESTADO" Type="varchar2" Mode="In" />
+          <Parameter Name="ESTADO" Type="number" Mode="In" />
+          <Parameter Name="ID_SALIDA" Type="number" Mode="Out" />
         </Function>
       </Schema>
     </edmx:StorageModels>
@@ -219,6 +220,14 @@
             <End Role="ESTADO_PEDIDO" EntitySet="ESTADO_PEDIDO" />
             <End Role="PEDIDO" EntitySet="PEDIDOes" />
           </AssociationSet>
+          <FunctionImport Name="INSERTARPEDIDO">
+            <Parameter Name="FORMA" Mode="In" Type="String" />
+            <Parameter Name="DETALLE" Mode="In" Type="String" />
+            <Parameter Name="TOTAL" Mode="In" Type="Decimal" />
+            <Parameter Name="RUN_CLIENTE" Mode="In" Type="String" />
+            <Parameter Name="ESTADO" Mode="In" Type="Decimal" />
+            <Parameter Name="ID_SALIDA" Mode="Out" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="CATEGORIA_PRODUCTO">
           <Key>
@@ -249,7 +258,7 @@
           <Key>
             <PropertyRef Name="ID_DETALLE" />
           </Key>
-          <Property Name="ID_DETALLE" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_DETALLE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="ID_PRODUCTO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="CANTIDAD" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
@@ -288,7 +297,7 @@
           <Key>
             <PropertyRef Name="ID_PEDIDO" />
           </Key>
-          <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PEDIDO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="FORMA_ENTREGA" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="COMENTARIO" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="TOTAL_VENTA" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
@@ -473,6 +482,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="INSERTARPEDIDO" FunctionName="Modelo.Store.INSERTARPEDIDO" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -493,34 +503,35 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Modelo" ZoomLevel="64">
-        <EntityTypeShape EntityType="Modelo.CATEGORIA_PRODUCTO" Width="2.5" PointX="7.875" PointY="4.5" Height="1.5956835937499996" IsExpanded="true" />
+      <Diagram Name="Modelo">
+        <EntityTypeShape EntityType="Modelo.CATEGORIA_PRODUCTO" Width="1.5" PointX="0.75" PointY="9.875" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.CLIENTE" Width="1.5" PointX="0.75" PointY="1" Height="3.3263964843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Modelo.DETALLE_PEDIDO" Width="1.875" PointX="5.375" PointY="1" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Modelo.EMPLEADO" Width="1.5" PointX="12.25" PointY="1.625" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.DETALLE_PEDIDO" Width="1.5" PointX="5.25" PointY="1.625" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.EMPLEADO" Width="1.5" PointX="5.75" PointY="4.75" Height="3.9033007812499996" IsExpanded="true" />
         <EntityTypeShape EntityType="Modelo.ESTADO_PEDIDO" Width="1.5" PointX="0.75" PointY="5.875" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Modelo.PEDIDO" Width="1.5" PointX="3" PointY="1" Height="2.9417936197916661" IsExpanded="true" />
-        <EntityTypeShape EntityType="Modelo.PRODUCTO" Width="1.5" PointX="5.375" PointY="4" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.PEDIDO" Width="1.5" PointX="3" PointY="1.125" Height="2.9417936197916661" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.PRODUCTO" Width="1.5" PointX="3" PointY="9.125" Height="3.1340950520833317" IsExpanded="true" />
         <AssociationConnector Association="Modelo.CATEGORIA_PRODUCTO_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.875" PointY="5.297841796875" />
-          <ConnectorPoint PointX="6.875" PointY="5.297841796875" />
+          <ConnectorPoint PointX="2.25" PointY="10.672841796875" />
+          <ConnectorPoint PointX="3" PointY="10.672841796875" />
         </AssociationConnector>
         <AssociationConnector Association="Modelo.RUN_CLIENTE_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.4708968098958328" />
-          <ConnectorPoint PointX="3" PointY="2.4708968098958328" />
+          <ConnectorPoint PointX="2.25" PointY="2.5958968098958328" />
+          <ConnectorPoint PointX="3" PointY="2.5958968098958328" />
         </AssociationConnector>
         <AssociationConnector Association="Modelo.ID_PEDIDO_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.0862939453125" />
-          <ConnectorPoint PointX="5.375" PointY="2.0862939453125" />
+          <ConnectorPoint PointX="4.5" PointY="2.7112939453125" />
+          <ConnectorPoint PointX="5.25" PointY="2.7112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="Modelo.ID_PRODUCTO_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.125" PointY="4" />
-          <ConnectorPoint PointX="6.125" PointY="3.1725878906249996" />
+          <ConnectorPoint PointX="4.5" PointY="10.692047526041666" />
+          <ConnectorPoint PointX="5.46875" PointY="10.692047526041666" />
+          <ConnectorPoint PointX="5.46875" PointY="3.7975878906249996" />
         </AssociationConnector>
         <AssociationConnector Association="Modelo.ID_ESTADO_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="6.672841796875" />
-          <ConnectorPoint PointX="3.71875" PointY="6.672841796875" />
-          <ConnectorPoint PointX="3.71875" PointY="3.9417936197916661" />
+          <ConnectorPoint PointX="3.75" PointY="6.672841796875" />
+          <ConnectorPoint PointX="3.75" PointY="4.0667936197916656" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

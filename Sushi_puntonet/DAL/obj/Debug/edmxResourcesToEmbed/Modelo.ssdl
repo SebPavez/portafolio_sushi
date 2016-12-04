@@ -179,6 +179,7 @@
     <Parameter Name="DETALLE" Type="varchar2" Mode="In" />
     <Parameter Name="TOTAL" Type="number" Mode="In" />
     <Parameter Name="RUN_CLIENTE" Type="varchar2" Mode="In" />
-    <Parameter Name="ESTADO" Type="varchar2" Mode="In" />
+    <Parameter Name="ESTADO" Type="number" Mode="In" />
+    <Parameter Name="ID_SALIDA" Type="number" Mode="Out" />
   </Function>
 </Schema>

@@ -93,5 +93,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="INSERTARPEDIDO" FunctionName="Modelo.Store.INSERTARPEDIDO" />
   </EntityContainerMapping>
 </Mapping>

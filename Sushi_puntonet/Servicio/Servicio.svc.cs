@@ -147,21 +147,16 @@ namespace Servicio
                 {
                     using (Entidades contexto = new Entidades())
                     {
-                        DAL.PEDIDO pedidoDAL = new DAL.PEDIDO();
-                        pedidoDAL.RUN_CLIENTE = nuevoPedido.RunCliente;
-                        pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
-                        pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
-                        pedidoDAL.TOTAL_VENTA = (decimal) nuevoPedido.TotalVenta;
-                        pedidoDAL.FECHA_HORA = DateTime.Now;
-                        pedidoDAL.ID_ESTADO = 1;                        
-                        contexto.AddToPEDIDOes(pedidoDAL);
-                        contexto.SaveChanges();
+                        System.Data.Objects.ObjectParameter id_salida = new System.Data.Objects.ObjectParameter("ID_SALIDA", typeof(int?));                        
+                        
+                        contexto.INSERTARPEDIDO(nuevoPedido.FormaEntrega, nuevoPedido.Comentario, (decimal?)nuevoPedido.TotalVenta, nuevoPedido.RunCliente, 1, id_salida);
+                        
                         foreach (Negocio.DetallePedido item in nuevoPedido.DetallePedido)
                         {
                             DAL.DETALLE_PEDIDO nuevoDetalle = new DAL.DETALLE_PEDIDO();
                             nuevoDetalle.ID_PRODUCTO = item.Producto.IdProducto;
                             nuevoDetalle.CANTIDAD = item.Cantidad;
-                            nuevoDetalle.ID_PEDIDO = pedidoDAL.ID_PEDIDO;
+                            nuevoDetalle.ID_PEDIDO = Decimal.ToInt32((decimal)id_salida.Value);
                             contexto.AddToDETALLE_PEDIDO(nuevoDetalle);
                         }
                         contexto.SaveChanges();
