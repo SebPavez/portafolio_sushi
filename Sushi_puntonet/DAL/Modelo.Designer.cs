@@ -19,11 +19,11 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("Modelo", "CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.CATEGORIA_PRODUCTO), "PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PRODUCTO), true)]
-[assembly: EdmRelationshipAttribute("Modelo", "RUN_CLIENTE_FK", "CLIENTE", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.CLIENTE), "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PEDIDO), true)]
-[assembly: EdmRelationshipAttribute("Modelo", "ID_PEDIDO_FK", "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.PEDIDO), "DETALLE_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.DETALLE_PEDIDO), true)]
-[assembly: EdmRelationshipAttribute("Modelo", "ID_PRODUCTO_FK", "PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.PRODUCTO), "DETALLE_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.DETALLE_PEDIDO), true)]
-[assembly: EdmRelationshipAttribute("Modelo", "ID_ESTADO_FK", "ESTADO_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.ESTADO_PEDIDO), "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PEDIDO), true)]
+[assembly: EdmRelationshipAttribute("Model", "CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.CATEGORIA_PRODUCTO), "PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PRODUCTO), true)]
+[assembly: EdmRelationshipAttribute("Model", "RUN_CLIENTE_FK", "CLIENTE", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.CLIENTE), "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PEDIDO), true)]
+[assembly: EdmRelationshipAttribute("Model", "ID_PEDIDO_FK", "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.PEDIDO), "DETALLE_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.DETALLE_PEDIDO), true)]
+[assembly: EdmRelationshipAttribute("Model", "ID_PRODUCTO_FK", "PRODUCTO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.PRODUCTO), "DETALLE_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.DETALLE_PEDIDO), true)]
+[assembly: EdmRelationshipAttribute("Model", "ID_ESTADO_FK", "ESTADO_PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DAL.ESTADO_PEDIDO), "PEDIDO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DAL.PEDIDO), true)]
 
 #endregion
 
@@ -74,6 +74,22 @@ namespace DAL
         #endregion
     
         #region ObjectSet Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<APEX__ACL> APEX__ACL
+        {
+            get
+            {
+                if ((_APEX__ACL == null))
+                {
+                    _APEX__ACL = base.CreateObjectSet<APEX__ACL>("APEX__ACL");
+                }
+                return _APEX__ACL;
+            }
+        }
+        private ObjectSet<APEX__ACL> _APEX__ACL;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -192,6 +208,14 @@ namespace DAL
         #region AddTo Methods
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the APEX__ACL EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToAPEX__ACL(APEX__ACL aPEX__ACL)
+        {
+            base.AddObject("APEX__ACL", aPEX__ACL);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the CATEGORIA_PRODUCTO EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToCATEGORIA_PRODUCTO(CATEGORIA_PRODUCTO cATEGORIA_PRODUCTO)
@@ -250,6 +274,47 @@ namespace DAL
         #endregion
 
         #region Function Imports
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        /// <param name="iD_PEDIDO">No Metadata Documentation available.</param>
+        /// <param name="iD_PRODUCTO">No Metadata Documentation available.</param>
+        /// <param name="cANTIDAD">No Metadata Documentation available.</param>
+        public int INSERTARDETALLEPEDIDO(Nullable<global::System.Decimal> iD_PEDIDO, Nullable<global::System.Decimal> iD_PRODUCTO, Nullable<global::System.Decimal> cANTIDAD)
+        {
+            ObjectParameter iD_PEDIDOParameter;
+            if (iD_PEDIDO.HasValue)
+            {
+                iD_PEDIDOParameter = new ObjectParameter("ID_PEDIDO", iD_PEDIDO);
+            }
+            else
+            {
+                iD_PEDIDOParameter = new ObjectParameter("ID_PEDIDO", typeof(global::System.Decimal));
+            }
+    
+            ObjectParameter iD_PRODUCTOParameter;
+            if (iD_PRODUCTO.HasValue)
+            {
+                iD_PRODUCTOParameter = new ObjectParameter("ID_PRODUCTO", iD_PRODUCTO);
+            }
+            else
+            {
+                iD_PRODUCTOParameter = new ObjectParameter("ID_PRODUCTO", typeof(global::System.Decimal));
+            }
+    
+            ObjectParameter cANTIDADParameter;
+            if (cANTIDAD.HasValue)
+            {
+                cANTIDADParameter = new ObjectParameter("CANTIDAD", cANTIDAD);
+            }
+            else
+            {
+                cANTIDADParameter = new ObjectParameter("CANTIDAD", typeof(global::System.Decimal));
+            }
+    
+            return base.ExecuteFunction("INSERTARDETALLEPEDIDO", iD_PEDIDOParameter, iD_PRODUCTOParameter, cANTIDADParameter);
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -326,7 +391,242 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="CATEGORIA_PRODUCTO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="APEX__ACL")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class APEX__ACL : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new APEX__ACL object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="wS_APP_ID">Initial value of the WS_APP_ID property.</param>
+        /// <param name="uSERNAME">Initial value of the USERNAME property.</param>
+        /// <param name="pRIV">Initial value of the PRIV property.</param>
+        /// <param name="cREATED_ON">Initial value of the CREATED_ON property.</param>
+        /// <param name="cREATED_BY">Initial value of the CREATED_BY property.</param>
+        public static APEX__ACL CreateAPEX__ACL(global::System.Decimal id, global::System.Decimal wS_APP_ID, global::System.String uSERNAME, global::System.String pRIV, global::System.DateTime cREATED_ON, global::System.String cREATED_BY)
+        {
+            APEX__ACL aPEX__ACL = new APEX__ACL();
+            aPEX__ACL.ID = id;
+            aPEX__ACL.WS_APP_ID = wS_APP_ID;
+            aPEX__ACL.USERNAME = uSERNAME;
+            aPEX__ACL.PRIV = pRIV;
+            aPEX__ACL.CREATED_ON = cREATED_ON;
+            aPEX__ACL.CREATED_BY = cREATED_BY;
+            return aPEX__ACL;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Decimal _ID;
+        partial void OnIDChanging(global::System.Decimal value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal WS_APP_ID
+        {
+            get
+            {
+                return _WS_APP_ID;
+            }
+            set
+            {
+                OnWS_APP_IDChanging(value);
+                ReportPropertyChanging("WS_APP_ID");
+                _WS_APP_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("WS_APP_ID");
+                OnWS_APP_IDChanged();
+            }
+        }
+        private global::System.Decimal _WS_APP_ID;
+        partial void OnWS_APP_IDChanging(global::System.Decimal value);
+        partial void OnWS_APP_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String USERNAME
+        {
+            get
+            {
+                return _USERNAME;
+            }
+            set
+            {
+                OnUSERNAMEChanging(value);
+                ReportPropertyChanging("USERNAME");
+                _USERNAME = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("USERNAME");
+                OnUSERNAMEChanged();
+            }
+        }
+        private global::System.String _USERNAME;
+        partial void OnUSERNAMEChanging(global::System.String value);
+        partial void OnUSERNAMEChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PRIV
+        {
+            get
+            {
+                return _PRIV;
+            }
+            set
+            {
+                OnPRIVChanging(value);
+                ReportPropertyChanging("PRIV");
+                _PRIV = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PRIV");
+                OnPRIVChanged();
+            }
+        }
+        private global::System.String _PRIV;
+        partial void OnPRIVChanging(global::System.String value);
+        partial void OnPRIVChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CREATED_ON
+        {
+            get
+            {
+                return _CREATED_ON;
+            }
+            set
+            {
+                OnCREATED_ONChanging(value);
+                ReportPropertyChanging("CREATED_ON");
+                _CREATED_ON = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CREATED_ON");
+                OnCREATED_ONChanged();
+            }
+        }
+        private global::System.DateTime _CREATED_ON;
+        partial void OnCREATED_ONChanging(global::System.DateTime value);
+        partial void OnCREATED_ONChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String CREATED_BY
+        {
+            get
+            {
+                return _CREATED_BY;
+            }
+            set
+            {
+                OnCREATED_BYChanging(value);
+                ReportPropertyChanging("CREATED_BY");
+                _CREATED_BY = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("CREATED_BY");
+                OnCREATED_BYChanged();
+            }
+        }
+        private global::System.String _CREATED_BY;
+        partial void OnCREATED_BYChanging(global::System.String value);
+        partial void OnCREATED_BYChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> UPDATED_ON
+        {
+            get
+            {
+                return _UPDATED_ON;
+            }
+            set
+            {
+                OnUPDATED_ONChanging(value);
+                ReportPropertyChanging("UPDATED_ON");
+                _UPDATED_ON = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UPDATED_ON");
+                OnUPDATED_ONChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _UPDATED_ON;
+        partial void OnUPDATED_ONChanging(Nullable<global::System.DateTime> value);
+        partial void OnUPDATED_ONChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String UPDATED_BY
+        {
+            get
+            {
+                return _UPDATED_BY;
+            }
+            set
+            {
+                OnUPDATED_BYChanging(value);
+                ReportPropertyChanging("UPDATED_BY");
+                _UPDATED_BY = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("UPDATED_BY");
+                OnUPDATED_BYChanged();
+            }
+        }
+        private global::System.String _UPDATED_BY;
+        partial void OnUPDATED_BYChanging(global::System.String value);
+        partial void OnUPDATED_BYChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="CATEGORIA_PRODUCTO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class CATEGORIA_PRODUCTO : EntityObject
@@ -412,18 +712,18 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "CATEGORIA_PRODUCTO_FK", "PRODUCTO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "CATEGORIA_PRODUCTO_FK", "PRODUCTO")]
         public EntityCollection<PRODUCTO> PRODUCTOes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "PRODUCTO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "PRODUCTO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "PRODUCTO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "PRODUCTO", value);
                 }
             }
         }
@@ -435,7 +735,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="CLIENTE")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="CLIENTE")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class CLIENTE : EntityObject
@@ -755,18 +1055,18 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "RUN_CLIENTE_FK", "PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "RUN_CLIENTE_FK", "PEDIDO")]
         public EntityCollection<PEDIDO> PEDIDOes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PEDIDO>("Modelo.RUN_CLIENTE_FK", "PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PEDIDO>("Model.RUN_CLIENTE_FK", "PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PEDIDO>("Modelo.RUN_CLIENTE_FK", "PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PEDIDO>("Model.RUN_CLIENTE_FK", "PEDIDO", value);
                 }
             }
         }
@@ -778,7 +1078,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="DETALLE_PEDIDO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="DETALLE_PEDIDO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class DETALLE_PEDIDO : EntityObject
@@ -916,16 +1216,16 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_PEDIDO_FK", "PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_PEDIDO_FK", "PEDIDO")]
         public PEDIDO PEDIDO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Modelo.ID_PEDIDO_FK", "PEDIDO").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Model.ID_PEDIDO_FK", "PEDIDO").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Modelo.ID_PEDIDO_FK", "PEDIDO").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Model.ID_PEDIDO_FK", "PEDIDO").Value = value;
             }
         }
         /// <summary>
@@ -937,13 +1237,13 @@ namespace DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Modelo.ID_PEDIDO_FK", "PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PEDIDO>("Model.ID_PEDIDO_FK", "PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PEDIDO>("Modelo.ID_PEDIDO_FK", "PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PEDIDO>("Model.ID_PEDIDO_FK", "PEDIDO", value);
                 }
             }
         }
@@ -954,16 +1254,16 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_PRODUCTO_FK", "PRODUCTO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_PRODUCTO_FK", "PRODUCTO")]
         public PRODUCTO PRODUCTO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Modelo.ID_PRODUCTO_FK", "PRODUCTO").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Model.ID_PRODUCTO_FK", "PRODUCTO").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Modelo.ID_PRODUCTO_FK", "PRODUCTO").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Model.ID_PRODUCTO_FK", "PRODUCTO").Value = value;
             }
         }
         /// <summary>
@@ -975,13 +1275,13 @@ namespace DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Modelo.ID_PRODUCTO_FK", "PRODUCTO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PRODUCTO>("Model.ID_PRODUCTO_FK", "PRODUCTO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PRODUCTO>("Modelo.ID_PRODUCTO_FK", "PRODUCTO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PRODUCTO>("Model.ID_PRODUCTO_FK", "PRODUCTO", value);
                 }
             }
         }
@@ -993,7 +1293,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="EMPLEADO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="EMPLEADO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EMPLEADO : EntityObject
@@ -1412,7 +1712,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="ESTADO_PEDIDO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="ESTADO_PEDIDO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class ESTADO_PEDIDO : EntityObject
@@ -1498,18 +1798,18 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_ESTADO_FK", "PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_ESTADO_FK", "PEDIDO")]
         public EntityCollection<PEDIDO> PEDIDOes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PEDIDO>("Modelo.ID_ESTADO_FK", "PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PEDIDO>("Model.ID_ESTADO_FK", "PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PEDIDO>("Modelo.ID_ESTADO_FK", "PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PEDIDO>("Model.ID_ESTADO_FK", "PEDIDO", value);
                 }
             }
         }
@@ -1521,7 +1821,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="PEDIDO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="PEDIDO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class PEDIDO : EntityObject
@@ -1737,16 +2037,16 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "RUN_CLIENTE_FK", "CLIENTE")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "RUN_CLIENTE_FK", "CLIENTE")]
         public CLIENTE CLIENTE
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Modelo.RUN_CLIENTE_FK", "CLIENTE").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Model.RUN_CLIENTE_FK", "CLIENTE").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Modelo.RUN_CLIENTE_FK", "CLIENTE").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Model.RUN_CLIENTE_FK", "CLIENTE").Value = value;
             }
         }
         /// <summary>
@@ -1758,13 +2058,13 @@ namespace DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Modelo.RUN_CLIENTE_FK", "CLIENTE");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CLIENTE>("Model.RUN_CLIENTE_FK", "CLIENTE");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CLIENTE>("Modelo.RUN_CLIENTE_FK", "CLIENTE", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CLIENTE>("Model.RUN_CLIENTE_FK", "CLIENTE", value);
                 }
             }
         }
@@ -1775,18 +2075,18 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_PEDIDO_FK", "DETALLE_PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_PEDIDO_FK", "DETALLE_PEDIDO")]
         public EntityCollection<DETALLE_PEDIDO> DETALLE_PEDIDO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DETALLE_PEDIDO>("Modelo.ID_PEDIDO_FK", "DETALLE_PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DETALLE_PEDIDO>("Model.ID_PEDIDO_FK", "DETALLE_PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DETALLE_PEDIDO>("Modelo.ID_PEDIDO_FK", "DETALLE_PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DETALLE_PEDIDO>("Model.ID_PEDIDO_FK", "DETALLE_PEDIDO", value);
                 }
             }
         }
@@ -1797,16 +2097,16 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_ESTADO_FK", "ESTADO_PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_ESTADO_FK", "ESTADO_PEDIDO")]
         public ESTADO_PEDIDO ESTADO_PEDIDO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Modelo.ID_ESTADO_FK", "ESTADO_PEDIDO").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Model.ID_ESTADO_FK", "ESTADO_PEDIDO").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Modelo.ID_ESTADO_FK", "ESTADO_PEDIDO").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Model.ID_ESTADO_FK", "ESTADO_PEDIDO").Value = value;
             }
         }
         /// <summary>
@@ -1818,13 +2118,13 @@ namespace DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Modelo.ID_ESTADO_FK", "ESTADO_PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ESTADO_PEDIDO>("Model.ID_ESTADO_FK", "ESTADO_PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ESTADO_PEDIDO>("Modelo.ID_ESTADO_FK", "ESTADO_PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ESTADO_PEDIDO>("Model.ID_ESTADO_FK", "ESTADO_PEDIDO", value);
                 }
             }
         }
@@ -1836,7 +2136,7 @@ namespace DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Modelo", Name="PRODUCTO")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="PRODUCTO")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class PRODUCTO : EntityObject
@@ -2104,16 +2404,16 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO")]
         public CATEGORIA_PRODUCTO CATEGORIA_PRODUCTO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO").Value = value;
             }
         }
         /// <summary>
@@ -2125,13 +2425,13 @@ namespace DAL
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CATEGORIA_PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CATEGORIA_PRODUCTO>("Modelo.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CATEGORIA_PRODUCTO>("Model.CATEGORIA_PRODUCTO_FK", "CATEGORIA_PRODUCTO", value);
                 }
             }
         }
@@ -2142,18 +2442,18 @@ namespace DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("Modelo", "ID_PRODUCTO_FK", "DETALLE_PEDIDO")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "ID_PRODUCTO_FK", "DETALLE_PEDIDO")]
         public EntityCollection<DETALLE_PEDIDO> DETALLE_PEDIDO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DETALLE_PEDIDO>("Modelo.ID_PRODUCTO_FK", "DETALLE_PEDIDO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DETALLE_PEDIDO>("Model.ID_PRODUCTO_FK", "DETALLE_PEDIDO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DETALLE_PEDIDO>("Modelo.ID_PRODUCTO_FK", "DETALLE_PEDIDO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DETALLE_PEDIDO>("Model.ID_PRODUCTO_FK", "DETALLE_PEDIDO", value);
                 }
             }
         }
