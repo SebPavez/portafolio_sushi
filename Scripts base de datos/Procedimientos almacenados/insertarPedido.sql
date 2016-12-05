@@ -3,7 +3,7 @@ CREATE OR REPLACE PROCEDURE insertarPedido(
     detalle IN pedido.forma_entrega%TYPE,
     total IN pedido.total_venta%TYPE,    
     run_cliente IN pedido.run_cliente%TYPE,
-    estado IN estado_pedido.estado%TYPE,
+    estado IN estado_pedido.id_estado%TYPE,
     id_salida OUT pedido.id_pedido%TYPE
 )
     

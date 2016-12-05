@@ -1,8 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="Entidades">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entidades">
+    <EntitySetMapping Name="APEX__ACL">
+      <EntityTypeMapping TypeName="Model.APEX__ACL">
+        <MappingFragment StoreEntitySet="APEX$_ACL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WS_APP_ID" ColumnName="WS_APP_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PRIV" ColumnName="PRIV" />
+          <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+          <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CATEGORIA_PRODUCTO">
-      <EntityTypeMapping TypeName="Modelo.CATEGORIA_PRODUCTO">
+      <EntityTypeMapping TypeName="Model.CATEGORIA_PRODUCTO">
         <MappingFragment StoreEntitySet="CATEGORIA_PRODUCTO">
           <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
           <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
@@ -10,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CLIENTEs">
-      <EntityTypeMapping TypeName="Modelo.CLIENTE">
+      <EntityTypeMapping TypeName="Model.CLIENTE">
         <MappingFragment StoreEntitySet="CLIENTE">
           <ScalarProperty Name="CLIENTE_RUN" ColumnName="CLIENTE_RUN" />
           <ScalarProperty Name="NOMBRE_COMPLETO" ColumnName="NOMBRE_COMPLETO" />
@@ -27,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DETALLE_PEDIDO">
-      <EntityTypeMapping TypeName="Modelo.DETALLE_PEDIDO">
+      <EntityTypeMapping TypeName="Model.DETALLE_PEDIDO">
         <MappingFragment StoreEntitySet="DETALLE_PEDIDO">
           <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
           <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
@@ -37,7 +51,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EMPLEADOes">
-      <EntityTypeMapping TypeName="Modelo.EMPLEADO">
+      <EntityTypeMapping TypeName="Model.EMPLEADO">
         <MappingFragment StoreEntitySet="EMPLEADO">
           <ScalarProperty Name="RUN" ColumnName="RUN" />
           <ScalarProperty Name="FECHA_CONTRATO" ColumnName="FECHA_CONTRATO" />
@@ -58,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ESTADO_PEDIDO">
-      <EntityTypeMapping TypeName="Modelo.ESTADO_PEDIDO">
+      <EntityTypeMapping TypeName="Model.ESTADO_PEDIDO">
         <MappingFragment StoreEntitySet="ESTADO_PEDIDO">
           <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
@@ -66,7 +80,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PEDIDOes">
-      <EntityTypeMapping TypeName="Modelo.PEDIDO">
+      <EntityTypeMapping TypeName="Model.PEDIDO">
         <MappingFragment StoreEntitySet="PEDIDO">
           <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
           <ScalarProperty Name="FORMA_ENTREGA" ColumnName="FORMA_ENTREGA" />
@@ -79,7 +93,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PRODUCTOes">
-      <EntityTypeMapping TypeName="Modelo.PRODUCTO">
+      <EntityTypeMapping TypeName="Model.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
           <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
           <ScalarProperty Name="STOCK" ColumnName="STOCK" />
@@ -93,5 +107,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="INSERTARDETALLEPEDIDO" FunctionName="Model.Store.INSERTARDETALLEPEDIDO" />
+    <FunctionImportMapping FunctionImportName="INSERTARPEDIDO" FunctionName="Model.Store.INSERTARPEDIDO" />
   </EntityContainerMapping>
 </Mapping>

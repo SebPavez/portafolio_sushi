@@ -5,6 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="row">
+    <asp:Label Text="" ID="estadoCompra" runat="server" />
+    <br />
     <asp:Label Text="" ID="estadoCarro" runat="server" />
 </div>
 <div class="row">

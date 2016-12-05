@@ -11,9 +11,28 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CargarHistorial();
         }
 
+
+        protected void CargarHistorial() {
+            string runCliente = (string)Session["runCliente"];
+            try
+            {
+                using (ServicioCompras.ServicioClient servicio = new ServicioCompras.ServicioClient())
+                {
+                    Negocio.Pedido[] listado = servicio.ListarHistorial(runCliente);
+                    grillaHistorial.DataSource = listado;
+                    grillaHistorial.DataBind();
+                }
+            }
+            catch (Exception)
+            {
+                estadoGrilla.Text = "No se pudieron encontrar datos";
+                estadoGrilla.Visible = true;
+            }
+            
+        }
         protected void grillaHistorial_PreRender(object sender, EventArgs e)
         {
             if ((grillaHistorial.ShowHeader == true && grillaHistorial.Rows.Count > 0) || grillaHistorial.ShowHeaderWhenEmpty == true)

@@ -63,19 +63,19 @@ namespace WebApp
 
                     if (servicio.GenerarPedido(nuevoPedido))
                     {
-                        this.estadoCarro.Text = "Pedido realizado con éxito";
+                        this.estadoCompra.Text = "Pedido realizado con éxito";
                         Session["carrito"] = null;
                         CargarTablaCarro();
                     }
                     else
                     {
-                        this.estadoCarro.Text = "Falla al realizar pedido, intente más tarde";
+                        this.estadoCompra.Text = "Falla al realizar pedido, intente más tarde";
                     }
                 }
             }
             catch (Exception)
             {
-                this.estadoCarro.Text = "Falla al realizar pedido, intente más tarde";                
+                this.estadoCompra.Text = "Falla al realizar pedido, intente más tarde";                
             }
             
         }

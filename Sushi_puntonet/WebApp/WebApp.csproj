@@ -116,13 +116,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ServicioReporte\ServicioReporte.disco" />
-    <None Include="Service References\ServicioReporte\configuration91.svcinfo" />
-    <None Include="Service References\ServicioReporte\configuration.svcinfo" />
-    <None Include="Service References\ServicioReporte\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -141,16 +134,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServicioCompras\Servicio2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioReporte\ServicioReporte.wsdl" />
-    <None Include="Service References\ServicioReporte\ServicioReporte.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioReporte\ServicioReporte1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServicioReporte\ServicioReporte2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -213,11 +196,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServicioReporte\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServicioCompras\" />
-    <WCFMetadataStorage Include="Service References\ServicioReporte\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

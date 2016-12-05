@@ -147,24 +147,15 @@ namespace Servicio
                 {
                     using (Entidades contexto = new Entidades())
                     {
-                        DAL.PEDIDO pedidoDAL = new DAL.PEDIDO();
-                        pedidoDAL.RUN_CLIENTE = nuevoPedido.RunCliente;
-                        pedidoDAL.FORMA_ENTREGA = nuevoPedido.FormaEntrega;
-                        pedidoDAL.COMENTARIO = nuevoPedido.Comentario;
-                        pedidoDAL.TOTAL_VENTA = (decimal) nuevoPedido.TotalVenta;
-                        pedidoDAL.FECHA_HORA = DateTime.Now;
-                        pedidoDAL.ID_ESTADO = 1;                        
-                        contexto.AddToPEDIDOes(pedidoDAL);
-                        contexto.SaveChanges();
+                        System.Data.Objects.ObjectParameter id_salida = new System.Data.Objects.ObjectParameter("ID_SALIDA", typeof(int?));                        
+                        
+                        contexto.INSERTARPEDIDO(nuevoPedido.FormaEntrega, nuevoPedido.Comentario, (decimal?)nuevoPedido.TotalVenta, nuevoPedido.RunCliente, 1, id_salida);
+                        decimal? idAdquirido = Decimal.ToInt32((decimal)id_salida.Value);
                         foreach (Negocio.DetallePedido item in nuevoPedido.DetallePedido)
-                        {
-                            DAL.DETALLE_PEDIDO nuevoDetalle = new DAL.DETALLE_PEDIDO();
-                            nuevoDetalle.ID_PRODUCTO = item.Producto.IdProducto;
-                            nuevoDetalle.CANTIDAD = item.Cantidad;
-                            nuevoDetalle.ID_PEDIDO = pedidoDAL.ID_PEDIDO;
-                            contexto.AddToDETALLE_PEDIDO(nuevoDetalle);
-                        }
-                        contexto.SaveChanges();
+                        {                            
+                            contexto.INSERTARDETALLEPEDIDO(idAdquirido, (decimal?) item.Producto.IdProducto, (decimal?)item.Cantidad);
+                            
+                        }                        
                         contexto.Dispose();
                     }
                     return true;
@@ -212,8 +203,32 @@ namespace Servicio
         }
 
         //TO_DO
-        public List<Negocio.Pedido> ListarHistorial() {
-            List<Negocio.Pedido> listaRetorno = null;
+        public List<Negocio.Pedido> ListarHistorial(string runCliente) {
+            List<Negocio.Pedido> listaRetorno = new List<Pedido>();
+            try
+            {
+                using (DAL.Entidades contexto = new DAL.Entidades()) {
+                    List<DAL.PEDIDO> pedidosEnBD = contexto.PEDIDOes.Where(obj => obj.RUN_CLIENTE == runCliente).ToList<DAL.PEDIDO>();
+                    foreach (DAL.PEDIDO item in pedidosEnBD)
+                    {
+                        Negocio.Pedido elementoAResultado = new Negocio.Pedido();
+                        elementoAResultado.IdPedido = Decimal.ToInt32(item.ID_PEDIDO);
+                        elementoAResultado.FormaEntrega = item.FORMA_ENTREGA;
+                        elementoAResultado.Comentario = item.COMENTARIO;
+                        elementoAResultado.TotalVenta = Decimal.ToInt32(item.TOTAL_VENTA);
+                        elementoAResultado.FechaHoraPedido = item.FECHA_HORA;
+                        elementoAResultado.RunCliente = item.RUN_CLIENTE;
+                        elementoAResultado.Estado = Decimal.ToInt32(item.ESTADO_PEDIDO.ID_ESTADO);
+                        //no se agrega el detalle del pedido
+                        listaRetorno.Add(elementoAResultado);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {                
+                throw;
+            }
             return listaRetorno;
         }
 
