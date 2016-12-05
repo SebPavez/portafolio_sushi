@@ -2,19 +2,29 @@
 package negocio;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Pedido {
     private int id;
     private String formaEntrega;
     private String comentario;
     private double totalVenta;
-    private String fechaHoraPedido;
+    private Date fechaHoraPedido;
     private ArrayList<DetallePedido> detallePedido;
     private Cliente cliente;
+    private String run_cliente;
     private int idEstado;
 
     public int getId() {
         return id;
+    }
+
+    public String getRun_cliente() {
+        return run_cliente;
+    }
+
+    public void setRun_cliente(String run_cliente) {
+        this.run_cliente = run_cliente;
     }
 
     public void setId(int id) {
@@ -45,11 +55,11 @@ public class Pedido {
         this.totalVenta = totalVenta;
     }
 
-    public String getFechaHoraPedido() {
+    public Date getFechaHoraPedido() {
         return fechaHoraPedido;
     }
 
-    public void setFechaHoraPedido(String fechaHoraPedido) {
+    public void setFechaHoraPedido(Date fechaHoraPedido) {
         this.fechaHoraPedido = fechaHoraPedido;
     }
 
@@ -77,9 +87,15 @@ public class Pedido {
         this.detallePedido = detallePedido;
     }
 
-    @Override
-    public String toString() {
-        return "Pedido{" + "id=" + id + ", formaEntrega=" + formaEntrega + ", comentario=" + comentario + ", totalVenta=" + totalVenta + ", fechaHoraPedido=" + fechaHoraPedido + ", detallePedido=" + detallePedido + ", cliente=" + cliente + ", idEstado=" + idEstado + '}';
+    public String imprimir() {
+        return  "Id Pedido: " + id +"\n"+ 
+//                "run cliente: " + run_cliente + "\n"+ 
+                "Forma Entrega: " + formaEntrega + "\n"+ 
+                "fecha Hora Pedido: " + fechaHoraPedido + "\n"+ 
+                "Comentario: " + comentario + "\n"+ 
+                "Id Estado: " + idEstado + "\n"+ 
+                "Total Venta: " + totalVenta +"\n"+ 
+                "-----------------------------------\n"; 
     }
     
 }
