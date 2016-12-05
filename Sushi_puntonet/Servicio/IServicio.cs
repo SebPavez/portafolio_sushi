@@ -33,7 +33,7 @@ namespace Servicio
         List<Negocio.Producto> ListarProductos();
 
         [OperationContract]        
-        List<Negocio.Pedido> ListarHistorial();
+        List<Negocio.Pedido> ListarHistorial(string runCliente);
 
         [OperationContract]        
         Negocio.Producto BuscarProductoID(int id);

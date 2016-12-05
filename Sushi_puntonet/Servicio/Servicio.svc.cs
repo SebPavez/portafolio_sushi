@@ -203,8 +203,32 @@ namespace Servicio
         }
 
         //TO_DO
-        public List<Negocio.Pedido> ListarHistorial() {
-            List<Negocio.Pedido> listaRetorno = null;
+        public List<Negocio.Pedido> ListarHistorial(string runCliente) {
+            List<Negocio.Pedido> listaRetorno = new List<Pedido>();
+            try
+            {
+                using (DAL.Entidades contexto = new DAL.Entidades()) {
+                    List<DAL.PEDIDO> pedidosEnBD = contexto.PEDIDOes.Where(obj => obj.RUN_CLIENTE == runCliente).ToList<DAL.PEDIDO>();
+                    foreach (DAL.PEDIDO item in pedidosEnBD)
+                    {
+                        Negocio.Pedido elementoAResultado = new Negocio.Pedido();
+                        elementoAResultado.IdPedido = Decimal.ToInt32(item.ID_PEDIDO);
+                        elementoAResultado.FormaEntrega = item.FORMA_ENTREGA;
+                        elementoAResultado.Comentario = item.COMENTARIO;
+                        elementoAResultado.TotalVenta = Decimal.ToInt32(item.TOTAL_VENTA);
+                        elementoAResultado.FechaHoraPedido = item.FECHA_HORA;
+                        elementoAResultado.RunCliente = item.RUN_CLIENTE;
+                        elementoAResultado.Estado = Decimal.ToInt32(item.ESTADO_PEDIDO.ID_ESTADO);
+                        //no se agrega el detalle del pedido
+                        listaRetorno.Add(elementoAResultado);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {                
+                throw;
+            }
             return listaRetorno;
         }
 

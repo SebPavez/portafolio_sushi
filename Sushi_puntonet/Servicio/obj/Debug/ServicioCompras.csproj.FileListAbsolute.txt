@@ -1,4 +1,4 @@
-﻿C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
+C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Servicio.pdb
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\DAL.dll
 C:\Users\Sebastián Pavez\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Negocio.dll
@@ -34,4 +34,3 @@ C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\bin\Neg
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\ServicioCompras.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.dll
 C:\Users\David\Documents\GitHub\portafolio_sushi\Sushi_puntonet\Servicio\obj\Debug\Servicio.pdb
-
